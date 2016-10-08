@@ -5,11 +5,11 @@
     <Attribute name="password" id="password" type="password"/>
     <Attribute name="email" id="email" type="string"/>
   </Entity>
-  <Entity id="Group" name="Group" duration="persistent" gr:x="250" gr:y="178" gr:hideAttributes="false" attributeOrder="groupOID groupName">
+  <Entity id="Group" name="Group" duration="persistent" gr:x="360" gr:y="80" gr:hideAttributes="false" attributeOrder="groupOID groupName">
     <Attribute name="oid" id="groupOID" type="integer" key="true"/>
     <Attribute name="groupName" id="groupName" type="string"/>
   </Entity>
-  <Entity id="Module" name="Module" duration="persistent" gr:x="472" gr:y="167" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
+  <Entity id="Module" name="Module" duration="persistent" gr:x="865" gr:y="130" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
     <Attribute name="oid" id="moduleOID" type="integer" key="true"/>
     <Attribute name="moduleID" id="moduleID" type="string"/>
     <Attribute name="moduleName" id="moduleName" type="string"/>
@@ -29,5 +29,38 @@
   <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41">
     <RelationshipRole1 id="Group2Module" name="modules" maxCard="N"/>
     <RelationshipRole2 id="Module2Group" name="groups" maxCard="N"/>
+  </Relationship>
+  <Entity id="ent7" name="Contribution" duration="persistent" attributeOrder="ent7#att1 ent7#att2 ent7#att3 ent7#att4" gr:x="560" gr:y="980">
+    <Attribute id="ent7#att1" name="oid" key="true" type="integer"/>
+    <Attribute id="ent7#att2" name="title" type="string"/>
+    <Attribute id="ent7#att3" name="description" type="string"/>
+    <Attribute id="ent7#att4" name="min_amount" type="decimal"/>
+  </Entity>
+  <Entity id="ent8" name="Vote" duration="persistent" gr:x="125" gr:y="1015" attributeOrder="ent8#att5">
+    <Attribute id="ent8#att5" name="oid" key="true" type="integer"/>
+  </Entity>
+  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" gr:x="405" gr:y="545">
+    <Attribute id="ent10#att7" name="oid" key="true" type="integer"/>
+    <Attribute id="ent10#att8" name="title" type="string"/>
+    <Attribute id="ent10#att9" name="description" type="string"/>
+    <Attribute id="ent10#att10" name="goal" type="decimal"/>
+    <Attribute id="ent10#att11" name="expiration" type="timestamp"/>
+    <Attribute id="ent10#att12" name="popularity" type="float"/>
+    <Attribute id="ent10#att13" name="quality" type="float"/>
+  </Entity>
+  <Entity id="ent11" name="Question" duration="persistent" gr:x="130" gr:y="745" attributeOrder="ent11#att14">
+    <Attribute id="ent11#att14" name="oid" key="true" type="integer"/>
+  </Entity>
+  <Entity id="ent12" name="Tag" duration="persistent" attributeOrder="ent12#att15 ent12#att16" gr:x="860" gr:y="575">
+    <Attribute id="ent12#att15" name="oid" key="true" type="integer"/>
+    <Attribute id="ent12#att16" name="caption" type="string"/>
+  </Entity>
+  <Relationship id="rel3" name="Campaign_Tag" sourceEntity="ent10" targetEntity="ent12">
+    <RelationshipRole1 id="rel3#role1" name="CampaignToTag" maxCard="N"/>
+    <RelationshipRole2 id="rel3#role2" name="TagToCampaign" maxCard="N"/>
+  </Relationship>
+  <Relationship id="rel4" name="CampaignOwner" sourceEntity="User" targetEntity="ent10">
+    <RelationshipRole1 id="rel4#role3" name="UserToCampaign" maxCard="N"/>
+    <RelationshipRole2 id="rel4#role4" name="CampaignToUser" maxCard="1"/>
   </Relationship>
 </DataModel>

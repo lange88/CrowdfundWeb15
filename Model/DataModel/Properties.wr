@@ -1,4 +1,4 @@
-<DataModel xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
+<DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
   <Entity id="User" name="User" duration="persistent" gr:x="20" gr:y="158" gr:hideAttributes="false" attributeOrder="userOID userName password email">
     <Attribute name="oid" id="userOID" type="integer" key="true"/>
     <Attribute name="userName" id="userName" type="string"/>
@@ -63,4 +63,5 @@
     <RelationshipRole1 id="rel4#role3" name="UserToCampaign" maxCard="N"/>
     <RelationshipRole2 id="rel4#role4" name="CampaignToUser" maxCard="1"/>
   </Relationship>
+  <db:Database id="db1" name="CrowdfundWeb15" type="PostgreSQL 9" url="jdbc:postgresql://localhost/CrowdfundWebDb" username="sqllogin" password="supermooipassword"/>
 </DataModel>

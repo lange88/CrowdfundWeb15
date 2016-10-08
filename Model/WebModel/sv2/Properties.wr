@@ -1,0 +1,5 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Campaigner" protected="true" homePage="sv2#page1">
+  <OperationUnits>
+    <LoginUnit gr:x="220" gr:y="515" id="sv2#lgu1" name="Login1"/>
+  </OperationUnits>
+</SiteView>

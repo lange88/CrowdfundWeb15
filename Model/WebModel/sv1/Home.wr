@@ -1,0 +1,28 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="350" gr:y="165" id="sv1#Home" name="Homepage">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#Home#inu2" name="Populair Campaigns" entity="ent10" displayAttributes="ent10#att8" maxResults="5" linkOrder="sv1#Home#inu2#ln1">
+      <Link id="sv1#Home#inu2#ln1" name="Flow1" to="sv1#CampaignDetails#dau1" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#Home#inu2">
+          <layout:Attribute attribute="ent10#att8"/>
+          <layout:Link link="sv1#Home#inu2#ln1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,15 +1,18 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="20" gr:y="158" gr:hideAttributes="false" attributeOrder="userOID userName password email">
+  <Entity id="User" name="User" duration="persistent" gr:x="280" gr:y="220" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att22 User#att23 User#att24">
     <Attribute name="oid" id="userOID" type="integer" key="true"/>
     <Attribute name="userName" id="userName" type="string"/>
     <Attribute name="password" id="password" type="password"/>
     <Attribute name="email" id="email" type="string"/>
+    <Attribute id="User#att22" name="birthdate" type="date"/>
+    <Attribute id="User#att23" name="reputation" type="integer"/>
+    <Attribute id="User#att24" name="wisdom" type="integer"/>
   </Entity>
-  <Entity id="Group" name="Group" duration="persistent" gr:x="360" gr:y="80" gr:hideAttributes="false" attributeOrder="groupOID groupName">
+  <Entity id="Group" name="Group" duration="persistent" gr:x="755" gr:y="120" gr:hideAttributes="false" attributeOrder="groupOID groupName">
     <Attribute name="oid" id="groupOID" type="integer" key="true"/>
     <Attribute name="groupName" id="groupName" type="string"/>
   </Entity>
-  <Entity id="Module" name="Module" duration="persistent" gr:x="865" gr:y="130" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
+  <Entity id="Module" name="Module" duration="persistent" gr:x="1255" gr:y="175" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
     <Attribute name="oid" id="moduleOID" type="integer" key="true"/>
     <Attribute name="moduleID" id="moduleID" type="string"/>
     <Attribute name="moduleName" id="moduleName" type="string"/>
@@ -30,16 +33,14 @@
     <RelationshipRole1 id="Group2Module" name="modules" maxCard="N"/>
     <RelationshipRole2 id="Module2Group" name="groups" maxCard="N"/>
   </Relationship>
-  <Entity id="ent7" name="Contribution" duration="persistent" attributeOrder="ent7#att1 ent7#att2 ent7#att3 ent7#att4" gr:x="560" gr:y="980">
+  <Entity id="ent7" name="Contribution" duration="persistent" attributeOrder="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" gr:x="385" gr:y="780">
     <Attribute id="ent7#att1" name="oid" key="true" type="integer"/>
     <Attribute id="ent7#att2" name="title" type="string"/>
     <Attribute id="ent7#att3" name="description" type="string"/>
     <Attribute id="ent7#att4" name="min_amount" type="decimal"/>
+    <Attribute id="ent7#att18" name="max_pledges" type="integer"/>
   </Entity>
-  <Entity id="ent8" name="Vote" duration="persistent" gr:x="125" gr:y="1015" attributeOrder="ent8#att5">
-    <Attribute id="ent8#att5" name="oid" key="true" type="integer"/>
-  </Entity>
-  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" gr:x="405" gr:y="545">
+  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" gr:x="830" gr:y="595">
     <Attribute id="ent10#att7" name="oid" key="true" type="integer"/>
     <Attribute id="ent10#att8" name="title" type="string"/>
     <Attribute id="ent10#att9" name="description" type="string"/>
@@ -48,10 +49,11 @@
     <Attribute id="ent10#att12" name="popularity" type="float"/>
     <Attribute id="ent10#att13" name="quality" type="float"/>
   </Entity>
-  <Entity id="ent11" name="Question" duration="persistent" gr:x="130" gr:y="745" attributeOrder="ent11#att14">
+  <Entity id="ent11" name="Question" duration="persistent" gr:x="285" gr:y="-20" attributeOrder="ent11#att14 ent11#att19">
     <Attribute id="ent11#att14" name="oid" key="true" type="integer"/>
+    <Attribute id="ent11#att19" name="private" type="boolean"/>
   </Entity>
-  <Entity id="ent12" name="Tag" duration="persistent" attributeOrder="ent12#att15 ent12#att16" gr:x="860" gr:y="575">
+  <Entity id="ent12" name="Tag" duration="persistent" attributeOrder="ent12#att15 ent12#att16" gr:x="1310" gr:y="620">
     <Attribute id="ent12#att15" name="oid" key="true" type="integer"/>
     <Attribute id="ent12#att16" name="caption" type="string"/>
   </Entity>
@@ -64,4 +66,40 @@
     <RelationshipRole2 id="rel4#role4" name="CampaignToUser" maxCard="1"/>
   </Relationship>
   <db:Database id="db1" name="CrowdfundWeb15" type="PostgreSQL 9" url="jdbc:postgresql://localhost/CrowdfundWebDb" username="sqllogin" password="supermooipassword"/>
+  <Relationship id="rel1" name="Campaign_Contribution" sourceEntity="ent10" targetEntity="ent7">
+    <RelationshipRole1 id="rel1#role5" name="CampaignToContribution" maxCard="N"/>
+    <RelationshipRole2 id="rel1#role6" name="ContributionToCampaign" maxCard="1"/>
+  </Relationship>
+  <Entity gr:x="30" gr:y="615" id="ent1" name="Pledge" duration="persistent" attributeOrder="ent1#att6 ent1#att17">
+    <Attribute id="ent1#att6" key="true" name="oid" type="integer"/>
+    <Attribute id="ent1#att17" name="amount" type="decimal"/>
+  </Entity>
+  <Relationship id="rel5" name="User_Pledge" sourceEntity="User" targetEntity="ent1">
+    <RelationshipRole1 id="rel5#role9" name="UserToPledge" maxCard="N"/>
+    <RelationshipRole2 id="rel5#role10" name="PledgeToUser" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel6" name="Pledge_Contribution" sourceEntity="ent1" targetEntity="ent7">
+    <RelationshipRole1 id="rel6#role11" name="PledgeToContribution" maxCard="1"/>
+    <RelationshipRole2 id="rel6#role12" name="ContributionToPledge" maxCard="N"/>
+  </Relationship>
+  <Relationship id="rel7" name="User_Campaign_Vote" sourceEntity="User" targetEntity="ent10" gr:bendpoints="356,111,-170,-331">
+    <RelationshipRole1 id="rel7#role13" name="UserToCampaign_2" maxCard="N"/>
+    <RelationshipRole2 id="rel7#role14" name="CampaignToUser_2" maxCard="N"/>
+  </Relationship>
+  <Relationship id="rel8" name="Question_Supporter" sourceEntity="User" targetEntity="ent11" gr:bendpoints="113,-146,127,108">
+    <RelationshipRole1 id="rel8#role15" name="UserToQuestion" maxCard="N"/>
+    <RelationshipRole2 id="rel8#role16" name="QuestionToUser" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel9" name="Question_Campainer" sourceEntity="ent11" targetEntity="User" gr:bendpoints="-140,106,-154,-148">
+    <RelationshipRole1 id="rel9#role17" name="QuestionToUser_2" maxCard="1"/>
+    <RelationshipRole2 id="rel9#role18" name="UserToQuestion_2" maxCard="N"/>
+  </Relationship>
+  <Entity gr:x="-95" gr:y="250" id="ent2" name="PaymentInformation" duration="persistent" attributeOrder="ent2#att20 ent2#att21">
+    <Attribute id="ent2#att20" key="true" name="oid" type="integer"/>
+    <Attribute id="ent2#att21" name="data" type="string"/>
+  </Entity>
+  <Relationship id="rel10" name="PaymentInformation_User" sourceEntity="ent2" targetEntity="User">
+    <RelationshipRole1 id="rel10#role19" name="PaymentInformationToUser" maxCard="1"/>
+    <RelationshipRole2 id="rel10#role20" name="UserToPaymentInformation" maxCard="N"/>
+  </Relationship>
 </DataModel>

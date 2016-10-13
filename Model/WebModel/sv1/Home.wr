@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="350" gr:y="165" id="sv1#Home" name="Homepage">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="350" gr:y="165" id="sv1#Home" name="Homepage" linkOrder="sv1#Home#ln3 sv1#Home#ln11">
   <ContentUnits>
     <IndexUnit gr:x="0" gr:y="0" id="sv1#Home#inu2" name="Populair Campaigns" entity="ent10" displayAttributes="ent10#att8" maxResults="5" linkOrder="sv1#Home#inu2#ln1">
       <Link id="sv1#Home#inu2#ln1" name="Flow1" to="sv1#CampaignDetails#dau1" automaticCoupling="true" type="normal" validate="true"/>
@@ -25,4 +25,6 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <Link id="sv1#Home#ln3" name="Register" to="sv1#page2" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv1#Home#ln11" name="Login" to="sv1#page3" automaticCoupling="true" type="normal" validate="true"/>
 </Page>

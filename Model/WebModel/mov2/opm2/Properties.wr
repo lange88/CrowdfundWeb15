@@ -1,0 +1,18 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="145" gr:y="110" id="mov2#opm2" name="Login">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm2#icu2" gr:x="30" gr:y="60">
+      <OKLink id="mov2#opm2#icu2#oln7" name="OKFlow7" to="mov2#opm2#lgu3" automaticCoupling="false">
+        <LinkParameter id="mov2#opm2#icu2#oln7#par16" name="Password" source="mov2#opm2#icu2#icp5" target="mov2#opm2#lgu3.password"/>
+        <LinkParameter id="mov2#opm2#icu2#oln7#par17" name="Username" source="mov2#opm2#icu2#icp6" target="mov2#opm2#lgu3.username"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm2#icu2#icp5" name="Password"/>
+      <InputCollectorParameter id="mov2#opm2#icu2#icp6" name="Username"/>
+    </InputCollectorUnit>
+    <LoginUnit gr:x="355" gr:y="85" id="mov2#opm2#lgu3" name="Login">
+      <KOLink id="mov2#opm2#lgu3#kln4" name="KOFlow4" to="mov2#opm2#kocu2" automaticCoupling="true"/>
+    </LoginUnit>
+    <KOCollectorUnit gr:x="510" gr:y="70" id="mov2#opm2#kocu2" name="Error">
+      <OutputCollectorParameter id="mov2#opm2#kocu2#ocp2" name="errorMessage" value="Combination of email and password is not correct."/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,41 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm3" name="RegistrationAction" gr:x="325" gr:y="485">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm3#icu3" gr:x="0" gr:y="150">
+      <InputCollectorParameter id="mov2#opm3#icu3#icp4" name="userEmail"/>
+      <InputCollectorParameter id="mov2#opm3#icu3#icp7" name="userPassword"/>
+      <InputCollectorParameter id="mov2#opm3#icu3#icp8" name="userName"/>
+      <Link id="mov2#opm3#icu3#ln2" name="Flow8" to="mov2#opm3#cru1" type="transport" validate="true" gr:bendpoints="182,-100,-223,0">
+        <LinkParameter id="mov2#opm3#icu3#ln2#par1" name="userEmail_email" source="mov2#opm3#icu3#icp4" target="mov2#opm3#cru1.email"/>
+        <LinkParameter id="mov2#opm3#icu3#ln2#par2" name="userPassword_password" source="mov2#opm3#icu3#icp7" target="mov2#opm3#cru1.password"/>
+        <LinkParameter id="mov2#opm3#icu3#ln2#par3" name="userName_userName" source="mov2#opm3#icu3#icp8" target="mov2#opm3#cru1.userName"/>
+      </Link>
+      <OKLink id="mov2#opm3#icu3#oln4" name="OKFlow5" to="mov2#opm3#seu2">
+        <LinkParameter id="mov2#opm3#icu3#oln4#par4" name="userEmail_AttCondition1" source="mov2#opm3#icu3#icp4" target="mov2#opm3#seu2#su3#acond2"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#opm3#okcu2" name="Registered" gr:x="605" gr:y="55"/>
+    <KOCollectorUnit id="mov2#opm3#kocu3" name="Error" gr:x="605" gr:y="210">
+      <OutputCollectorParameter id="mov2#opm3#kocu3#ocp3" name="errorMessage"/>
+    </KOCollectorUnit>
+    <IsNotNullUnit id="mov2#opm3#inn2" name="User exists?" gr:x="290" gr:y="165">
+      <KOLink id="mov2#opm3#inn2#kln6" name="KOFlow1" to="mov2#opm3#cru1" automaticCoupling="true"/>
+      <OKLink id="mov2#opm3#inn2#oln5" name="OKFlow1" to="mov2#opm3#kocu3">
+        <LinkParameter id="mov2#opm3#inn2#oln5#par5" name="A user with this email already exists_errorMessage" target="mov2#opm3#kocu3#ocp3" sourceValue="A user with this email already exists"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <CreateUnit id="mov2#opm3#cru1" name="CreateUser" gr:x="465" gr:y="65" entity="User">
+      <OKLink id="mov2#opm3#cru1#oln6" name="OKFlow2" to="mov2#opm3#okcu2" automaticCoupling="true"/>
+      <KOLink id="mov2#opm3#cru1#kln7" name="KOFlow2" to="mov2#opm3#kocu3">
+        <LinkParameter id="mov2#opm3#cru1#kln7#par6" name="User could not be created_errorMessage" target="mov2#opm3#kocu3#ocp3" sourceValue="User could not be created"/>
+      </KOLink>
+    </CreateUnit>
+    <SelectorUnit id="mov2#opm3#seu2" name="GetUser" gr:x="275" gr:y="265" entity="User" distinctAttributes="userOID">
+      <Selector id="mov2#opm3#seu2#su3" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm3#seu2#su3#acond2" name="AttCondition1" predicate="eq" booleanOperator="or" implied="false" attributes="email"/>
+      </Selector>
+      <OKLink id="mov2#opm3#seu2#oln8" name="OKFlow6" to="mov2#opm3#inn2">
+        <LinkParameter id="mov2#opm3#seu2#oln8#par11" name="oid_Input" source="userOIDArray" target="mov2#opm3#inn2.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

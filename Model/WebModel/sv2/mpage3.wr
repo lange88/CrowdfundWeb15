@@ -6,7 +6,7 @@
         <LinkParameter id="sv2#mpage3#gtu5#ln48#par62" name="UserCtxParam.oid_Current User" source="sv2#mpage3#gtu5.UserCtxParam" target="sv2#cgu5.userOid"/>
       </Link>
       <Link id="sv2#mpage3#gtu5#ln51" name="Flow51" to="sv2#mpage3#inu7" type="transport" validate="true">
-        <LinkParameter id="sv2#mpage3#gtu5#ln51#par66" name="GroupCtxParam.oid_Filter current group [oid]" source="sv2#mpage3#gtu5.GroupCtxParam" target="sv2#mpage3#inu7#su18#rcond9.userOID"/>
+        <LinkParameter id="sv2#mpage3#gtu5#ln51#par70" name="GroupCtxParam.oid_KeyCondition11 [oid]" source="sv2#mpage3#gtu5.GroupCtxParam" target="sv2#mpage3#inu7#su18#kcond11.groupOID"/>
       </Link>
     </GetUnit>
     <DataUnit gr:x="365" gr:y="0" id="sv2#mpage3#dau7" name="Username" entity="User" displayAttributes="userName" linkOrder="sv2#mpage3#dau7#ln33" gr:showAllParts="false">
@@ -20,7 +20,7 @@
         <LinkParameter id="sv2#mpage3#inu7#ln50#par65" name="oid_Selected Group" source="data[].groupOID" target="sv2#cgu5.groupOid"/>
       </Link>
       <Selector id="sv2#mpage3#inu7#su18" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv2#mpage3#inu7#su18#rcond9" name="Filter current group" predicate="in" implied="false" role="User2Group"/>
+        <KeyCondition id="sv2#mpage3#inu7#su18#kcond11" name="KeyCondition11" predicate="notIn" implied="false"/>
       </Selector>
     </IndexUnit>
   </ContentUnits>

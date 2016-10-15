@@ -36,14 +36,20 @@
     </SelectorUnit>
     <IsNotNullUnit gr:x="1185" gr:y="100" id="mov3#opm5#inn3" name="Is Not Null3">
       <KOLink id="mov3#opm5#inn3#kln9" name="KOFlow9" to="mov3#opm5#cru3" automaticCoupling="true"/>
-      <OKLink id="mov3#opm5#inn3#oln13" name="OKFlow13" to="mov3#opm5#kocu5" automaticCoupling="true" gr:bendpoints="242,52,-118,-143"/>
+      <OKLink id="mov3#opm5#inn3#oln13" name="OKFlow13" to="mov3#opm5#kocu5" gr:bendpoints="242,52,-118,-143">
+        <LinkParameter id="mov3#opm5#inn3#oln13#par23" name="You have already contributed to this project_errorMessage" sourceValue="You have already contributed to this project" target="mov3#opm5#kocu5#ocp4"/>
+      </OKLink>
     </IsNotNullUnit>
     <CreateUnit gr:x="1345" gr:y="185" id="mov3#opm5#cru3" name="CreatePledge" entity="ent1">
       <OKLink id="mov3#opm5#cru3#oln14" name="OKFlow14" to="mov3#opm5#okcu3" automaticCoupling="true"/>
-      <KOLink id="mov3#opm5#cru3#kln10" name="KOFlow10" to="mov3#opm5#kocu5" automaticCoupling="true"/>
+      <KOLink id="mov3#opm5#cru3#kln10" name="KOFlow10" to="mov3#opm5#kocu5">
+        <LinkParameter id="mov3#opm5#cru3#kln10#par21" name="Could not create your pledge_errorMessage" sourceValue="Could not create your pledge" target="mov3#opm5#kocu5#ocp4"/>
+      </KOLink>
     </CreateUnit>
     <OKCollectorUnit gr:x="1485" gr:y="85" id="mov3#opm5#okcu3" name="OK"/>
-    <KOCollectorUnit gr:x="1485" gr:y="275" id="mov3#opm5#kocu5" name="Error"/>
+    <KOCollectorUnit gr:x="1485" gr:y="275" id="mov3#opm5#kocu5" name="Error">
+      <OutputCollectorParameter id="mov3#opm5#kocu5#ocp4" name="errorMessage"/>
+    </KOCollectorUnit>
     <GetUnit gr:x="1290" gr:y="310" id="mov3#opm5#gtu1" name="GetUser" contextParameters="UserCtxParam" linkOrder="mov3#opm5#gtu1#ln20">
       <Link id="mov3#opm5#gtu1#ln19" name="Flow19" to="mov3#opm5#cru3" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="mov3#opm5#gtu1#ln20" name="Flow20" to="mov3#opm5#seu3" automaticCoupling="true" type="transport" validate="true"/>
@@ -51,7 +57,6 @@
     <MathUnit gr:x="340" gr:y="185" id="mov3#opm5#mathu2" name="Math2" resultType="boolean">
       <MathVariable id="mov3#opm5#mathu2#mathv1" name="amount"/>
       <MathVariable id="mov3#opm5#mathu2#mathv2" name="minAmount"/>
-      <KOLink id="mov3#opm5#mathu2#kln13" name="KOFlow13" to="mov3#opm5#kocu5" automaticCoupling="true" gr:bendpoints="5,120,-1230,10;215,198,-345,-47"/>
       <OKLink id="mov3#opm5#mathu2#oln22" name="OKFlow22" to="mov3#opm5#switch3">
         <LinkParameter id="mov3#opm5#mathu2#oln22#par43" name="Result_Switch" source="result" target="mov3#opm5#switch3.switch"/>
       </OKLink>
@@ -60,7 +65,9 @@
       <Case value="true"/>
       <Case value="false"/>
       <OKLink id="mov3#opm5#switch3#oln23" name="OKFlow23" to="mov3#opm5#seu4" automaticCoupling="true" code="true"/>
-      <OKLink id="mov3#opm5#switch3#oln24" name="OKFlow24" to="mov3#opm5#kocu5" automaticCoupling="true" code="false"/>
+      <OKLink id="mov3#opm5#switch3#oln24" name="OKFlow24" to="mov3#opm5#kocu5" code="false">
+        <LinkParameter id="mov3#opm5#switch3#oln24#par25" name="Give at least the minimum amount_errorMessage" sourceValue="Give at least the minimum amount" target="mov3#opm5#kocu5#ocp4"/>
+      </OKLink>
     </SwitchUnit>
     <SelectorUnit gr:x="410" gr:y="-15" id="mov3#opm5#seu4" name="Selector4" entity="ent1">
       <Selector id="mov3#opm5#seu4#su9" defaultPolicy="fill" booleanOperator="and">
@@ -81,7 +88,9 @@
       <OKLink id="mov3#opm5#switch4#oln27" name="OKFlow27" to="mov3#opm5#seu3" automaticCoupling="true" code="true"/>
       <Case value="true"/>
       <Case value="false"/>
-      <OKLink id="mov3#opm5#switch4#oln28" name="OKFlow28" to="mov3#opm5#kocu5" automaticCoupling="true" code="false"/>
+      <OKLink id="mov3#opm5#switch4#oln28" name="OKFlow28" to="mov3#opm5#kocu5" code="false">
+        <LinkParameter id="mov3#opm5#switch4#oln28#par27" name="The maximum of amount of pledges for this contribution has been reached._errorMessage" sourceValue="The maximum of amount of pledges for this contribution has been reached." target="mov3#opm5#kocu5#ocp4"/>
+      </OKLink>
     </SwitchUnit>
   </OperationUnits>
 </OperationModule>

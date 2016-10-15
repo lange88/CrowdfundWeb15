@@ -10,7 +10,10 @@
       </Link>
     </DataUnit>
     <IndexUnit gr:x="5" gr:y="260" id="sv2#page13#inu3" name="Contibutions list" entity="ent7" displayAttributes="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" linkOrder="sv2#page13#inu3#ln7">
-      <Link id="sv2#page13#inu3#ln7" name="Edit" to="sv2#page17" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page13#inu3#ln7" name="Edit" to="sv2#page17#enu6" type="normal" validate="true">
+        <LinkParameter id="sv2#page13#inu3#ln7#par96" name="oid_Key Condition [oid]" source="data[].ent7#att1" target="sv2#page17#enu6.ent7#att1"/>
+        <LinkParameter id="sv2#page13#inu3#ln7#par97" name="ContributionToCampaign.oid_PASSING" source="data[].rel1#role6_ent10#att7" passing="true"/>
+      </Link>
       <Selector id="sv2#page13#inu3#su8" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#page13#inu3#su8#rcond2" name="RoleCondition2" predicate="in" implied="false" role="rel1#role5"/>
       </Selector>
@@ -101,9 +104,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page13#mssu3"/>
-      </layout:Cell>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -117,4 +118,13 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <layout:CustomLocation name="Top">
+    <layout:Grid containerType="cell">
+      <layout:Row>
+        <layout:Cell>
+          <layout:Unit unitId="sv2#page13#mssu3"/>
+        </layout:Cell>
+      </layout:Row>
+    </layout:Grid>
+  </layout:CustomLocation>
 </Page>

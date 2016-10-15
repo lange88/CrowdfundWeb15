@@ -91,7 +91,7 @@
       <db:JoinColumn attribute="ent10#att7" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="CrowdfundWeb15" type="PostgreSQL 9" url="jdbc:postgresql://localhost/CrowdfundWebDb" username="sqllogin" password="supermooipassword" schema="public"/>
+  <db:Database id="db1" name="CrowdfundWeb15" type="MySQL" url="jdbc:postgresql://localhost/CrowdfundWebDb" username="sqllogin" password="supermooipassword" schema="public"/>
   <Relationship id="rel1" name="Campaign_Contribution" sourceEntity="ent10" targetEntity="ent7" db:database="db1" db:table="contribution">
     <RelationshipRole1 id="rel1#role5" name="CampaignToContribution" maxCard="N">
       <db:JoinColumn attribute="ent10#att7" name="campaign_oid"/>

@@ -1,8 +1,23 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="640" gr:y="835" id="sv2#page21" name="Claim B">
-  <ContentUnits/>
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="670" gr:y="1055" id="sv2#page21" name="Claim B">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv2#page21#dau3" name="Details3" entity="User" displayAll="true">
+      <Selector id="sv2#page21#dau3#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page21#dau3#su5#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12"/>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page21#dau3">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att22"/>
+          <layout:Attribute attribute="User#att23"/>
+          <layout:Attribute attribute="User#att24"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

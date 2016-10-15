@@ -56,7 +56,7 @@
     <Attribute id="ent7#att4" name="min_amount" type="decimal" db:column="min_amount"/>
     <Attribute id="ent7#att18" name="max_pledges" type="integer" db:column="max_pledges"/>
   </Entity>
-  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" gr:x="830" gr:y="595" db:database="db1" db:table="campaign">
+  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13 ent10#att5" gr:x="830" gr:y="595" db:database="db1" db:table="campaign">
     <Attribute id="ent10#att7" name="oid" key="true" type="integer" db:column="oid"/>
     <Attribute id="ent10#att8" name="title" type="string" db:column="title"/>
     <Attribute id="ent10#att9" name="description" type="string" db:column="description"/>
@@ -64,6 +64,7 @@
     <Attribute id="ent10#att11" name="expiration" type="timestamp" db:column="expiration"/>
     <Attribute id="ent10#att12" name="popularity" type="float" db:column="popularity"/>
     <Attribute id="ent10#att13" name="quality" type="float" db:column="quality"/>
+    <Attribute id="ent10#att5" name="attribute5" type="string" derivationQuery="simpleImported::Self.rel4#role4.userName"/>
   </Entity>
   <Entity id="ent11" name="Question" duration="persistent" gr:x="285" gr:y="-20" attributeOrder="ent11#att14 ent11#att19 ent11#att25 ent11#att26" db:database="db1" db:table="question">
     <Attribute id="ent11#att14" name="oid" key="true" type="integer" db:column="oid"/>
@@ -84,10 +85,10 @@
     </RelationshipRole2>
   </Relationship>
   <Relationship id="rel4" name="CampaignOwner" sourceEntity="User" targetEntity="ent10" db:database="db1" db:table="campaign">
-    <RelationshipRole1 id="rel4#role3" name="UserToCampaign" maxCard="N">
+    <RelationshipRole1 id="rel4#role3" name="UserToCampaign_Owner" maxCard="N">
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </RelationshipRole1>
-    <RelationshipRole2 id="rel4#role4" name="CampaignToUser" maxCard="1">
+    <RelationshipRole2 id="rel4#role4" name="CampaignToUser_Owner" maxCard="1">
       <db:JoinColumn attribute="ent10#att7" name="oid"/>
     </RelationshipRole2>
   </Relationship>
@@ -121,10 +122,10 @@
     </RelationshipRole2>
   </Relationship>
   <Relationship id="rel7" name="User_Campaign_Vote" sourceEntity="User" targetEntity="ent10" gr:bendpoints="356,111,-170,-331" db:database="db1" db:table="user_campaign_vote">
-    <RelationshipRole1 id="rel7#role13" name="UserToCampaign_2" maxCard="N">
+    <RelationshipRole1 id="rel7#role13" name="UserToCampaign_Vote" maxCard="N">
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </RelationshipRole1>
-    <RelationshipRole2 id="rel7#role14" name="CampaignToUser_2" maxCard="N">
+    <RelationshipRole2 id="rel7#role14" name="CampaignToUser_Vote" maxCard="N">
       <db:JoinColumn attribute="ent10#att7" name="campaign_oid"/>
     </RelationshipRole2>
   </Relationship>

@@ -17,19 +17,19 @@
     <KOCollectorUnit id="mov2#opm3#kocu3" name="Error" gr:x="605" gr:y="210">
       <OutputCollectorParameter id="mov2#opm3#kocu3#ocp3" name="errorMessage"/>
     </KOCollectorUnit>
-    <IsNotNullUnit id="mov2#opm3#inn2" name="User exists?" gr:x="290" gr:y="165">
+    <IsNotNullUnit id="mov2#opm3#inn2" name="User exists?" gr:x="350" gr:y="205">
       <KOLink id="mov2#opm3#inn2#kln6" name="KOFlow1" to="mov2#opm3#cru1" automaticCoupling="true"/>
       <OKLink id="mov2#opm3#inn2#oln5" name="OKFlow1" to="mov2#opm3#kocu3">
         <LinkParameter id="mov2#opm3#inn2#oln5#par5" name="A user with this email already exists_errorMessage" target="mov2#opm3#kocu3#ocp3" sourceValue="A user with this email already exists"/>
       </OKLink>
     </IsNotNullUnit>
-    <CreateUnit id="mov2#opm3#cru1" name="CreateUser" gr:x="465" gr:y="65" entity="User">
+    <CreateUnit id="mov2#opm3#cru1" name="CreateUser" gr:x="430" gr:y="65" entity="User">
       <OKLink id="mov2#opm3#cru1#oln6" name="OKFlow2" to="mov2#opm3#okcu2" automaticCoupling="true"/>
       <KOLink id="mov2#opm3#cru1#kln7" name="KOFlow2" to="mov2#opm3#kocu3">
         <LinkParameter id="mov2#opm3#cru1#kln7#par6" name="User could not be created_errorMessage" target="mov2#opm3#kocu3#ocp3" sourceValue="User could not be created"/>
       </KOLink>
     </CreateUnit>
-    <SelectorUnit id="mov2#opm3#seu2" name="GetUser" gr:x="275" gr:y="265" entity="User" distinctAttributes="userOID">
+    <SelectorUnit id="mov2#opm3#seu2" name="GetUser" gr:x="375" gr:y="350" entity="User" distinctAttributes="userOID">
       <Selector id="mov2#opm3#seu2#su3" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="mov2#opm3#seu2#su3#acond2" name="AttCondition1" predicate="eq" booleanOperator="or" implied="false" attributes="email"/>
       </Selector>

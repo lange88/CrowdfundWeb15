@@ -1,10 +1,19 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="670" gr:y="1055" id="sv2#page21" name="Claim B">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="675" gr:y="1115" id="sv2#page21" name="Change group">
   <ContentUnits>
-    <DataUnit gr:x="0" gr:y="0" id="sv2#page21#dau3" name="Details3" entity="User" displayAll="true">
+    <DataUnit gr:x="0" gr:y="45" id="sv2#page21#dau3" name="Details3" entity="User" displayAll="true">
       <Selector id="sv2#page21#dau3#su5" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#page21#dau3#su5#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
       </Selector>
+      <Link id="sv2#page21#dau3#ln35" name="Flow35" to="sv2#page21#inu5" automaticCoupling="true" type="transport" validate="true"/>
     </DataUnit>
+    <IndexUnit gr:x="190" gr:y="140" id="sv2#page21#inu5" name="Simple List5" entity="Group" displayAttributes="groupOID groupName" linkOrder="sv2#page21#inu5#ln38">
+      <Link id="sv2#page21#inu5#ln38" name="Flow38" to="sv2#miu7" type="normal" validate="true">
+        <LinkParameter id="sv2#page21#inu5#ln38#par33" name="oid_Selected Group" source="data[].groupOID" target="sv2#miu7.mov2#opm6#icu6#icp29"/>
+      </Link>
+    </IndexUnit>
+    <GetUnit gr:x="235" gr:y="0" id="sv2#page21#gtu7" name="Get7" contextParameters="UserCtxParam">
+      <Link id="sv2#page21#gtu7#ln37" name="Flow37" to="sv2#page21#dau3" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -30,5 +39,46 @@
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page21#inu5">
+          <layout:Attribute attribute="groupOID"/>
+          <layout:Attribute attribute="groupName"/>
+          <layout:Link link="sv2#page21#inu5#ln38"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
   </layout:Grid>
+  <layout:CustomLocation name="Top">
+    <layout:Grid containerType="cell">
+      <layout:Row>
+        <layout:Cell/>
+      </layout:Row>
+    </layout:Grid>
+  </layout:CustomLocation>
 </Page>

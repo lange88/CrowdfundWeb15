@@ -1,8 +1,51 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="140" gr:y="600" id="sv3#page6" name="Make pledge">
-  <ContentUnits/>
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="280" gr:y="305" id="sv3#page6" name="Make pledge">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv3#page6#dau3" name="Details3" entity="ent7" displayAttributes="ent7#att2 ent7#att3 ent7#att4 ent7#att18">
+      <Selector id="sv3#page6#dau3#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#page6#dau3#su7#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv3#page6#dau3#ln18" name="Flow18" to="sv3#miu6" type="transport" validate="true">
+        <LinkParameter id="sv3#page6#dau3#ln18#par29" name="oid_Contribution" source="data.ent7#att1" target="sv3#miu6.mov3#opm5#icu5#icp9"/>
+        <LinkParameter id="sv3#page6#dau3#ln18#par42" name="min_amount_ContributionMinAmount" source="data.ent7#att4" target="sv3#miu6.mov3#opm5#icu5#icp12"/>
+        <LinkParameter id="sv3#page6#dau3#ln18#par44" name="max_pledges_ContributionMaxContributions" source="data.ent7#att18" target="sv3#miu6.mov3#opm5#icu5#icp13"/>
+      </Link>
+    </DataUnit>
+    <EntryUnit gr:x="60" gr:y="110" id="sv3#page6#enu3" name="Pledge" entity="ent1" linkOrder="sv3#page6#enu3#ln17" fieldOrder="sv3#page6#enu3#fld6">
+      <Field id="sv3#page6#enu3#fld6" name="PledgeAmount" type="decimal" modifiable="true" attribute="ent1#att17"/>
+      <Link id="sv3#page6#enu3#ln17" name="Flow17" to="sv3#miu6" type="normal" validate="true">
+        <LinkParameter id="sv3#page6#enu3#ln17#par28" name="Field6_Amount" source="sv3#page6#enu3#fld6" target="sv3#miu6.mov3#opm5#icu5#icp11"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12"/>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page6#dau3">
+          <layout:Attribute attribute="ent7#att2"/>
+          <layout:Attribute attribute="ent7#att3"/>
+          <layout:Attribute attribute="ent7#att4"/>
+          <layout:Attribute attribute="ent7#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page6#enu3">
+          <layout:Field field="sv3#page6#enu3#fld6"/>
+          <layout:Link link="sv3#page6#enu3#ln17"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

@@ -1,0 +1,87 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="90" gr:y="70" id="mov3#opm5" name="MakePledge">
+  <OperationUnits>
+    <InputCollectorUnit id="mov3#opm5#icu5" gr:x="30" gr:y="60" linkOrder="mov3#opm5#icu5#ln27 mov3#opm5#icu5#ln28">
+      <InputCollectorParameter id="mov3#opm5#icu5#icp9" name="ContributionID"/>
+      <Link id="mov3#opm5#icu5#ln15" name="Flow15" to="mov3#opm5#cru3" type="transport" validate="true">
+        <LinkParameter id="mov3#opm5#icu5#ln15#par24" name="Contribution_Contribution.oid(PledgeToContribution)" source="mov3#opm5#icu5#icp9" target="mov3#opm5#cru3.rel6#role11.ent7#att1"/>
+        <LinkParameter id="mov3#opm5#icu5#ln15#par26" name="Amount_amount" source="mov3#opm5#icu5#icp11" target="mov3#opm5#cru3.ent1#att17"/>
+      </Link>
+      <InputCollectorParameter id="mov3#opm5#icu5#icp11" name="Amount"/>
+      <InputCollectorParameter id="mov3#opm5#icu5#icp12" name="ContributionMinAmount"/>
+      <Link id="mov3#opm5#icu5#ln25" name="OKFlow15" to="mov3#opm5#seu3" type="transport">
+        <LinkParameter id="mov3#opm5#icu5#ln25#par38" name="ContributionID_RoleCondition5 [oid]" source="mov3#opm5#icu5#icp9" target="mov3#opm5#seu3#su6#rcond5.ent7#att1"/>
+      </Link>
+      <OKLink id="mov3#opm5#icu5#oln20" name="Flow23" to="mov3#opm5#mathu2">
+        <LinkParameter id="mov3#opm5#icu5#oln20#par39" name="Amount_amount" source="mov3#opm5#icu5#icp11" target="mov3#opm5#mathu2#mathv1"/>
+        <LinkParameter id="mov3#opm5#icu5#oln20#par40" name="ContributionMinAmount_minAmount" source="mov3#opm5#icu5#icp12" target="mov3#opm5#mathu2#mathv2"/>
+        <LinkParameter id="mov3#opm5#icu5#oln20#par41" name="Amount - ContributionMinAmount_Expression" target="mov3#opm5#mathu2.expr" sourceValue="amount &gt;= minAmount"/>
+      </OKLink>
+      <InputCollectorParameter id="mov3#opm5#icu5#icp13" name="ContributionMaxPledges"/>
+      <Link id="mov3#opm5#icu5#ln27" name="Flow27" to="mov3#opm5#seu4" type="transport" validate="true">
+        <LinkParameter id="mov3#opm5#icu5#ln27#par45" name="ContributionID_RoleCondition7 [oid]" source="mov3#opm5#icu5#icp9" target="mov3#opm5#seu4#su9#rcond7.ent7#att1"/>
+      </Link>
+      <Link id="mov3#opm5#icu5#ln28" name="Flow28" to="mov3#opm5#mathu3" type="transport" validate="true" gr:bendpoints="378,11,-137,86">
+        <LinkParameter id="mov3#opm5#icu5#ln28#par47" name="pledges&lt;maxPledges_Expression" sourceValue="pledges&lt;maxPledges" target="mov3#opm5#mathu3.expr"/>
+        <LinkParameter id="mov3#opm5#icu5#ln28#par48" name="ContributionMaxPledges_maxPledges" source="mov3#opm5#icu5#icp13" target="mov3#opm5#mathu3#mathv4"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="935" gr:y="40" id="mov3#opm5#seu3" name="Has pledged before?" entity="ent1">
+      <Selector id="mov3#opm5#seu3#su6" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov3#opm5#seu3#su6#rcond4" name="PledgeForCampaign" predicate="in" implied="false" role="rel5#role9"/>
+        <RelationshipRoleCondition id="mov3#opm5#seu3#su6#rcond5" name="RoleCondition5" predicate="in" implied="false" role="rel1#role6.rel1#role5.rel6#role12"/>
+      </Selector>
+      <OKLink id="mov3#opm5#seu3#oln11" name="UserContribtions" to="mov3#opm5#inn3">
+        <LinkParameter id="mov3#opm5#seu3#oln11#par31" name="oid_Input" source="ent1#att6Array" target="mov3#opm5#inn3.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="1185" gr:y="100" id="mov3#opm5#inn3" name="Is Not Null3">
+      <KOLink id="mov3#opm5#inn3#kln9" name="KOFlow9" to="mov3#opm5#cru3" automaticCoupling="true"/>
+      <OKLink id="mov3#opm5#inn3#oln13" name="OKFlow13" to="mov3#opm5#kocu5" automaticCoupling="true" gr:bendpoints="242,52,-118,-143"/>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="1345" gr:y="185" id="mov3#opm5#cru3" name="CreatePledge" entity="ent1">
+      <OKLink id="mov3#opm5#cru3#oln14" name="OKFlow14" to="mov3#opm5#okcu3" automaticCoupling="true"/>
+      <KOLink id="mov3#opm5#cru3#kln10" name="KOFlow10" to="mov3#opm5#kocu5" automaticCoupling="true"/>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="1485" gr:y="85" id="mov3#opm5#okcu3" name="OK"/>
+    <KOCollectorUnit gr:x="1485" gr:y="275" id="mov3#opm5#kocu5" name="Error"/>
+    <GetUnit gr:x="1290" gr:y="310" id="mov3#opm5#gtu1" name="GetUser" contextParameters="UserCtxParam" linkOrder="mov3#opm5#gtu1#ln20">
+      <Link id="mov3#opm5#gtu1#ln19" name="Flow19" to="mov3#opm5#cru3" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="mov3#opm5#gtu1#ln20" name="Flow20" to="mov3#opm5#seu3" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+    <MathUnit gr:x="340" gr:y="185" id="mov3#opm5#mathu2" name="Math2" resultType="boolean">
+      <MathVariable id="mov3#opm5#mathu2#mathv1" name="amount"/>
+      <MathVariable id="mov3#opm5#mathu2#mathv2" name="minAmount"/>
+      <KOLink id="mov3#opm5#mathu2#kln13" name="KOFlow13" to="mov3#opm5#kocu5" automaticCoupling="true" gr:bendpoints="5,120,-1230,10;215,198,-345,-47"/>
+      <OKLink id="mov3#opm5#mathu2#oln22" name="OKFlow22" to="mov3#opm5#switch3">
+        <LinkParameter id="mov3#opm5#mathu2#oln22#par43" name="Result_Switch" source="result" target="mov3#opm5#switch3.switch"/>
+      </OKLink>
+    </MathUnit>
+    <SwitchUnit gr:x="530" gr:y="185" id="mov3#opm5#switch3" name="Switch3">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov3#opm5#switch3#oln23" name="OKFlow23" to="mov3#opm5#seu4" automaticCoupling="true" code="true"/>
+      <OKLink id="mov3#opm5#switch3#oln24" name="OKFlow24" to="mov3#opm5#kocu5" automaticCoupling="true" code="false"/>
+    </SwitchUnit>
+    <SelectorUnit gr:x="410" gr:y="-15" id="mov3#opm5#seu4" name="Selector4" entity="ent1">
+      <Selector id="mov3#opm5#seu4#su9" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov3#opm5#seu4#su9#rcond7" name="RoleCondition7" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
+      <OKLink id="mov3#opm5#seu4#oln25" name="OKFlow25" to="mov3#opm5#mathu3">
+        <LinkParameter id="mov3#opm5#seu4#oln25#par46" name="Data Size_pledges" source="dataSize" target="mov3#opm5#mathu3#mathv3"/>
+      </OKLink>
+    </SelectorUnit>
+    <MathUnit gr:x="650" gr:y="10" id="mov3#opm5#mathu3" name="Math3" resultType="boolean">
+      <MathVariable id="mov3#opm5#mathu3#mathv3" name="pledges"/>
+      <MathVariable id="mov3#opm5#mathu3#mathv4" name="maxPledges"/>
+      <OKLink id="mov3#opm5#mathu3#oln26" name="OKFlow26" to="mov3#opm5#switch4">
+        <LinkParameter id="mov3#opm5#mathu3#oln26#par49" name="Result_Switch" source="result" target="mov3#opm5#switch4.switch"/>
+      </OKLink>
+    </MathUnit>
+    <SwitchUnit gr:x="710" gr:y="115" id="mov3#opm5#switch4" name="Switch4">
+      <OKLink id="mov3#opm5#switch4#oln27" name="OKFlow27" to="mov3#opm5#seu3" automaticCoupling="true" code="true"/>
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov3#opm5#switch4#oln28" name="OKFlow28" to="mov3#opm5#kocu5" automaticCoupling="true" code="false"/>
+    </SwitchUnit>
+  </OperationUnits>
+</OperationModule>

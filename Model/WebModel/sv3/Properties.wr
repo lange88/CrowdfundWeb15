@@ -1,3 +1,5 @@
-<SiteView id="sv3" name="Supporter" protected="true" homePage="sv3#page4">
-  <OperationUnits/>
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Supporter" protected="true" homePage="sv3#page4" landmarks="sv3#miu2">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="1080" gr:y="515" id="sv3#miu2" action="true" moduleId="mov2#opm4" landmark="true" name="Logout"/>
+  </OperationUnits>
 </SiteView>

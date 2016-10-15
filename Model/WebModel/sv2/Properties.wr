@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Campaigner" protected="true" homePage="sv2#page1">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Campaigner" protected="true" homePage="sv2#page1" landmarks="sv2#miu4">
   <OperationUnits>
     <LoginUnit gr:x="220" gr:y="515" id="sv2#lgu1" name="Login1"/>
     <ModuleInstanceUnit gr:x="335" gr:y="245" id="sv2#miu1" moduleId="mov1#opm1" action="true">
@@ -7,5 +7,6 @@
       </KOLink>
       <OKLink id="sv2#miu1#oln6" name="OKFlow6" to="sv2#page1" automaticCoupling="true"/>
     </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1130" gr:y="165" id="sv2#miu4" action="true" name="Logout" landmark="true" moduleId="mov2#opm4"/>
   </OperationUnits>
 </SiteView>

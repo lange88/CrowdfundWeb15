@@ -15,8 +15,6 @@
       </KOLink>
     </ModuleInstanceUnit>
     <LogoutUnit gr:x="350" gr:y="995" id="sv2#lou2" name="Logout" siteView="sv1"/>
-    <ModuleInstanceUnit gr:x="1150" gr:y="1310" id="sv2#miu7" action="true"/>
-    <ChangeGroupUnit gr:x="45" gr:y="765" id="sv2#cgu4" name="Change Group4"/>
     <ChangeGroupUnit gr:x="270" gr:y="1575" id="sv2#cgu5" name="Change Group5"/>
   </OperationUnits>
 </SiteView>

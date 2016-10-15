@@ -6,5 +6,7 @@
         <LinkParameter id="sv3#miu6#kln11#par30" name="errorMessage_Shown Messages" source="mov3#opm5#kocu5#ocp4" target="sv3#page6#mssu3.shownMessages"/>
       </KOLink>
     </ModuleInstanceUnit>
+    <ChangeGroupUnit id="sv3#cgu7" name="Change Group5" gr:x="1225" gr:y="600"/>
+    <LogoutUnit id="sv3#lou4" name="Logout" gr:x="1305" gr:y="20" siteView="sv1"/>
   </OperationUnits>
 </SiteView>

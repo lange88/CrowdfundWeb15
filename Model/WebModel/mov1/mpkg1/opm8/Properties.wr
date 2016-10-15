@@ -1,0 +1,8 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="85" id="mov1#mpkg1#opm8" name="Delete">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm8#icu8" gr:x="30" gr:y="60">
+      <OKLink id="mov1#mpkg1#opm8#icu8#oln10" name="OKFlow10" to="mov1#mpkg1#opm8#seu3" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="395" gr:y="260" id="mov1#mpkg1#opm8#seu3" name="Get Contribution" entity="ent7"/>
+  </OperationUnits>
+</OperationModule>

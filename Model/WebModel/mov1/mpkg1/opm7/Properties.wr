@@ -1,0 +1,55 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#opm7" name="Create" gr:x="0" gr:y="0">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm7#icu7" gr:x="-75" gr:y="65" linkOrder="mov1#mpkg1#opm7#icu7#ln14">
+      <Link id="mov1#mpkg1#opm7#icu7#ln25" name="Data To Create" to="mov1#mpkg1#opm7#cru3" type="transport">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln25#par41" name="min_amount_min_amount" source="mov1#mpkg1#opm7#icu7#icp26" target="mov1#mpkg1#opm7#cru3.ent7#att4"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln25#par42" name="title_title" source="mov1#mpkg1#opm7#icu7#icp27" target="mov1#mpkg1#opm7#cru3.ent7#att2"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln25#par43" name="description_description" source="mov1#mpkg1#opm7#icu7#icp24" target="mov1#mpkg1#opm7#cru3.ent7#att3"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln25#par44" name="max_pledges_max_pledges" source="mov1#mpkg1#opm7#icu7#icp25" target="mov1#mpkg1#opm7#cru3.ent7#att18"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln25#par45" name="Campaign.oid(ContributionToCampaign)_Campaign.oid(ContributionToCampaign)" source="mov1#mpkg1#opm7#icu7#icp23" target="mov1#mpkg1#opm7#cru3.rel1#role6.ent10#att7"/>
+      </Link>
+      <OKLink id="mov1#mpkg1#opm7#icu7#oln15" name="Check Exists Flow" to="mov1#mpkg1#opm7#seu5">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#oln15#par47" name="Campaign.oid(ContributionToCampaign)_RoleCondition3 [oid]" source="mov1#mpkg1#opm7#icu7#icp23" target="mov1#mpkg1#opm7#seu5#su9#rcond3.ent10#att7"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#oln15#par48" name="title_AttCondition5" source="mov1#mpkg1#opm7#icu7#icp27" target="mov1#mpkg1#opm7#seu5#su9#acond5"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp23" name="Campaign.oid(ContributionToCampaign)"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp24" name="description"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp25" name="max_pledges"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp26" name="min_amount"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp27" name="title"/>
+      <Link id="mov1#mpkg1#opm7#icu7#ln14" name="Flow14" to="mov1#mpkg1#opm7#okcu3" automaticCoupling="false" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln14#par57" name="Campaign.oid(ContributionToCampaign)" source="mov1#mpkg1#opm7#icu7#icp23" target="mov1#mpkg1#opm7#okcu3#ocp6"/>
+      </Link>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="1115" gr:y="255" id="mov1#mpkg1#opm7#cru3" name="Create new contribution" entity="ent7" skipBlankRecords="false">
+      <OKLink id="mov1#mpkg1#opm7#cru3#oln12" name="OKFlow12" to="mov1#mpkg1#opm7#okcu3">
+        <LinkParameter id="mov1#mpkg1#opm7#cru3#oln12#par59" name="Contribution created_Message" sourceValue="Contribution created" target="mov1#mpkg1#opm7#okcu3#ocp7"/>
+      </OKLink>
+      <KOLink id="mov1#mpkg1#opm7#cru3#kln10" name="KOFlow10" to="mov1#mpkg1#opm7#kocu5">
+        <LinkParameter id="mov1#mpkg1#opm7#cru3#kln10#par25" name="The contribution could be created!_ErrorMessage" sourceValue="The contribution could be created!" target="mov1#mpkg1#opm7#kocu5#ocp5"/>
+      </KOLink>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="1655" gr:y="160" id="mov1#mpkg1#opm7#okcu3" name="OK Port3">
+      <OutputCollectorParameter id="mov1#mpkg1#opm7#okcu3#ocp6" name="Campaign.oid(ContributionToCampaign)"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm7#okcu3#ocp7" name="Message"/>
+    </OKCollectorUnit>
+    <SelectorUnit gr:x="530" gr:y="340" id="mov1#mpkg1#opm7#seu5" name="Contribution exists" entity="ent7">
+      <Selector id="mov1#mpkg1#opm7#seu5#su9" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg1#opm7#seu5#su9#rcond3" name="Campaign Filter" predicate="in" implied="false" role="rel1#role5"/>
+        <AttributesCondition id="mov1#mpkg1#opm7#seu5#su9#acond5" name="Title check" predicate="eq" booleanOperator="or" implied="false" attributes="ent7#att2"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm7#seu5#oln16" name="OKFlow16" to="mov1#mpkg1#opm7#inn3">
+        <LinkParameter id="mov1#mpkg1#opm7#seu5#oln16#par23" name="oid_Input" source="ent7#att1Array" target="mov1#mpkg1#opm7#inn3.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <KOCollectorUnit gr:x="1655" gr:y="645" id="mov1#mpkg1#opm7#kocu5" name="KO Port5">
+      <OutputCollectorParameter id="mov1#mpkg1#opm7#kocu5#ocp5" name="Message"/>
+    </KOCollectorUnit>
+    <IsNotNullUnit gr:x="845" gr:y="630" id="mov1#mpkg1#opm7#inn3" name="Contribution exists?">
+      <OKLink id="mov1#mpkg1#opm7#inn3#oln17" name="OKFlow17" to="mov1#mpkg1#opm7#kocu5">
+        <LinkParameter id="mov1#mpkg1#opm7#inn3#oln17#par24" name="This contribution already exists for this campaign!_ErrorMessage" sourceValue="This contribution already exists for this campaign!" target="mov1#mpkg1#opm7#kocu5#ocp5"/>
+      </OKLink>
+      <KOLink id="mov1#mpkg1#opm7#inn3#kln9" name="KOFlow9" to="mov1#mpkg1#opm7#cru3" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

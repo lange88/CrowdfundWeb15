@@ -1,12 +1,19 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Campaigner" protected="true" homePage="sv2#page1" landmarks="sv2#miu4">
   <OperationUnits>
-    <LoginUnit gr:x="220" gr:y="515" id="sv2#lgu1" name="Login1"/>
     <ModuleInstanceUnit gr:x="335" gr:y="245" id="sv2#miu1" moduleId="mov1#opm1" action="true">
       <KOLink id="sv2#miu1#kln3" name="KOFlow3" to="sv2#page2#mssu1" gr:bendpoints="0,59,-335,-1">
         <LinkParameter id="sv2#miu1#kln3#par16" name="errorMessage_Shown Messages" source="mov1#opm1#kocu1#ocp2" target="sv2#page2#mssu1.shownMessages"/>
       </KOLink>
       <OKLink id="sv2#miu1#oln6" name="OKFlow6" to="sv2#page1" automaticCoupling="true"/>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="1130" gr:y="165" id="sv2#miu4" action="true" name="Logout" landmark="true" moduleId="mov2#opm4"/>
+    <ModuleInstanceUnit gr:x="1150" gr:y="100" id="sv2#miu4" action="true" name="Logout" landmark="true" moduleId="mov2#opm4"/>
+    <ModuleInstanceUnit gr:x="1670" gr:y="490" id="sv2#miu6" action="true" moduleId="mov1#mpkg1#opm7" name="Create contribution">
+      <OKLink id="sv2#miu6#oln18" name="Flow21" to="sv2#page13#mssu3" gr:bendpoints="-240,-130,215,150">
+        <LinkParameter id="sv2#miu6#oln18#par60" name="Message_Shown Messages" source="mov1#mpkg1#opm7#okcu3#ocp7" target="sv2#page13#mssu3.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv2#miu6#kln11" name="KOFlow11" to="sv2#page13#mssu3">
+        <LinkParameter id="sv2#miu6#kln11#par36" name="ErrorMessage_Shown Messages" source="mov1#mpkg1#opm7#kocu5#ocp5" target="sv2#page13#mssu3.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
   </OperationUnits>
 </SiteView>

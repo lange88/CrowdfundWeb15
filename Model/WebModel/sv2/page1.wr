@@ -1,6 +1,8 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="625" gr:y="475" id="sv2#page1" name="Page 1" linkOrder="sv2#page1#ln3">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv2#page1#inu1" name="Simple List1" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11"/>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#page1#inu1" name="Simple List1" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11" linkOrder="sv2#page1#inu1#ln4">
+      <Link id="sv2#page1#inu1#ln4" name="Details" to="sv2#page13#dau2" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -10,6 +12,7 @@
           <layout:Attribute attribute="ent10#att9"/>
           <layout:Attribute attribute="ent10#att10"/>
           <layout:Attribute attribute="ent10#att11"/>
+          <layout:Link link="sv2#page1#inu1#ln4"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

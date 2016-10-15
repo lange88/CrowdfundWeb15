@@ -1,11 +1,5 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Campaigner" protected="false" homePage="sv2#page1">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Campaigner" protected="true" homePage="sv2#page1">
   <OperationUnits>
     <LoginUnit gr:x="220" gr:y="515" id="sv2#lgu1" name="Login1"/>
-    <ModuleInstanceUnit gr:x="335" gr:y="245" id="sv2#miu1" moduleId="mov1#opm1" action="true">
-      <KOLink id="sv2#miu1#kln3" name="KOFlow3" to="sv2#page2#mssu1" gr:bendpoints="0,59,-335,-1">
-        <LinkParameter id="sv2#miu1#kln3#par16" name="errorMessage_Shown Messages" source="mov1#opm1#kocu1#ocp2" target="sv2#page2#mssu1.shownMessages"/>
-      </KOLink>
-      <OKLink id="sv2#miu1#oln6" name="OKFlow6" to="sv2#page1" automaticCoupling="true"/>
-    </ModuleInstanceUnit>
   </OperationUnits>
 </SiteView>

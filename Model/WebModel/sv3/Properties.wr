@@ -1,8 +1,8 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Supporter" protected="true" homePage="sv3#page4" landmarks="sv3#miu2">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Supporter" protected="true" homePage="sv3#page4" landmarks="sv3#miu2 sv3#page4 sv3#page7">
   <OperationUnits>
     <ModuleInstanceUnit gr:x="1080" gr:y="515" id="sv3#miu2" action="true" moduleId="mov2#opm4" landmark="true" name="Logout"/>
     <ModuleInstanceUnit gr:x="245" gr:y="635" id="sv3#miu6" action="true" moduleId="mov3#opm5">
-      <OKLink id="sv3#miu6#oln16" name="OKFlow16" to="sv3#page4" automaticCoupling="true"/>
+      <OKLink id="sv3#miu6#oln16" name="OKFlow16" to="sv3#page7" automaticCoupling="true"/>
       <KOLink id="sv3#miu6#kln11" name="KOFlow11" to="sv3#page6#mssu3" gr:bendpoints="-48,-83,-73,162">
         <LinkParameter id="sv3#miu6#kln11#par30" name="errorMessage_Shown Messages" source="mov3#opm5#kocu5#ocp4" target="sv3#page6#mssu3.shownMessages"/>
       </KOLink>

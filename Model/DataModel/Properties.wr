@@ -56,15 +56,18 @@
     <Attribute id="ent7#att4" name="min_amount" type="decimal" db:column="min_amount"/>
     <Attribute id="ent7#att18" name="max_pledges" type="integer" db:column="max_pledges"/>
   </Entity>
-  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13 ent10#att5" gr:x="830" gr:y="595" db:database="db1" db:table="campaign">
+  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" gr:x="830" gr:y="595" db:database="db1" db:table="campaign">
     <Attribute id="ent10#att7" name="oid" key="true" type="integer" db:column="oid"/>
     <Attribute id="ent10#att8" name="title" type="string" db:column="title"/>
     <Attribute id="ent10#att9" name="description" type="string" db:column="description"/>
     <Attribute id="ent10#att10" name="goal" type="decimal" db:column="goal"/>
     <Attribute id="ent10#att11" name="expiration" type="timestamp" db:column="expiration"/>
-    <Attribute id="ent10#att12" name="popularity" type="float" db:column="popularity"/>
-    <Attribute id="ent10#att13" name="quality" type="float" db:column="quality"/>
-    <Attribute id="ent10#att5" name="attribute5" type="string" derivationQuery="simpleImported::Self.rel4#role4.userName"/>
+    <Attribute id="ent10#att12" name="popularity" type="decimal" derivationQuery="calculated::sum(Self.rel1#role5(as Var1).rel6#role12(as Var2).ent1#att17)" db:table="campaign_popularity_view" db:column="der_attr" storageType="file">
+      <db:JoinColumn attribute="ent10#att7" name="oid"/>
+    </Attribute>
+    <Attribute id="ent10#att13" name="quality" type="integer" derivationQuery="calculated::count(Self.rel7#role14(as Var1))" db:table="campaign_quality_view" db:column="der_attr" storageType="file">
+      <db:JoinColumn attribute="ent10#att7" name="oid"/>
+    </Attribute>
   </Entity>
   <Entity id="ent11" name="Question" duration="persistent" gr:x="285" gr:y="-20" attributeOrder="ent11#att14 ent11#att19 ent11#att25 ent11#att26" db:database="db1" db:table="question">
     <Attribute id="ent11#att14" name="oid" key="true" type="integer" db:column="oid"/>
@@ -92,7 +95,8 @@
       <db:JoinColumn attribute="ent10#att7" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="CrowdfundWeb15" type="PostgreSQL 9" url="jdbc:postgresql://localhost/CrowdfundWebDb" username="sqllogin" password="supermooipassword" schema="public"/>
+  <db:Database id="db1" name="CrowdfundWeb15" type="PostgreSQL 9" url="jdbc:postgresql://localhost/CrowdfundWebDb" username="sqllogin" password="supermooipassword" schema="public">
+  </db:Database>
   <Relationship id="rel1" name="Campaign_Contribution" sourceEntity="ent10" targetEntity="ent7" db:database="db1" db:table="contribution">
     <RelationshipRole1 id="rel1#role5" name="CampaignToContribution" maxCard="N">
       <db:JoinColumn attribute="ent10#att7" name="campaign_oid"/>

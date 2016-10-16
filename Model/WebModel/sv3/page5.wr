@@ -1,12 +1,13 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="545" gr:y="200" id="sv3#page5" name="Details Campaign">
   <ContentUnits>
-    <DataUnit gr:x="0" gr:y="0" id="sv3#page5#dau2" name="Details2" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
+    <DataUnit gr:x="0" gr:y="0" id="sv3#page5#dau2" name="Details2" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" linkOrder="sv3#page5#dau2#ln26">
       <Selector id="sv3#page5#dau2#su4" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page5#dau2#su4#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv3#page5#dau2#ln12" name="Flow12" to="sv3#page5#pwu1" type="transport" validate="true">
         <LinkParameter id="sv3#page5#dau2#ln12#par22" name="oid_RoleCondition1 [oid]" source="data.ent10#att7" target="sv3#page5#pwu1#su8#rcond6.ent10#att7"/>
       </Link>
+      <Link id="sv3#page5#dau2#ln26" name="Ask a question" to="sv3#page9#dau5" automaticCoupling="true" type="normal" validate="true"/>
     </DataUnit>
     <PowerIndexUnit id="sv3#page5#pwu1" entity="ent7" displayAttributes="ent7#att2 ent7#att3 ent7#att4 ent7#att18" sortable="true" checkable="false" useCountQuery="false" gr:x="35" gr:y="150" name="Possible Contributions" linkOrder="sv3#page5#pwu1#ln22">
       <Selector id="sv3#page5#pwu1#su8" defaultPolicy="fill" booleanOperator="and">
@@ -27,6 +28,7 @@
           <layout:Attribute attribute="ent10#att11"/>
           <layout:Attribute attribute="ent10#att12"/>
           <layout:Attribute attribute="ent10#att13"/>
+          <layout:Link link="sv3#page5#dau2#ln26"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

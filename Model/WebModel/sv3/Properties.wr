@@ -12,7 +12,7 @@
       </KOLink>
       <OKLink id="sv3#miu7#oln31" name="OKFlow31" to="sv3#page10" automaticCoupling="true"/>
     </ModuleInstanceUnit>
-    <ChangeGroupUnit id="sv3#cgu7" name="Change Group5" gr:x="1225" gr:y="600"/>
+    <ChangeGroupUnit id="sv3#cgu7" name="Change Group5" gr:x="1385" gr:y="555"/>
     <LogoutUnit id="sv3#lou4" name="Logout" gr:x="1305" gr:y="20" siteView="sv1"/>
   </OperationUnits>
 </SiteView>

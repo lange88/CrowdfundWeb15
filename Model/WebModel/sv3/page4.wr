@@ -11,6 +11,12 @@
         <LinkParameter id="sv3#page4#gtu8#ln41#par81" name="UserCtxParam.oid_RoleCondition14 [oid]" source="sv3#page4#gtu8.UserCtxParam" target="sv3#page4#inu3#su20#rcond14.ent1#att6"/>
       </Link>
     </GetUnit>
+    <EntryUnit gr:x="310" gr:y="115" id="sv3#page4#enu5" name="Search" linkOrder="sv3#page4#enu5#ln9">
+      <Field id="sv3#page4#enu5#fld14" name="Filter" type="string" modifiable="true" contentType="text/plain"/>
+      <Link id="sv3#page4#enu5#ln9" name="Flow9" to="sv3#page8#pwu2" type="normal" validate="true">
+        <LinkParameter id="sv3#page4#enu5#ln9#par94" name="Filter_AttCondition6" source="sv3#page4#enu5#fld14" target="sv3#page8#pwu2#su19#acond6"/>
+      </Link>
+    </EntryUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -38,7 +44,12 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12"/>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page4#enu5">
+          <layout:Field field="sv3#page4#enu5#fld14"/>
+          <layout:Link link="sv3#page4#enu5#ln9"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

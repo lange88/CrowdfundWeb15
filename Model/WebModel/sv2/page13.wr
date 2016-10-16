@@ -9,7 +9,7 @@
         <LinkParameter id="sv2#page13#dau2#ln23#par55" name="oid_Campaign.oid(ContributionToCampaign)" source="data.ent10#att7" target="sv2#miu6.mov1#mpkg1#opm7#icu7#icp23"/>
       </Link>
     </DataUnit>
-    <IndexUnit gr:x="5" gr:y="260" id="sv2#page13#inu3" name="Contibutions list" entity="ent7" displayAttributes="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" linkOrder="sv2#page13#inu3#ln7">
+    <IndexUnit gr:x="5" gr:y="260" id="sv2#page13#inu3" name="Contibutions list" entity="ent7" displayAttributes="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" linkOrder="sv2#page13#inu3#ln7 sv2#page13#inu3#ln38">
       <Link id="sv2#page13#inu3#ln7" name="Edit" to="sv2#page17#enu6" type="normal" validate="true">
         <LinkParameter id="sv2#page13#inu3#ln7#par96" name="oid_Key Condition [oid]" source="data[].ent7#att1" target="sv2#page17#enu6.ent7#att1"/>
         <LinkParameter id="sv2#page13#inu3#ln7#par97" name="ContributionToCampaign.oid_PASSING" source="data[].rel1#role6_ent10#att7" passing="true"/>
@@ -17,6 +17,9 @@
       <Selector id="sv2#page13#inu3#su8" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#page13#inu3#su8#rcond2" name="RoleCondition2" predicate="in" implied="false" role="rel1#role5"/>
       </Selector>
+      <Link id="sv2#page13#inu3#ln38" name="Flow38" to="sv2#miu2" type="normal" validate="true">
+        <LinkParameter id="sv2#page13#inu3#ln38#par76" name="oid_Contribution Key" source="data[].ent7#att1" target="sv2#miu2.mov1#mpkg1#opm8#icu8#icp18"/>
+      </Link>
     </IndexUnit>
     <EntryUnit gr:x="320" gr:y="270" id="sv2#page13#enu3" name="New contribution" entity="ent7" linkOrder="sv2#page13#enu3#ln19">
       <Field id="sv2#page13#enu3#fld6" name="Title" type="string" modifiable="true" attribute="ent7#att2"/>
@@ -67,6 +70,7 @@
           <layout:Attribute attribute="ent7#att4"/>
           <layout:Attribute attribute="ent7#att18"/>
           <layout:Link link="sv2#page13#inu3#ln7"/>
+          <layout:Link link="sv2#page13#inu3#ln38"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

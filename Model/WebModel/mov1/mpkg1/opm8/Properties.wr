@@ -1,8 +1,44 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="85" id="mov1#mpkg1#opm8" name="Delete">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="165" id="mov1#mpkg1#opm8" name="Delete">
   <OperationUnits>
-    <InputCollectorUnit id="mov1#mpkg1#opm8#icu8" gr:x="30" gr:y="60">
-      <OKLink id="mov1#mpkg1#opm8#icu8#oln10" name="OKFlow10" to="mov1#mpkg1#opm8#seu3" automaticCoupling="true"/>
+    <InputCollectorUnit id="mov1#mpkg1#opm8#icu8" gr:x="30" gr:y="82">
+      <OKLink id="mov1#mpkg1#opm8#icu8#oln10" name="OKFlow10" to="mov1#mpkg1#opm8#seu3">
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#oln10#par61" name="Contribution to Pledge [oid]" source="mov1#mpkg1#opm8#icu8#icp18" target="mov1#mpkg1#opm8#seu3#su16#rcond11.ent7#att1"/>
+      </OKLink>
+      <Link id="mov1#mpkg1#opm8#icu8#ln34" name="Flow34" to="mov1#mpkg1#opm8#dlu1" automaticCoupling="false" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln34#par63" name="KeyCondition3 [oid]" source="mov1#mpkg1#opm8#icu8#icp18" target="mov1#mpkg1#opm8#dlu1#su5#kcond3.ent7#att1"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp18" name="Contribution Key"/>
     </InputCollectorUnit>
-    <SelectorUnit gr:x="395" gr:y="260" id="mov1#mpkg1#opm8#seu3" name="Get Contribution" entity="ent7"/>
+    <SelectorUnit gr:x="505" gr:y="385" id="mov1#mpkg1#opm8#seu3" name="Get pledges " entity="ent1">
+      <OKLink id="mov1#mpkg1#opm8#seu3#oln9" name="OKFlow9" to="mov1#mpkg1#opm8#inn5">
+        <LinkParameter id="mov1#mpkg1#opm8#seu3#oln9#par77" name="oid_Input" source="ent1#att6Array" target="mov1#mpkg1#opm8#inn5.isnotnull"/>
+      </OKLink>
+      <Selector id="mov1#mpkg1#opm8#seu3#su16" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg1#opm8#seu3#su16#rcond11" name="Contribution to Pledge" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="540" gr:y="255" id="mov1#mpkg1#opm8#inn5" name="Has pledges">
+      <OKLink id="mov1#mpkg1#opm8#inn5#oln33" name="OKFlow33" to="mov1#mpkg1#opm8#kocu4">
+        <LinkParameter id="mov1#mpkg1#opm8#inn5#oln33#par69" name="Could not delete contribution, pledges are already made!_Message" sourceValue="Could not delete contribution, pledges are already made!" target="mov1#mpkg1#opm8#kocu4#ocp11"/>
+      </OKLink>
+      <KOLink id="mov1#mpkg1#opm8#inn5#kln8" name="KOFlow8" to="mov1#mpkg1#opm8#dlu1" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <DeleteUnit gr:x="505" gr:y="85" id="mov1#mpkg1#opm8#dlu1" name="Delete contribution" entity="ent7">
+      <Selector id="mov1#mpkg1#opm8#dlu1#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm8#dlu1#su5#kcond3" name="Contribution key" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov1#mpkg1#opm8#dlu1#kln16" name="KO Deleted contribution" to="mov1#mpkg1#opm8#kocu4">
+        <LinkParameter id="mov1#mpkg1#opm8#dlu1#kln16#par68" name="Error during deletion of contribution_Message" sourceValue="Error during deletion of contribution" target="mov1#mpkg1#opm8#kocu4#ocp11"/>
+      </KOLink>
+      <OKLink id="mov1#mpkg1#opm8#dlu1#oln35" name="OK Deleted contribution" to="mov1#mpkg1#opm8#okcu5">
+        <LinkParameter id="mov1#mpkg1#opm8#dlu1#oln35#par67" name="Contribution deleted_Message" sourceValue="Contribution deleted" target="mov1#mpkg1#opm8#okcu5#ocp9"/>
+      </OKLink>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="910" gr:y="85" id="mov1#mpkg1#opm8#okcu5" name="OK Port5">
+      <OutputCollectorParameter id="mov1#mpkg1#opm8#okcu5#ocp9" name="Message"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="910" gr:y="230" id="mov1#mpkg1#opm8#kocu4" name="KO Port4">
+      <OutputCollectorParameter id="mov1#mpkg1#opm8#kocu4#ocp11" name="Message"/>
+    </KOCollectorUnit>
   </OperationUnits>
 </OperationModule>

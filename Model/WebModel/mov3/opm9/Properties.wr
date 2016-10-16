@@ -1,0 +1,44 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="360" gr:y="105" id="mov3#opm9" name="AskQuestion">
+  <OperationUnits>
+    <InputCollectorUnit id="mov3#opm9#icu9" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov3#opm9#icu9#icp10" name="Question"/>
+      <InputCollectorParameter id="mov3#opm9#icu9#icp14" name="CampaignOwner"/>
+      <OKLink id="mov3#opm9#icu9#oln19" name="Flow16" to="mov3#opm9#seu6">
+        <LinkParameter id="mov3#opm9#icu9#oln19#par14" name="CampaignOwner_AttCondition3" source="mov3#opm9#icu9#icp10" target="mov3#opm9#seu6#su13#acond3"/>
+      </OKLink>
+      <Link id="mov3#opm9#icu9#ln29" name="Flow29" to="mov3#opm9#cru4" type="transport" validate="true">
+        <LinkParameter id="mov3#opm9#icu9#ln29#par37" name="Question_content" source="mov3#opm9#icu9#icp10" target="mov3#opm9#cru4.ent11#att25"/>
+        <LinkParameter id="mov3#opm9#icu9#ln29#par50" name="_private" target="mov3#opm9#cru4.ent11#att19" source="mov3#opm9#icu9#icp15"/>
+        <LinkParameter id="mov3#opm9#icu9#ln29#par56" name="CampaignOwner_User.oid(QuestionToUser_2)" source="mov3#opm9#icu9#icp14" target="mov3#opm9#cru4.rel9#role17.userOID"/>
+      </Link>
+      <InputCollectorParameter id="mov3#opm9#icu9#icp15" name="Private"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="415" gr:y="165" id="mov3#opm9#seu6" name="Selector6" entity="ent11">
+      <Selector id="mov3#opm9#seu6#su13" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov3#opm9#seu6#su13#acond3" name="AttCondition3" predicate="eq" booleanOperator="or" implied="false" attributes="ent11#att25"/>
+      </Selector>
+      <OKLink id="mov3#opm9#seu6#oln21" name="OKFlow21" to="mov3#opm9#inn4">
+        <LinkParameter id="mov3#opm9#seu6#oln21#par34" name="oid_Input" source="ent11#att14Array" target="mov3#opm9#inn4.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="650" gr:y="175" id="mov3#opm9#inn4" name="Is Not Null4">
+      <OKLink id="mov3#opm9#inn4#oln29" name="OKFlow29" to="mov3#opm9#kocu6">
+        <LinkParameter id="mov3#opm9#inn4#oln29#par33" name="The same question already exists_errorMessage" sourceValue="The same question already exists" target="mov3#opm9#kocu6#ocp8"/>
+      </OKLink>
+      <KOLink id="mov3#opm9#inn4#kln12" name="KOFlow12" to="mov3#opm9#cru4" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <OKCollectorUnit gr:x="950" gr:y="50" id="mov3#opm9#okcu4" name="OK Port4"/>
+    <KOCollectorUnit gr:x="950" gr:y="220" id="mov3#opm9#kocu6" name="KO Port6">
+      <OutputCollectorParameter id="mov3#opm9#kocu6#ocp8" name="errorMessage"/>
+    </KOCollectorUnit>
+    <CreateUnit gr:x="685" gr:y="-70" id="mov3#opm9#cru4" name="Create4" entity="ent11">
+      <KOLink id="mov3#opm9#cru4#kln13" name="KOFlow13" to="mov3#opm9#kocu6" automaticCoupling="true"/>
+      <OKLink id="mov3#opm9#cru4#oln30" name="OKFlow30" to="mov3#opm9#okcu4" automaticCoupling="true"/>
+    </CreateUnit>
+    <GetUnit gr:x="345" gr:y="-80" id="mov3#opm9#gtu3" name="GetUser" contextParameters="UserCtxParam" linkOrder="mov3#opm9#gtu3#ln30">
+      <Link id="mov3#opm9#gtu3#ln30" name="Flow30" to="mov3#opm9#cru4" type="transport" validate="true">
+        <LinkParameter id="mov3#opm9#gtu3#ln30#par35" name="UserCtxParam.oid_User.oid(QuestionToUser)" source="mov3#opm9#gtu3.UserCtxParam" target="mov3#opm9#cru4.rel8#role16.userOID"/>
+      </Link>
+    </GetUnit>
+  </OperationUnits>
+</OperationModule>

@@ -17,7 +17,7 @@
       <InputCollectorParameter id="mov1#opm1#icu1#icp4" name="goal"/>
       <InputCollectorParameter id="mov1#opm1#icu1#icp5" name="title"/>
     </InputCollectorUnit>
-    <SelectorUnit gr:x="520" gr:y="70" id="mov1#opm1#seu1" name="same CampaignTitle" entity="ent10" distinctAttributes="ent10#att7">
+    <SelectorUnit gr:x="510" gr:y="220" id="mov1#opm1#seu1" name="same CampaignTitle" entity="ent10" distinctAttributes="ent10#att7">
       <Selector id="mov1#opm1#seu1#su2" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="mov1#opm1#seu1#su2#acond1" name="AttCondition1" predicate="eq" booleanOperator="or" implied="false" attributes="ent10#att8"/>
       </Selector>
@@ -25,13 +25,13 @@
         <LinkParameter id="mov1#opm1#seu1#oln2#par15" name="oid_Input" source="ent10#att7Array" target="mov1#opm1#inn1.isnotnull"/>
       </OKLink>
     </SelectorUnit>
-    <IsNotNullUnit gr:x="820" gr:y="55" id="mov1#opm1#inn1" name="Campaign exists?">
+    <IsNotNullUnit gr:x="845" gr:y="250" id="mov1#opm1#inn1" name="Campaign exists?">
       <KOLink id="mov1#opm1#inn1#kln1" name="KOFlow1" to="mov1#opm1#cru2" automaticCoupling="true"/>
       <OKLink id="mov1#opm1#inn1#oln4" name="OKFlow4" to="mov1#opm1#kocu1">
         <LinkParameter id="mov1#opm1#inn1#oln4#par7" name="A campaign of the same name exists._errorMessage" sourceValue="A campaign of the same name exists." target="mov1#opm1#kocu1#ocp2"/>
       </OKLink>
     </IsNotNullUnit>
-    <CreateUnit gr:x="505" gr:y="325" id="mov1#opm1#cru2" name="CreateCampaign" entity="ent10">
+    <CreateUnit gr:x="845" gr:y="85" id="mov1#opm1#cru2" name="CreateCampaign" entity="ent10">
       <OKLink id="mov1#opm1#cru2#oln3" name="OKFlow3" to="mov1#opm1#okcu1" automaticCoupling="false">
         <LinkParameter id="mov1#opm1#cru2#oln3#par6" name="oid" source="ent10#att7Array" target="mov1#opm1#okcu1#ocp1"/>
       </OKLink>
@@ -39,11 +39,14 @@
         <LinkParameter id="mov1#opm1#cru2#kln2#par8" name="Could not create campaign_errorMessage" sourceValue="Could not create campaign" target="mov1#opm1#kocu1#ocp2"/>
       </KOLink>
     </CreateUnit>
-    <OKCollectorUnit gr:x="1240" gr:y="70" id="mov1#opm1#okcu1" name="OK">
+    <OKCollectorUnit gr:x="1425" gr:y="55" id="mov1#opm1#okcu1" name="OK">
       <OutputCollectorParameter id="mov1#opm1#okcu1#ocp1" name="oid"/>
     </OKCollectorUnit>
-    <KOCollectorUnit gr:x="1240" gr:y="465" id="mov1#opm1#kocu1" name="Error">
+    <KOCollectorUnit gr:x="1425" gr:y="240" id="mov1#opm1#kocu1" name="Error">
       <OutputCollectorParameter id="mov1#opm1#kocu1#ocp2" name="errorMessage"/>
     </KOCollectorUnit>
+    <GetUnit gr:x="490" gr:y="35" id="mov1#opm1#gtu7" name="Get User" contextParameters="UserCtxParam" linkOrder="mov1#opm1#gtu7#ln16">
+      <Link id="mov1#opm1#gtu7#ln16" name="Flow16" to="mov1#opm1#cru2" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
   </OperationUnits>
 </OperationModule>

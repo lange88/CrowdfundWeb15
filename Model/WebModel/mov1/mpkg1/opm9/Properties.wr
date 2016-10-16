@@ -1,0 +1,34 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="80" id="mov1#mpkg1#opm9" name="Edit">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm9#icu9" gr:x="35" gr:y="295">
+      <OKLink id="mov1#mpkg1#opm9#icu9#oln32" name="Flow62" to="mov1#mpkg1#opm9#mfu1">
+        <LinkParameter id="mov1#mpkg1#opm9#icu9#oln32#par82" name="Contribution Object" source="mov1#mpkg1#opm9#icu9#icp14" target="mov1#mpkg1#opm9#mfu1.entityBeans"/>
+        <LinkParameter id="mov1#mpkg1#opm9#icu9#oln32#par88" name="Contribution Key_KeyCondition14 [oid]" source="mov1#mpkg1#opm9#icu9#icp15" target="mov1#mpkg1#opm9#mfu1#su24#kcond14.ent7#att1"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg1#opm9#icu9#icp14" name="Contribution Object"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm9#icu9#icp15" name="Contribution Key"/>
+      <Link id="mov1#mpkg1#opm9#icu9#ln66" name="Flow66" to="mov1#mpkg1#opm9#okcu4" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm9#icu9#ln66#par93" name="Company Key_Company ID" source="mov1#mpkg1#opm9#icu9#icp16" target="mov1#mpkg1#opm9#okcu4#ocp12"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm9#icu9#icp16" name="Company Key"/>
+    </InputCollectorUnit>
+    <KOCollectorUnit id="mov1#mpkg1#opm9#kocu6" name="KO Port5" gr:x="995" gr:y="515">
+      <OutputCollectorParameter id="mov1#mpkg1#opm9#kocu6#ocp8" name="Message"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit id="mov1#mpkg1#opm9#okcu4" name="OK Port3" gr:x="995" gr:y="115">
+      <OutputCollectorParameter id="mov1#mpkg1#opm9#okcu4#ocp10" name="Message"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm9#okcu4#ocp12" name="Company ID"/>
+    </OKCollectorUnit>
+    <ModifyUnit gr:x="530" gr:y="425" id="mov1#mpkg1#opm9#mfu1" name="Update Contribution" entity="ent7">
+      <Selector id="mov1#mpkg1#opm9#mfu1#su24" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm9#mfu1#su24#kcond14" name="KeyCondition14" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm9#mfu1#oln30" name="OKFlow30" to="mov1#mpkg1#opm9#okcu4">
+        <LinkParameter id="mov1#mpkg1#opm9#mfu1#oln30#par80" name="Contribution updated_Message" sourceValue="Contribution updated" target="mov1#mpkg1#opm9#okcu4#ocp10"/>
+      </OKLink>
+      <KOLink id="mov1#mpkg1#opm9#mfu1#kln14" name="KOFlow14" to="mov1#mpkg1#opm9#kocu6">
+        <LinkParameter id="mov1#mpkg1#opm9#mfu1#kln14#par79" name="Error updating contribution_Message" sourceValue="Error updating contribution" target="mov1#mpkg1#opm9#kocu6#ocp8"/>
+      </KOLink>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

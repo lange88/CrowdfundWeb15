@@ -1,8 +1,45 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1025" gr:y="900" id="sv2#page17" name="Edit contribution">
-  <ContentUnits/>
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="960" gr:y="805" id="sv2#page17" name="Edit contribution">
+  <ContentUnits>
+    <EntryUnit gr:x="180" gr:y="0" id="sv2#page17#enu6" name="Edit contribution" entity="ent7" linkOrder="sv2#page17#enu6#ln63">
+      <Field id="sv2#page17#enu6#fld10" name="title" type="string" modifiable="true" attribute="ent7#att2"/>
+      <Field id="sv2#page17#enu6#fld11" name="description" type="string" modifiable="true" attribute="ent7#att3"/>
+      <Field id="sv2#page17#enu6#fld12" name="min_amount" type="decimal" modifiable="true" attribute="ent7#att4"/>
+      <Field id="sv2#page17#enu6#fld13" name="max_pledges" type="integer" modifiable="true" attribute="ent7#att18"/>
+      <Link id="sv2#page17#enu6#ln63" name="Flow63" to="sv2#miu8" type="normal" validate="true">
+        <LinkParameter id="sv2#page17#enu6#ln63#par89" name="Key [oid]_Contribution Key" source="key.ent7#att1" target="sv2#miu8.mov1#mpkg1#opm9#icu9#icp15"/>
+        <LinkParameter id="sv2#page17#enu6#ln63#par90" name="Contribution Object_Contribution Object" source="entityBean" target="sv2#miu8.mov1#mpkg1#opm9#icu9#icp14"/>
+        <LinkParameter id="sv2#page17#enu6#ln63#par98" name="ContributionToCampaign.oid_PASSING_Company Key" sourceLinkParameter="sv2#page13#inu3#ln7#par97" target="sv2#miu8.mov1#mpkg1#opm9#icu9#icp16"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="0" gr:y="5" id="sv2#page17#mssu4" name="Notification"/>
+  </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12"/>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page17#enu6">
+          <layout:Field field="sv2#page17#enu6#fld10"/>
+          <layout:Field field="sv2#page17#enu6#fld11"/>
+          <layout:Field field="sv2#page17#enu6#fld12"/>
+          <layout:Field field="sv2#page17#enu6#fld13"/>
+          <layout:Link link="sv2#page17#enu6#ln63"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page17#mssu4"/>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

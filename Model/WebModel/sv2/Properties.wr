@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Campaigner" protected="true" landmarks="sv2#miu4" homePage="sv2#page1">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Campaigner" protected="true" homePage="sv2#page1" linkVisibilityPolicy="always">
   <OperationUnits>
     <ModuleInstanceUnit gr:x="335" gr:y="245" id="sv2#miu1" moduleId="mov1#opm1" action="true">
       <KOLink id="sv2#miu1#kln3" name="KOFlow3" to="sv2#page2#mssu1" gr:bendpoints="0,59,-335,-1">
@@ -6,7 +6,6 @@
       </KOLink>
       <OKLink id="sv2#miu1#oln6" name="OKFlow6" to="sv2#page1" automaticCoupling="true"/>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="1150" gr:y="100" id="sv2#miu4" action="true" name="Logout" landmark="true" moduleId="mov2#opm4"/>
     <ModuleInstanceUnit gr:x="1670" gr:y="490" id="sv2#miu6" action="true" moduleId="mov1#mpkg1#opm7" name="Create contribution">
       <OKLink id="sv2#miu6#oln18" name="Flow21" to="sv2#page13#mssu3" gr:bendpoints="-240,-130,215,150">
         <LinkParameter id="sv2#miu6#oln18#par60" name="Message_Shown Messages" source="mov1#mpkg1#opm7#okcu3#ocp7" target="sv2#page13#mssu3.shownMessages"/>
@@ -15,5 +14,19 @@
         <LinkParameter id="sv2#miu6#kln11#par36" name="ErrorMessage_Shown Messages" source="mov1#mpkg1#opm7#kocu5#ocp5" target="sv2#page13#mssu3.shownMessages"/>
       </KOLink>
     </ModuleInstanceUnit>
+    <LogoutUnit gr:x="350" gr:y="995" id="sv2#lou2" name="Logout" siteView="sv1"/>
+    <ChangeGroupUnit gr:x="270" gr:y="1575" id="sv2#cgu5" name="Change Group5"/>
+    <ModuleInstanceUnit gr:x="900" gr:y="1040" id="sv2#miu8" action="true" moduleId="mov1#mpkg1#opm9">
+      <KOLink id="sv2#miu8#kln15" name="KOFlow15" to="sv2#page17#mssu4">
+        <LinkParameter id="sv2#miu8#kln15#par83" name="Message_Shown Messages" source="mov1#mpkg1#opm9#kocu6#ocp8" target="sv2#page17#mssu4.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv2#miu8#oln34" name="OKFlow34" to="sv2#page13#mssu3" gr:bendpoints="-61,-487,-356,43">
+        <LinkParameter id="sv2#miu8#oln34#par95" name="Company ID_Shown Messages" source="mov1#mpkg1#opm9#okcu4#ocp10" target="sv2#page13#mssu3.shownMessages"/>
+      </OKLink>
+      <Link id="sv2#miu8#ln69" name="Flow69" to="sv2#page13#dau2" type="transport" validate="true" gr:bendpoints="-89,-499,-199,166">
+        <LinkParameter id="sv2#miu8#ln69#par99" name="OK Port3.Company ID_KeyCondition2 [oid]" source="mov1#mpkg1#opm9#okcu4#ocp12" target="sv2#page13#dau2#su4#kcond2.ent10#att7"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="405" gr:y="825" id="sv2#seu8" name="Selector8" entity="ent7"/>
   </OperationUnits>
 </SiteView>

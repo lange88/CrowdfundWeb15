@@ -1,0 +1,76 @@
+<MasterPage xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="70" gr:y="1150" id="sv2#mpage3" name="Master page" gr:hide="false">
+  <ContentUnits>
+    <GetUnit gr:x="0" gr:y="0" id="sv2#mpage3#gtu5" name="User" contextParameters="GroupCtxParam UserCtxParam">
+      <Link id="sv2#mpage3#gtu5#ln26" name="Flow26" to="sv2#mpage3#dau7" type="transport" validate="true" automaticCoupling="true"/>
+      <Link id="sv2#mpage3#gtu5#ln48" name="Flow48" to="sv2#cgu5" type="transport" validate="true">
+        <LinkParameter id="sv2#mpage3#gtu5#ln48#par62" name="UserCtxParam.oid_Current User" source="sv2#mpage3#gtu5.UserCtxParam" target="sv2#cgu5.userOid"/>
+      </Link>
+      <Link id="sv2#mpage3#gtu5#ln51" name="Flow51" to="sv2#mpage3#inu7" type="transport" validate="true">
+        <LinkParameter id="sv2#mpage3#gtu5#ln51#par70" name="GroupCtxParam.oid_KeyCondition11 [oid]" source="sv2#mpage3#gtu5.GroupCtxParam" target="sv2#mpage3#inu7#su18#kcond11.groupOID"/>
+      </Link>
+    </GetUnit>
+    <DataUnit gr:x="365" gr:y="0" id="sv2#mpage3#dau7" name="Username" entity="User" displayAttributes="userName" linkOrder="sv2#mpage3#dau7#ln33" gr:showAllParts="false">
+      <Selector id="sv2#mpage3#dau7#su13" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mpage3#dau7#su13#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#mpage3#dau7#ln33" name="Logout" to="sv2#lou2" type="normal" validate="true"/>
+    </DataUnit>
+    <IndexUnit id="sv2#mpage3#inu7" entity="Group" gr:x="280" gr:y="180" name="Change perspective" linkOrder="sv2#mpage3#inu7#ln50" displayAttributes="groupName" customDescriptor="false">
+      <Link id="sv2#mpage3#inu7#ln50" name="Flow47" to="sv2#cgu5" type="normal" validate="true">
+        <LinkParameter id="sv2#mpage3#inu7#ln50#par65" name="oid_Selected Group" source="data[].groupOID" target="sv2#cgu5.groupOid"/>
+      </Link>
+      <Selector id="sv2#mpage3#inu7#su18" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mpage3#inu7#su18#kcond11" name="KeyCondition11" predicate="notIn" implied="false"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:CustomLocation name="User">
+    <layout:Grid containerType="cell">
+      <layout:Row>
+        <layout:Cell>
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="4">
+                <layout:Unit unitId="sv2#mpage3#inu7" layout:frameLayout="None" layout:linkLayout="WRDefault/Simple" layout:unitLayout="WRDefault/Dropdown" layout:attributeLayout="WRDefault/Default">
+                  <layout:Link link="sv2#mpage3#inu7#ln50"/>
+                  <layout:Attribute attribute="groupName"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell colspan="4"/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell colspan="4">
+                <layout:Unit unitId="sv2#mpage3#dau7" layout:frameLayout="None" layout:unitLayout="WRDefault/User">
+                  <layout:Attribute attribute="userName"/>
+                  <layout:Link link="sv2#mpage3#dau7#ln33"/>
+                  <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12"/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:Cell>
+      </layout:Row>
+    </layout:Grid>
+  </layout:CustomLocation>
+</MasterPage>

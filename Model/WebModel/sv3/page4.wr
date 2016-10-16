@@ -1,16 +1,44 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="495" gr:y="565" id="sv3#page4" name="Supporter Home" linkOrder="sv3#page4#ln21" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv3#page4#inu3" name="Simple List3" entity="ent10" linkOrder="sv3#page4#inu3#ln7">
+    <IndexUnit gr:x="0" gr:y="0" id="sv3#page4#inu3" name="Available Campaigns" entity="ent10" linkOrder="sv3#page4#inu3#ln7" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
       <Link id="sv3#page4#inu3#ln7" name="Flow7" to="sv3#page5#dau2" automaticCoupling="true" type="normal" validate="true"/>
+      <Selector id="sv3#page4#inu3#su20" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page4#inu3#su20#rcond14" name="RoleCondition14" predicate="notIn" implied="false" role="rel6#role11.rel1#role6"/>
+      </Selector>
     </IndexUnit>
+    <GetUnit gr:x="315" gr:y="10" id="sv3#page4#gtu8" name="GetUser" contextParameters="UserCtxParam">
+      <Link id="sv3#page4#gtu8#ln41" name="Flow41" to="sv3#page4#inu3" type="transport" validate="true">
+        <LinkParameter id="sv3#page4#gtu8#ln41#par81" name="UserCtxParam.oid_RoleCondition14 [oid]" source="sv3#page4#gtu8.UserCtxParam" target="sv3#page4#inu3#su20#rcond14.ent1#att6"/>
+      </Link>
+    </GetUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv3#page4#inu3">
           <layout:Link link="sv3#page4#inu3#ln7"/>
+          <layout:Attribute attribute="ent10#att8"/>
+          <layout:Attribute attribute="ent10#att9"/>
+          <layout:Attribute attribute="ent10#att10"/>
+          <layout:Attribute attribute="ent10#att11"/>
+          <layout:Attribute attribute="ent10#att12"/>
+          <layout:Attribute attribute="ent10#att13"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

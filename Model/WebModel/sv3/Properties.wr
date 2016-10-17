@@ -14,5 +14,13 @@
     </ModuleInstanceUnit>
     <ChangeGroupUnit id="sv3#cgu7" name="Change Group5" gr:x="1385" gr:y="555"/>
     <LogoutUnit id="sv3#lou4" name="Logout" gr:x="1305" gr:y="20" siteView="sv1"/>
+    <ModuleInstanceUnit gr:x="1060" gr:y="525" id="sv3#miu4" action="true" moduleId="mov3#opm4">
+      <OKLink id="sv3#miu4#oln42" name="OKFlow42" to="sv3#page5#mssu5" codeRef="mov3#opm4#okcu6">
+        <LinkParameter id="sv3#miu4#oln42#par91" name="You like this project_Shown Messages" sourceValue="You like this project" target="sv3#page5#mssu5.shownMessages"/>
+      </OKLink>
+      <OKLink id="sv3#miu4#oln44" name="OKFlow44" to="sv3#page5#mssu5" gr:bendpoints="61,126,226,-4" codeRef="mov3#opm4#okcu7">
+        <LinkParameter id="sv3#miu4#oln44#par102" name="You don't like this project_Shown Messages" sourceValue="You don't like this project" target="sv3#page5#mssu5.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
   </OperationUnits>
 </SiteView>

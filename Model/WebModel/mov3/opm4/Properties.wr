@@ -1,0 +1,56 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="125" gr:y="185" id="mov3#opm4" name="Upvote">
+  <OperationUnits>
+    <InputCollectorUnit id="mov3#opm4#icu4" gr:x="30" gr:y="60" linkOrder="mov3#opm4#icu4#ln46 mov3#opm4#icu4#ln52">
+      <InputCollectorParameter id="mov3#opm4#icu4#icp17" name="CampaignId"/>
+      <OKLink id="mov3#opm4#icu4#oln37" name="OKFlow37" to="mov3#opm4#seu7">
+        <LinkParameter id="mov3#opm4#icu4#oln37#par85" name="CampaignId_KeyCondition6 [oid]" source="mov3#opm4#icu4#icp17" target="mov3#opm4#seu7#su23#kcond6.ent10#att7"/>
+      </OKLink>
+      <Link id="mov3#opm4#icu4#ln46" name="Flow46" to="mov3#opm4#cnu1" type="transport" validate="true">
+        <LinkParameter id="mov3#opm4#icu4#ln46#par86" name="CampaignId_KeyCondition10 [oid] [Campaign] [Target]" source="mov3#opm4#icu4#icp17" target="mov3#opm4#cnu1#su27#kcond10.ent10#att7"/>
+      </Link>
+      <Link id="mov3#opm4#icu4#ln52" name="Flow52" to="mov3#opm4#dcnu1" type="transport" validate="true">
+        <LinkParameter id="mov3#opm4#icu4#ln52#par100" name="CampaignId_KeyCondition16 [oid] [Campaign] [Target]" source="mov3#opm4#icu4#icp17" target="mov3#opm4#dcnu1#su29#kcond16.ent10#att7"/>
+      </Link>
+    </InputCollectorUnit>
+    <GetUnit gr:x="405" gr:y="-10" id="mov3#opm4#gtu2" name="GetUser" contextParameters="UserCtxParam" linkOrder="mov3#opm4#gtu2#ln42 mov3#opm4#gtu2#ln45 mov3#opm4#gtu2#ln53">
+      <Link id="mov3#opm4#gtu2#ln42" name="Flow42" to="mov3#opm4#seu7" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="mov3#opm4#gtu2#ln45" name="Flow45" to="mov3#opm4#cnu1" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="mov3#opm4#gtu2#ln53" name="Flow53" to="mov3#opm4#dcnu1" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="126,247,-229,-28"/>
+    </GetUnit>
+    <SelectorUnit gr:x="400" gr:y="205" id="mov3#opm4#seu7" name="GetVotes" entity="ent10">
+      <Selector id="mov3#opm4#seu7#su23" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov3#opm4#seu7#su23#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel7#role13"/>
+        <KeyCondition id="mov3#opm4#seu7#su23#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov3#opm4#seu7#oln38" name="OKFlow38" to="mov3#opm4#inn6">
+        <LinkParameter id="mov3#opm4#seu7#oln38#par101" name="oid_Input" source="ent10#att7Array" target="mov3#opm4#inn6.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="600" gr:y="140" id="mov3#opm4#inn6">
+      <OKLink id="mov3#opm4#inn6#oln39" name="OKFlow39" to="mov3#opm4#dcnu1" automaticCoupling="true"/>
+      <KOLink id="mov3#opm4#inn6#kln18" name="KOFlow18" to="mov3#opm4#cnu1" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <OKCollectorUnit gr:x="985" gr:y="80" id="mov3#opm4#okcu6" name="OK Port6"/>
+    <ConnectUnit gr:x="745" gr:y="25" id="mov3#opm4#cnu1" name="Connect1" relationship="rel7#role13">
+      <SourceSelector id="mov3#opm4#cnu1#su26" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov3#opm4#cnu1#su26#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov3#opm4#cnu1#su27" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov3#opm4#cnu1#su27#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov3#opm4#cnu1#oln40" name="OKFlow40" to="mov3#opm4#okcu6" automaticCoupling="true"/>
+      <KOLink id="mov3#opm4#cnu1#kln19" name="KOFlow19" to="mov3#opm4#okcu7" automaticCoupling="true"/>
+    </ConnectUnit>
+    <DisconnectUnit gr:x="745" gr:y="250" id="mov3#opm4#dcnu1" name="Disconnect1" relationship="rel7#role13">
+      <SourceSelector id="mov3#opm4#dcnu1#su28" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov3#opm4#dcnu1#su28#kcond15" name="KeyCondition15" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov3#opm4#dcnu1#su29" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov3#opm4#dcnu1#su29#kcond16" name="KeyCondition16" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov3#opm4#dcnu1#oln41" name="OKFlow41" to="mov3#opm4#okcu7" automaticCoupling="true" gr:bendpoints="121,2,-169,32"/>
+      <KOLink id="mov3#opm4#dcnu1#kln20" name="KOFlow20" to="mov3#opm4#okcu6" automaticCoupling="true"/>
+    </DisconnectUnit>
+    <OKCollectorUnit id="mov3#opm4#okcu7" gr:x="985" gr:y="230" name="KO Port7"/>
+  </OperationUnits>
+</OperationModule>

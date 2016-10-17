@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="545" gr:y="200" id="sv3#page5" name="Details Campaign">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="545" gr:y="200" id="sv3#page5" name="Details Campaign" layout:linkVisibilityConditionNegated="true">
   <ContentUnits>
-    <DataUnit gr:x="0" gr:y="0" id="sv3#page5#dau2" name="Details2" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" linkOrder="sv3#page5#dau2#ln26">
+    <DataUnit gr:x="0" gr:y="0" id="sv3#page5#dau2" name="Details2" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" linkOrder="sv3#page5#dau2#ln26 sv3#page5#dau2#ln64">
       <Selector id="sv3#page5#dau2#su4" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page5#dau2#su4#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
       </Selector>
@@ -8,6 +8,9 @@
         <LinkParameter id="sv3#page5#dau2#ln12#par22" name="oid_RoleCondition1 [oid]" source="data.ent10#att7" target="sv3#page5#pwu1#su8#rcond6.ent10#att7"/>
       </Link>
       <Link id="sv3#page5#dau2#ln26" name="Ask a question" to="sv3#page9#dau5" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv3#page5#dau2#ln64" name="Flow49" to="sv3#miu4" type="normal" validate="true">
+        <LinkParameter id="sv3#page5#dau2#ln64#par105" name="oid_CampaignId" source="data.ent10#att7" target="sv3#miu4.mov3#opm4#icu4#icp17"/>
+      </Link>
     </DataUnit>
     <PowerIndexUnit id="sv3#page5#pwu1" entity="ent7" displayAttributes="ent7#att2 ent7#att3 ent7#att4 ent7#att18" sortable="true" checkable="false" useCountQuery="false" gr:x="35" gr:y="150" name="Possible Contributions" linkOrder="sv3#page5#pwu1#ln22">
       <Selector id="sv3#page5#pwu1#su8" defaultPolicy="fill" booleanOperator="and">
@@ -17,6 +20,7 @@
         <LinkParameter id="sv3#page5#pwu1#ln22#par32" name="oid_KeyCondition4 [oid]" source="data[].ent7#att1" target="sv3#page6#dau3#su7#kcond4.ent7#att1"/>
       </Link>
     </PowerIndexUnit>
+    <MultiMessageUnit gr:x="155" gr:y="245" id="sv3#page5#mssu5" name="Message5"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -29,6 +33,7 @@
           <layout:Attribute attribute="ent10#att12"/>
           <layout:Attribute attribute="ent10#att13"/>
           <layout:Link link="sv3#page5#dau2#ln26"/>
+          <layout:Link link="sv3#page5#dau2#ln64"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -53,6 +58,36 @@
           <layout:Link link="sv3#page5#pwu1#ln22"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page5#mssu5"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

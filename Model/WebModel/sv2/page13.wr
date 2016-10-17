@@ -8,8 +8,11 @@
       <Link id="sv2#page13#dau2#ln23" name="Flow23" to="sv2#miu6" type="transport" validate="true">
         <LinkParameter id="sv2#page13#dau2#ln23#par55" name="oid_Campaign.oid(ContributionToCampaign)" source="data.ent10#att7" target="sv2#miu6.mov1#mpkg1#opm7#icu7#icp23"/>
       </Link>
+      <Link id="sv2#page13#dau2#ln49" name="Flow49" to="sv2#page13#pwu5" type="transport" validate="true">
+        <LinkParameter id="sv2#page13#dau2#ln49#par85" name="oid_current oid" source="data.ent10#att7" target="sv2#page13#pwu5.current.ent11#att14"/>
+      </Link>
     </DataUnit>
-    <IndexUnit gr:x="5" gr:y="260" id="sv2#page13#inu3" name="Contibutions list" entity="ent7" displayAttributes="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" linkOrder="sv2#page13#inu3#ln7 sv2#page13#inu3#ln38">
+    <IndexUnit gr:x="150" gr:y="240" id="sv2#page13#inu3" name="Contibutions list" entity="ent7" displayAttributes="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" linkOrder="sv2#page13#inu3#ln7 sv2#page13#inu3#ln38">
       <Link id="sv2#page13#inu3#ln7" name="Edit" to="sv2#page17#enu6" type="normal" validate="true">
         <LinkParameter id="sv2#page13#inu3#ln7#par96" name="oid_Key Condition [oid]" source="data[].ent7#att1" target="sv2#page17#enu6.ent7#att1"/>
         <LinkParameter id="sv2#page13#inu3#ln7#par97" name="ContributionToCampaign.oid_PASSING" source="data[].rel1#role6_ent10#att7" passing="true"/>
@@ -34,7 +37,10 @@
       </Link>
       <VRules/>
     </EntryUnit>
-    <MultiMessageUnit gr:x="215" gr:y="160" id="sv2#page13#mssu3" name="Notification"/>
+    <MultiMessageUnit gr:x="240" gr:y="115" id="sv2#page13#mssu3" name="Notification"/>
+    <PowerIndexUnit gr:x="15" gr:y="150" id="sv2#page13#pwu5" name="Questions" sortable="true" checkable="false" useCountQuery="false" entity="ent11" displayAttributes="ent11#att19 ent11#att25 rel9#role17.userName" linkOrder="sv2#page13#pwu5#ln52">
+      <Link id="sv2#page13#pwu5#ln52" name="Flow52" to="sv2#page18#dau4" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -108,7 +114,14 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12"/>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page13#pwu5">
+          <layout:Attribute attribute="ent11#att19"/>
+          <layout:Attribute attribute="ent11#att25"/>
+          <layout:Attribute attribute="rel9#role17.userName"/>
+          <layout:Link link="sv2#page13#pwu5#ln52"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

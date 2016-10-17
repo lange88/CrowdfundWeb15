@@ -1,8 +1,40 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="20" gr:y="400" id="sv2#page18" name="Aswer question">
-  <ContentUnits/>
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="970" gr:y="735" id="sv2#page18" name="Aswer question">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv2#page18#dau4" name="Question" entity="ent11" displayAttributes="ent11#att25 rel9#role17.userName">
+      <Selector id="sv2#page18#dau4#su26" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page18#dau4#su26#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <EntryUnit gr:x="95" gr:y="5" id="sv2#page18#enu7" name="Answer">
+      <Field id="sv2#page18#enu7#fld15" name="AnswerText" type="string" modifiable="true" contentType="text/plain"/>
+    </EntryUnit>
+  </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12"/>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page18#dau4">
+          <layout:Attribute attribute="ent11#att25"/>
+          <layout:Attribute attribute="rel9#role17.userName"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page18#enu7">
+          <layout:Field field="sv2#page18#enu7#fld15"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

@@ -1,0 +1,52 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="0" id="mov1#mpkg3#opm6" name="Create">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg3#opm6#icu6" gr:x="30" gr:y="60">
+      <OKLink id="mov1#mpkg3#opm6#icu6#oln38" name="OKFlow1" to="mov1#mpkg3#opm6#seu7">
+        <LinkParameter id="mov1#mpkg3#opm6#icu6#oln38#par86" name="title_AttCondition1" source="mov1#mpkg3#opm6#icu6#icp29" target="mov1#mpkg3#opm6#seu7#su23#acond7"/>
+      </OKLink>
+      <Link id="mov1#mpkg3#opm6#icu6#ln44" name="Flow5" to="mov1#mpkg3#opm6#cru5" automaticCoupling="false" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg3#opm6#icu6#ln44#par87" name="Tag.oid(CampaignToTag)" source="mov1#mpkg3#opm6#icu6#icp20" target="mov1#mpkg3#opm6#cru5.rel3#role1.ent12#att15"/>
+        <LinkParameter id="mov1#mpkg3#opm6#icu6#ln44#par102" name="description" source="mov1#mpkg3#opm6#icu6#icp21" target="mov1#mpkg3#opm6#cru5.ent10#att9"/>
+        <LinkParameter id="mov1#mpkg3#opm6#icu6#ln44#par106" name="expiration" source="mov1#mpkg3#opm6#icu6#icp22" target="mov1#mpkg3#opm6#cru5.ent10#att11"/>
+        <LinkParameter id="mov1#mpkg3#opm6#icu6#ln44#par107" name="goal" source="mov1#mpkg3#opm6#icu6#icp28" target="mov1#mpkg3#opm6#cru5.ent10#att10"/>
+        <LinkParameter id="mov1#mpkg3#opm6#icu6#ln44#par108" name="title" source="mov1#mpkg3#opm6#icu6#icp29" target="mov1#mpkg3#opm6#cru5.ent10#att8"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg3#opm6#icu6#icp20" name="Tag.oid(CampaignToTag)"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm6#icu6#icp21" name="description"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm6#icu6#icp22" name="expiration"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm6#icu6#icp28" name="goal"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm6#icu6#icp29" name="title"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="510" gr:y="220" id="mov1#mpkg3#opm6#seu7" name="same CampaignTitle" entity="ent10" distinctAttributes="ent10#att7">
+      <Selector id="mov1#mpkg3#opm6#seu7#su23" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#mpkg3#opm6#seu7#su23#acond7" name="AttCondition1" predicate="eq" booleanOperator="or" implied="false" attributes="ent10#att8"/>
+      </Selector>
+      <OKLink id="mov1#mpkg3#opm6#seu7#oln41" name="OKFlow2" to="mov1#mpkg3#opm6#inn6">
+        <LinkParameter id="mov1#mpkg3#opm6#seu7#oln41#par109" name="oid_Input" source="ent10#att7Array" target="mov1#mpkg3#opm6#inn6.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="845" gr:y="250" id="mov1#mpkg3#opm6#inn6" name="Campaign exists?">
+      <KOLink id="mov1#mpkg3#opm6#inn6#kln20" name="KOFlow1" to="mov1#mpkg3#opm6#cru5" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg3#opm6#inn6#oln42" name="OKFlow4" to="mov1#mpkg3#opm6#kocu8">
+        <LinkParameter id="mov1#mpkg3#opm6#inn6#oln42#par110" name="A campaign of the same name exists._errorMessage" sourceValue="A campaign of the same name exists." target="mov1#mpkg3#opm6#kocu8#ocp16"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="845" gr:y="85" id="mov1#mpkg3#opm6#cru5" name="CreateCampaign" entity="ent10">
+      <OKLink id="mov1#mpkg3#opm6#cru5#oln43" name="OKFlow3" to="mov1#mpkg3#opm6#okcu7" automaticCoupling="false">
+        <LinkParameter id="mov1#mpkg3#opm6#cru5#oln43#par111" name="oid" source="ent10#att7Array" target="mov1#mpkg3#opm6#okcu7#ocp15"/>
+      </OKLink>
+      <KOLink id="mov1#mpkg3#opm6#cru5#kln21" name="KOFlow2" to="mov1#mpkg3#opm6#kocu8">
+        <LinkParameter id="mov1#mpkg3#opm6#cru5#kln21#par112" name="Could not create campaign_errorMessage" sourceValue="Could not create campaign" target="mov1#mpkg3#opm6#kocu8#ocp16"/>
+      </KOLink>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="1425" gr:y="55" id="mov1#mpkg3#opm6#okcu7" name="OK">
+      <OutputCollectorParameter id="mov1#mpkg3#opm6#okcu7#ocp15" name="oid"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="1425" gr:y="240" id="mov1#mpkg3#opm6#kocu8" name="Error">
+      <OutputCollectorParameter id="mov1#mpkg3#opm6#kocu8#ocp16" name="errorMessage"/>
+    </KOCollectorUnit>
+    <GetUnit gr:x="490" gr:y="35" id="mov1#mpkg3#opm6#gtu2" name="Get User" contextParameters="UserCtxParam">
+      <Link id="mov1#mpkg3#opm6#gtu2#ln45" name="Flow16" to="mov1#mpkg3#opm6#cru5" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+  </OperationUnits>
+</OperationModule>

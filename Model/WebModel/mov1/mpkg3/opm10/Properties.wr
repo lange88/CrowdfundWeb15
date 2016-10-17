@@ -1,0 +1,31 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="80" id="mov1#mpkg3#opm10" name="Edit">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg3#opm10#icu10" gr:x="25" gr:y="110">
+      <OKLink id="mov1#mpkg3#opm10#icu10#oln45" name="OKFlow45" to="mov1#mpkg3#opm10#mfu3" automaticCoupling="false">
+        <LinkParameter id="mov1#mpkg3#opm10#icu10#oln45#par115" name="Campaign Object" source="mov1#mpkg3#opm10#icu10#icp30" target="mov1#mpkg3#opm10#mfu3.entityBeans"/>
+        <LinkParameter id="mov1#mpkg3#opm10#icu10#oln45#par123" name="KeyCondition9 [oid]" source="mov1#mpkg3#opm10#icu10#icp31" target="mov1#mpkg3#opm10#mfu3#su25#kcond9.ent10#att7"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg3#opm10#icu10#icp30" name="Campaign Object"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm10#icu10#icp31" name="KeyCondition9 [oid]"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="855" gr:y="110" id="mov1#mpkg3#opm10#okcu8" name="OK Port8">
+      <OutputCollectorParameter id="mov1#mpkg3#opm10#okcu8#ocp17" name="Shown Messages"/>
+      <OutputCollectorParameter id="mov1#mpkg3#opm10#okcu8#ocp19" name="oid"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="855" gr:y="300" id="mov1#mpkg3#opm10#kocu9" name="KO Port9">
+      <OutputCollectorParameter id="mov1#mpkg3#opm10#kocu9#ocp18" name="Shown Messages"/>
+    </KOCollectorUnit>
+    <ModifyUnit gr:x="495" gr:y="110" id="mov1#mpkg3#opm10#mfu3" name="Update campaign" entity="ent10">
+      <Selector id="mov1#mpkg3#opm10#mfu3#su25" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg3#opm10#mfu3#su25#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg3#opm10#mfu3#oln46" name="OKFlow46" to="mov1#mpkg3#opm10#okcu8" automaticCoupling="false">
+        <LinkParameter id="mov1#mpkg3#opm10#mfu3#oln46#par116" name="Campaign updated_Shown Message" sourceValue="Campaign updated" target="mov1#mpkg3#opm10#okcu8#ocp17"/>
+        <LinkParameter id="mov1#mpkg3#opm10#mfu3#oln46#par118" name="oid" source="ent10#att7Array" target="mov1#mpkg3#opm10#okcu8#ocp19"/>
+      </OKLink>
+      <KOLink id="mov1#mpkg3#opm10#mfu3#kln23" name="KOFlow23" to="mov1#mpkg3#opm10#kocu9">
+        <LinkParameter id="mov1#mpkg3#opm10#mfu3#kln23#par117" name="Error updating campaign_Shown Message" sourceValue="Error updating campaign" target="mov1#mpkg3#opm10#kocu9#ocp18"/>
+      </KOLink>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

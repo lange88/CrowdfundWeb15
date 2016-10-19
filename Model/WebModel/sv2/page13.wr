@@ -31,7 +31,7 @@
       <Field id="sv2#page13#enu3#fld7" name="Description" type="string" modifiable="true" attribute="ent7#att3"/>
       <Field id="sv2#page13#enu3#fld8" name="Max pledges" type="integer" modifiable="true" attribute="ent7#att18"/>
       <Field id="sv2#page13#enu3#fld9" name="Min_amount" type="decimal" modifiable="true" attribute="ent7#att4"/>
-      <Link id="sv2#page13#enu3#ln19" name="Flow19" to="sv2#miu6" type="normal" validate="true">
+      <Link id="sv2#page13#enu3#ln19" name="Create" to="sv2#miu6" type="normal" validate="true">
         <LinkParameter id="sv2#page13#enu3#ln19#par51" name="Description_description" source="sv2#page13#enu3#fld7" target="sv2#miu6.mov1#mpkg1#opm7#icu7#icp24"/>
         <LinkParameter id="sv2#page13#enu3#ln19#par52" name="Max pledges_max_pledges" source="sv2#page13#enu3#fld8" target="sv2#miu6.mov1#mpkg1#opm7#icu7#icp25"/>
         <LinkParameter id="sv2#page13#enu3#ln19#par53" name="Min_amount_min_amount" source="sv2#page13#enu3#fld9" target="sv2#miu6.mov1#mpkg1#opm7#icu7#icp26"/>
@@ -40,8 +40,8 @@
       <VRules/>
     </EntryUnit>
     <MultiMessageUnit gr:x="300" gr:y="45" id="sv2#page13#mssu3" name="Notification"/>
-    <PowerIndexUnit gr:x="215" gr:y="185" id="sv2#page13#pwu5" name="Questions" sortable="true" checkable="false" useCountQuery="false" entity="ent11" displayAttributes="ent11#att19 ent11#att25 rel9#role17.userName" linkOrder="sv2#page13#pwu5#ln52">
-      <Link id="sv2#page13#pwu5#ln52" name="Flow52" to="sv2#page18#dau4" automaticCoupling="true" type="normal" validate="true"/>
+    <PowerIndexUnit gr:x="215" gr:y="185" id="sv2#page13#pwu5" name="Questions" sortable="true" checkable="false" useCountQuery="false" entity="ent11" displayAttributes="ent11#att19 ent11#att25 rel9#role17.userName ent11#att26" linkOrder="sv2#page13#pwu5#ln52">
+      <Link id="sv2#page13#pwu5#ln52" name="Answer" to="sv2#page18#dau4" automaticCoupling="true" type="normal" validate="true"/>
       <Selector id="sv2#page13#pwu5#su2" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#page13#pwu5#su2#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel2#role8"/>
       </Selector>
@@ -100,10 +100,11 @@
       <layout:Cell/>
       <layout:Cell colspan="6">
         <layout:Unit unitId="sv2#page13#pwu5">
+          <layout:Link link="sv2#page13#pwu5#ln52"/>
           <layout:Attribute attribute="ent11#att19"/>
           <layout:Attribute attribute="ent11#att25"/>
           <layout:Attribute attribute="rel9#role17.userName"/>
-          <layout:Link link="sv2#page13#pwu5#ln52"/>
+          <layout:Attribute attribute="ent11#att26"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

@@ -14,7 +14,7 @@
       </Link>
     </EntryUnit>
     <MultiMessageUnit gr:x="180" gr:y="215" id="sv3#page9#mssu4" name="Message4"/>
-    <DataUnit gr:x="235" gr:y="30" id="sv3#page9#dau5" name="Details5" entity="ent10">
+    <DataUnit gr:x="240" gr:y="10" id="sv3#page9#dau5" name="Details5" entity="ent10">
       <Selector id="sv3#page9#dau5#su14" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page9#dau5#su14#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
       </Selector>

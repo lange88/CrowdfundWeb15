@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="30" gr:y="-140" id="sv3#page9" name="Ask question">
   <ContentUnits>
-    <MultiDataUnit gr:x="0" gr:y="0" id="sv3#page9#mdu3" name="MultipleDetails3" entity="ent11" displayAttributes="ent11#att25 ent11#att26">
+    <MultiDataUnit gr:x="0" gr:y="0" id="sv3#page9#mdu3" name="Previous questions" entity="ent11" displayAttributes="ent11#att25 ent11#att26">
       <Selector id="sv3#page9#mdu3#su12" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page9#mdu3#su12#rcond10" name="RoleCondition10" predicate="in" implied="false" role="rel4#role4.rel9#role18"/>
       </Selector>
@@ -13,8 +13,8 @@
         <LinkParameter id="sv3#page9#enu4#ln31#par62" name="Question_Question" source="sv3#page9#enu4#fld10" target="sv3#miu7.mov3#opm9#icu9#icp10"/>
       </Link>
     </EntryUnit>
-    <MultiMessageUnit gr:x="180" gr:y="215" id="sv3#page9#mssu4" name="Message4"/>
-    <DataUnit gr:x="240" gr:y="10" id="sv3#page9#dau5" name="Details5" entity="ent10">
+    <MultiMessageUnit gr:x="180" gr:y="215" id="sv3#page9#mssu4" name="ErrorMessage"/>
+    <DataUnit gr:x="240" gr:y="10" id="sv3#page9#dau5" name="Campaign Details" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11">
       <Selector id="sv3#page9#dau5#su14" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page9#dau5#su14#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
       </Selector>
@@ -83,7 +83,12 @@
     </layout:Row>
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv3#page9#dau5"/>
+        <layout:Unit unitId="sv3#page9#dau5">
+          <layout:Attribute attribute="ent10#att8"/>
+          <layout:Attribute attribute="ent10#att9"/>
+          <layout:Attribute attribute="ent10#att10"/>
+          <layout:Attribute attribute="ent10#att11"/>
+        </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>

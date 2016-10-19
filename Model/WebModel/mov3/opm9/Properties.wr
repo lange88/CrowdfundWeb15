@@ -34,7 +34,9 @@
       <OutputCollectorParameter id="mov3#opm9#kocu6#ocp8" name="errorMessage"/>
     </KOCollectorUnit>
     <CreateUnit gr:x="685" gr:y="-70" id="mov3#opm9#cru4" name="Create4" entity="ent11">
-      <KOLink id="mov3#opm9#cru4#kln13" name="KOFlow13" to="mov3#opm9#kocu6" automaticCoupling="true"/>
+      <KOLink id="mov3#opm9#cru4#kln13" name="KOFlow13" to="mov3#opm9#kocu6">
+        <LinkParameter id="mov3#opm9#cru4#kln13#par81" name="Could not create entry._errorMessage" sourceValue="Could not create entry." target="mov3#opm9#kocu6#ocp8"/>
+      </KOLink>
       <OKLink id="mov3#opm9#cru4#oln30" name="OKFlow30" to="mov3#opm9#okcu4" automaticCoupling="true"/>
     </CreateUnit>
     <GetUnit gr:x="345" gr:y="-80" id="mov3#opm9#gtu3" name="GetUser" contextParameters="UserCtxParam" linkOrder="mov3#opm9#gtu3#ln30">

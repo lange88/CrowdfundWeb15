@@ -6,11 +6,12 @@
       </Selector>
       <Link id="sv2#page18#dau4#ln55" name="Flow55" to="sv2#miu4" type="transport" validate="true">
         <LinkParameter id="sv2#page18#dau4#ln55#par101" name="oid_QuestionID" source="data.ent11#att14" target="sv2#miu4.mov1#opm4#icu4#icp17"/>
+        <LinkParameter id="sv2#page18#dau4#ln55#par125" name="QuestionToCampaign.oid_CampaignID" source="data.rel2#role7_ent10#att7" target="sv2#miu4.mov1#opm4#icu4#icp1"/>
       </Link>
     </DataUnit>
     <EntryUnit gr:x="95" gr:y="155" id="sv2#page18#enu7" name="Answer" linkOrder="sv2#page18#enu7#ln54">
       <Field id="sv2#page18#enu7#fld15" name="AnswerText" type="string" modifiable="true" contentType="text/plain"/>
-      <Link id="sv2#page18#enu7#ln54" name="Flow54" to="sv2#miu4" type="normal" validate="true">
+      <Link id="sv2#page18#enu7#ln54" name="Answer" to="sv2#miu4" type="normal" validate="true">
         <LinkParameter id="sv2#page18#enu7#ln54#par100" name="AnswerText_AnswerText" source="sv2#page18#enu7#fld15" target="sv2#miu4.mov1#opm4#icu4#icp19"/>
       </Link>
     </EntryUnit>

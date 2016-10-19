@@ -10,8 +10,10 @@
         <LinkParameter id="mov3#opm9#icu9#ln29#par37" name="Question_content" source="mov3#opm9#icu9#icp10" target="mov3#opm9#cru4.ent11#att25"/>
         <LinkParameter id="mov3#opm9#icu9#ln29#par50" name="_private" target="mov3#opm9#cru4.ent11#att19" source="mov3#opm9#icu9#icp15"/>
         <LinkParameter id="mov3#opm9#icu9#ln29#par56" name="CampaignOwner_User.oid(QuestionToUser_2)" source="mov3#opm9#icu9#icp14" target="mov3#opm9#cru4.rel9#role17.userOID"/>
+        <LinkParameter id="mov3#opm9#icu9#ln29#par127" name="CampaignID_Campaign.oid(QuestionToCampaign)" source="mov3#opm9#icu9#icp2" target="mov3#opm9#cru4.rel2#role7.ent10#att7"/>
       </Link>
       <InputCollectorParameter id="mov3#opm9#icu9#icp15" name="Private"/>
+      <InputCollectorParameter id="mov3#opm9#icu9#icp2" name="CampaignID"/>
     </InputCollectorUnit>
     <SelectorUnit gr:x="415" gr:y="165" id="mov3#opm9#seu6" name="Selector6" entity="ent11">
       <Selector id="mov3#opm9#seu6#su13" defaultPolicy="fill" booleanOperator="and">

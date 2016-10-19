@@ -1,26 +1,28 @@
 <OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="100" gr:y="140" id="mov1#opm4" name="AnswerQuestion">
   <OperationUnits>
-    <InputCollectorUnit id="mov1#opm4#icu4" gr:x="140" gr:y="220">
+    <InputCollectorUnit id="mov1#opm4#icu4" gr:x="140" gr:y="220" linkOrder="mov1#opm4#icu4#ln5">
       <InputCollectorParameter id="mov1#opm4#icu4#icp17" name="QuestionID"/>
       <InputCollectorParameter id="mov1#opm4#icu4#icp19" name="AnswerText"/>
       <OKLink id="mov1#opm4#icu4#oln39" name="OKFlow39" to="mov1#opm4#mfu2">
         <LinkParameter id="mov1#opm4#icu4#oln39#par104" name="AnswerText_answer" source="mov1#opm4#icu4#icp19" target="mov1#opm4#mfu2.ent11#att26"/>
         <LinkParameter id="mov1#opm4#icu4#oln39#par105" name="QuestionID_KeyCondition8 [oid]" source="mov1#opm4#icu4#icp17" target="mov1#opm4#mfu2#su27#kcond8.ent11#att14"/>
       </OKLink>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp1" name="CampaignID"/>
+      <Link id="mov1#opm4#icu4#ln5" name="Flow5" to="mov1#opm4#okcu6" type="transport" validate="true" gr:bendpoints="207,62,-233,22">
+        <LinkParameter id="mov1#opm4#icu4#ln5#par91" name="CampaignID_CampaignID" source="mov1#opm4#icu4#icp1" target="mov1#opm4#okcu6#ocp14"/>
+      </Link>
     </InputCollectorUnit>
     <ModifyUnit gr:x="415" gr:y="210" id="mov1#opm4#mfu2" name="UpdateQuestion" entity="ent11">
       <Selector id="mov1#opm4#mfu2#su27" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="mov1#opm4#mfu2#su27#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
       </Selector>
-      <OKLink id="mov1#opm4#mfu2#oln37" name="OKFlow37" to="mov1#opm4#okcu6">
-        <LinkParameter id="mov1#opm4#mfu2#oln37#par91" name="oid_QuestionID" source="ent11#att14Array" target="mov1#opm4#okcu6#ocp14"/>
-      </OKLink>
+      <OKLink id="mov1#opm4#mfu2#oln37" name="OKFlow37" to="mov1#opm4#okcu6"/>
       <KOLink id="mov1#opm4#mfu2#kln18" name="KOFlow18" to="mov1#opm4#kocu7">
         <LinkParameter id="mov1#opm4#mfu2#kln18#par92" name="Error saving answer_errorMessage" sourceValue="Error saving answer" target="mov1#opm4#kocu7#ocp13"/>
       </KOLink>
     </ModifyUnit>
     <OKCollectorUnit gr:x="580" gr:y="275" id="mov1#opm4#okcu6" name="OK Port6">
-      <OutputCollectorParameter id="mov1#opm4#okcu6#ocp14" name="QuestionID"/>
+      <OutputCollectorParameter id="mov1#opm4#okcu6#ocp14" name="CampaignID"/>
     </OKCollectorUnit>
     <KOCollectorUnit gr:x="580" gr:y="170" id="mov1#opm4#kocu7" name="KO Port7">
       <OutputCollectorParameter id="mov1#opm4#kocu7#ocp13" name="errorMessage"/>

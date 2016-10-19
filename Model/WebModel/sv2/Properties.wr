@@ -39,7 +39,9 @@
       <KOLink id="sv2#miu4#kln19" name="KOFlow19" to="sv2#page18#mssu5">
         <LinkParameter id="sv2#miu4#kln19#par103" name="errorMessage_Shown Messages" source="mov1#opm4#kocu7#ocp13" target="sv2#page18#mssu5.shownMessages"/>
       </KOLink>
-      <OKLink id="sv2#miu4#oln40" name="OKFlow40" to="sv2#page1" gr:bendpoints="-1102,-140,478,-300"/>
+      <OKLink id="sv2#miu4#oln40" name="OKFlow40" to="sv2#page13#dau2" gr:bendpoints="-604,-4,471,-74">
+        <LinkParameter id="sv2#miu4#oln40#par126" name="CampaignID_KeyCondition2 [oid]" source="mov1#opm4#okcu6#ocp14" target="sv2#page13#dau2#su4#kcond2.ent10#att7"/>
+      </OKLink>
     </ModuleInstanceUnit>
     <ModuleInstanceUnit gr:x="1305" gr:y="405" id="sv2#miu9" action="true" moduleId="mov1#mpkg3#opm10" linkOrder="sv2#miu9#ln53">
       <KOLink id="sv2#miu9#kln22" name="KOFlow22" to="sv2#page14#mssu6">

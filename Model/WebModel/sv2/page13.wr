@@ -10,6 +10,7 @@
       </Link>
       <Link id="sv2#page13#dau2#ln49" name="Flow49" to="sv2#page13#pwu5" type="transport" validate="true">
         <LinkParameter id="sv2#page13#dau2#ln49#par85" name="oid_current oid" source="data.ent10#att7" target="sv2#page13#pwu5.current.ent11#att14"/>
+        <LinkParameter id="sv2#page13#dau2#ln49#par15" name="oid_RoleCondition12 [oid]" source="data.ent10#att7" target="sv2#page13#pwu5#su2#rcond12.ent10#att7"/>
       </Link>
       <Link id="sv2#page13#dau2#ln42" name="Edit" to="sv2#page14#enu5" automaticCoupling="true" type="normal" validate="true"/>
     </DataUnit>
@@ -41,6 +42,9 @@
     <MultiMessageUnit gr:x="300" gr:y="45" id="sv2#page13#mssu3" name="Notification"/>
     <PowerIndexUnit gr:x="215" gr:y="185" id="sv2#page13#pwu5" name="Questions" sortable="true" checkable="false" useCountQuery="false" entity="ent11" displayAttributes="ent11#att19 ent11#att25 rel9#role17.userName" linkOrder="sv2#page13#pwu5#ln52">
       <Link id="sv2#page13#pwu5#ln52" name="Flow52" to="sv2#page18#dau4" automaticCoupling="true" type="normal" validate="true"/>
+      <Selector id="sv2#page13#pwu5#su2" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page13#pwu5#su2#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel2#role8"/>
+      </Selector>
     </PowerIndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">

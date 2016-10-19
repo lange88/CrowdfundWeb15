@@ -21,6 +21,7 @@
       <Link id="sv3#page9#dau5#ln35" name="Flow35" to="sv3#page9#mdu3" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="sv3#page9#dau5#ln36" name="Flow36" to="sv3#miu7" type="transport" validate="true">
         <LinkParameter id="sv3#page9#dau5#ln36#par66" name="CampaignToUser_Owner.oid_CampaignOwner" source="data.rel4#role4_userOID" target="sv3#miu7.mov3#opm9#icu9#icp14"/>
+        <LinkParameter id="sv3#page9#dau5#ln36#par128" name="oid_CampaignID" source="data.ent10#att7" target="sv3#miu7.mov3#opm9#icu9#icp2"/>
       </Link>
     </DataUnit>
   </ContentUnits>

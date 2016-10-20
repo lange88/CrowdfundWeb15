@@ -10,6 +10,7 @@
     <GetUnit gr:x="315" gr:y="10" id="sv3#page4#gtu8" name="GetUser" contextParameters="UserCtxParam">
       <Link id="sv3#page4#gtu8#ln41" name="Flow41" to="sv3#page4#inu3" type="transport" validate="true" automaticCoupling="true"/>
       <Link id="sv3#page4#gtu8#ln5" name="Flow5" to="sv3#page4#inu5" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv3#page4#gtu8#ln70" name="Flow70" to="sv3#page4#inu10" automaticCoupling="true" type="transport" validate="true"/>
     </GetUnit>
     <EntryUnit gr:x="310" gr:y="115" id="sv3#page4#enu5" name="Search" linkOrder="sv3#page4#enu5#ln9">
       <Field id="sv3#page4#enu5#fld14" name="Filter" type="string" modifiable="true" contentType="text/plain"/>
@@ -22,6 +23,12 @@
         <RelationshipRoleCondition id="sv3#page4#inu5#su2#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel5#role9.rel6#role11.rel1#role6.rel3#role1.rel3#role2"/>
         <RelationshipRoleCondition id="sv3#page4#inu5#su2#rcond15" name="RoleCondition15" predicate="notIn" implied="false" role="rel5#role9.rel6#role11.rel1#role6"/>
         <RelationshipRoleCondition id="sv3#page4#inu5#su2#rcond17" name="RoleCondition17" predicate="notIn" implied="false" role="rel4#role3"/>
+      </Selector>
+    </IndexUnit>
+    <IndexUnit gr:x="270" gr:y="250" id="sv3#page4#inu10" name="Suggestions from campaign owners" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10">
+      <Selector id="sv3#page4#inu10#su31" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page4#inu10#su31#rcond23" name="RoleCondition23" predicate="in" implied="false" role="rel11#role21.rel14#role27"/>
+        <RelationshipRoleCondition id="sv3#page4#inu10#su31#rcond24" name="RoleCondition24" predicate="notIn" implied="false" role="rel5#role9.rel6#role11.rel1#role6"/>
       </Selector>
     </IndexUnit>
   </ContentUnits>
@@ -78,6 +85,26 @@
           <layout:Attribute attribute="ent10#att11"/>
           <layout:Attribute attribute="ent10#att12"/>
           <layout:Attribute attribute="ent10#att13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page4#inu10">
+          <layout:Attribute attribute="ent10#att8"/>
+          <layout:Attribute attribute="ent10#att9"/>
+          <layout:Attribute attribute="ent10#att10"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

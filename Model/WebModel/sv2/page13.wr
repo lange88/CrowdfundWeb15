@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1030" gr:y="585" id="sv2#page13" name="Details campaign">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="970" gr:y="585" id="sv2#page13" name="Details campaign">
   <ContentUnits>
-    <DataUnit gr:x="0" gr:y="0" id="sv2#page13#dau2" name="Campaign Details" entity="ent10" displayAttributes="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" linkOrder="sv2#page13#dau2#ln42">
+    <DataUnit gr:x="60" gr:y="0" id="sv2#page13#dau2" name="Campaign Details" entity="ent10" displayAttributes="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" linkOrder="sv2#page13#dau2#ln42">
       <Selector id="sv2#page13#dau2#su4" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#page13#dau2#su4#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
       </Selector>
@@ -13,8 +13,12 @@
         <LinkParameter id="sv2#page13#dau2#ln49#par15" name="oid_RoleCondition12 [oid]" source="data.ent10#att7" target="sv2#page13#pwu5#su2#rcond12.ent10#att7"/>
       </Link>
       <Link id="sv2#page13#dau2#ln42" name="Edit" to="sv2#page14#enu5" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page13#dau2#ln16" name="Flow16" to="sv2#page13#inu8" type="transport" validate="true" automaticCoupling="true"/>
+      <Link id="sv2#page13#dau2#ln68" name="Flow68" to="sv2#miu10" type="transport" validate="true">
+        <LinkParameter id="sv2#page13#dau2#ln68#par142" name="oid_CampaignId" source="data.ent10#att7" target="sv2#miu10.mov1#opm1#icu1#icp33"/>
+      </Link>
     </DataUnit>
-    <IndexUnit gr:x="5" gr:y="380" id="sv2#page13#inu3" name="Contibutions list" entity="ent7" displayAttributes="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" linkOrder="sv2#page13#inu3#ln7 sv2#page13#inu3#ln38">
+    <IndexUnit gr:x="65" gr:y="380" id="sv2#page13#inu3" name="Contibutions list" entity="ent7" displayAttributes="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" linkOrder="sv2#page13#inu3#ln7 sv2#page13#inu3#ln38">
       <Link id="sv2#page13#inu3#ln7" name="Edit" to="sv2#page17#enu6" type="normal" validate="true">
         <LinkParameter id="sv2#page13#inu3#ln7#par96" name="oid_Key Condition [oid]" source="data[].ent7#att1" target="sv2#page17#enu6.ent7#att1"/>
         <LinkParameter id="sv2#page13#inu3#ln7#par97" name="ContributionToCampaign.oid_PASSING" source="data[].rel1#role6_ent10#att7" passing="true"/>
@@ -26,7 +30,7 @@
         <LinkParameter id="sv2#page13#inu3#ln38#par76" name="oid_Contribution Key" source="data[].ent7#att1" target="sv2#miu2.mov1#mpkg1#opm8#icu8#icp18"/>
       </Link>
     </IndexUnit>
-    <EntryUnit gr:x="305" gr:y="385" id="sv2#page13#enu3" name="New contribution" entity="ent7" linkOrder="sv2#page13#enu3#ln19">
+    <EntryUnit gr:x="365" gr:y="385" id="sv2#page13#enu3" name="New contribution" entity="ent7" linkOrder="sv2#page13#enu3#ln19">
       <Field id="sv2#page13#enu3#fld6" name="Title" type="string" modifiable="true" attribute="ent7#att2"/>
       <Field id="sv2#page13#enu3#fld7" name="Description" type="string" modifiable="true" attribute="ent7#att3"/>
       <Field id="sv2#page13#enu3#fld8" name="Max pledges" type="integer" modifiable="true" attribute="ent7#att18"/>
@@ -39,13 +43,29 @@
       </Link>
       <VRules/>
     </EntryUnit>
-    <MultiMessageUnit gr:x="300" gr:y="45" id="sv2#page13#mssu3" name="Notification"/>
-    <PowerIndexUnit gr:x="215" gr:y="185" id="sv2#page13#pwu5" name="Questions" sortable="true" checkable="false" useCountQuery="false" entity="ent11" displayAttributes="ent11#att19 ent11#att25 rel9#role17.userName ent11#att26" linkOrder="sv2#page13#pwu5#ln52">
+    <MultiMessageUnit gr:x="360" gr:y="45" id="sv2#page13#mssu3" name="Notification"/>
+    <PowerIndexUnit gr:x="275" gr:y="185" id="sv2#page13#pwu5" name="Questions" sortable="true" checkable="false" useCountQuery="false" entity="ent11" displayAttributes="ent11#att19 ent11#att25 rel9#role17.userName ent11#att26" linkOrder="sv2#page13#pwu5#ln52">
       <Link id="sv2#page13#pwu5#ln52" name="Answer" to="sv2#page18#dau4" automaticCoupling="true" type="normal" validate="true"/>
       <Selector id="sv2#page13#pwu5#su2" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#page13#pwu5#su2#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel2#role8"/>
       </Selector>
     </PowerIndexUnit>
+    <IndexUnit gr:x="220" gr:y="500" id="sv2#page13#inu8" name="Recommended supporters" entity="User" displayAttributes="userName email" linkOrder="sv2#page13#inu8#ln65">
+      <Selector id="sv2#page13#inu8#su29" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page13#inu8#su29#rcond19" name="RoleCondition19" predicate="in" implied="false" role="rel3#role1.rel3#role2.rel1#role5.rel6#role12.rel5#role10"/>
+        <KeyCondition id="sv2#page13#inu8#su29#kcond10" name="KeyCondition10" predicate="notIn" implied="false"/>
+        <RelationshipRoleCondition id="sv2#page13#inu8#su29#rcond25" name="RoleCondition25" predicate="notIn" implied="false" role="rel14#role28.rel11#role22"/>
+      </Selector>
+      <Link id="sv2#page13#inu8#ln65" name="Suggest this campaign" to="sv2#miu10" type="normal" validate="true">
+        <LinkParameter id="sv2#page13#inu8#ln65#par137" name="oid_SupporterId" source="data[].userOID" target="sv2#miu10.mov1#opm1#icu1#icp3"/>
+      </Link>
+    </IndexUnit>
+    <GetUnit gr:x="0" gr:y="545" id="sv2#page13#gtu7" name="GetUser" contextParameters="UserCtxParam">
+      <Link id="sv2#page13#gtu7#ln56" name="Flow56" to="sv2#page13#inu8" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#page13#gtu7#ln67" name="Flow67" to="sv2#miu10" type="transport" validate="true">
+        <LinkParameter id="sv2#page13#gtu7#ln67#par143" name="UserCtxParam.oid_CampaignerId" source="sv2#page13#gtu7.UserCtxParam" target="sv2#miu10.mov1#opm1#icu1#icp32"/>
+      </Link>
+    </GetUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -107,6 +127,40 @@
           <layout:Attribute attribute="ent11#att26"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page13#inu8">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Link link="sv2#page13#inu8#ln65"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

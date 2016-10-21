@@ -8,13 +8,15 @@
         <LinkParameter id="mov2#opm3#icu3#ln2#par1" name="userEmail_email" source="mov2#opm3#icu3#icp4" target="mov2#opm3#cru1.email"/>
         <LinkParameter id="mov2#opm3#icu3#ln2#par2" name="userPassword_password" source="mov2#opm3#icu3#icp7" target="mov2#opm3#cru1.password"/>
         <LinkParameter id="mov2#opm3#icu3#ln2#par3" name="userName_userName" source="mov2#opm3#icu3#icp8" target="mov2#opm3#cru1.userName"/>
+        <LinkParameter id="mov2#opm3#icu3#ln2#par144" name="1_Group.oid(defaultGroup)" sourceValue="1" target="mov2#opm3#cru1.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="mov2#opm3#icu3#ln2#par145" name="1,2_Group.oid(groups)" sourceValue="1,2" target="mov2#opm3#cru1.User2Group.groupOID"/>
       </Link>
       <OKLink id="mov2#opm3#icu3#oln4" name="OKFlow5" to="mov2#opm3#seu2">
         <LinkParameter id="mov2#opm3#icu3#oln4#par4" name="userEmail_AttCondition1" source="mov2#opm3#icu3#icp4" target="mov2#opm3#seu2#su3#acond2"/>
       </OKLink>
     </InputCollectorUnit>
-    <OKCollectorUnit id="mov2#opm3#okcu2" name="Registered" gr:x="605" gr:y="55"/>
-    <KOCollectorUnit id="mov2#opm3#kocu3" name="Error" gr:x="605" gr:y="210">
+    <OKCollectorUnit id="mov2#opm3#okcu2" name="Registered" gr:x="1145" gr:y="55"/>
+    <KOCollectorUnit id="mov2#opm3#kocu3" name="Error" gr:x="1145" gr:y="210">
       <OutputCollectorParameter id="mov2#opm3#kocu3#ocp3" name="errorMessage"/>
     </KOCollectorUnit>
     <IsNotNullUnit id="mov2#opm3#inn2" name="User exists?" gr:x="350" gr:y="205">
@@ -23,11 +25,12 @@
         <LinkParameter id="mov2#opm3#inn2#oln5#par5" name="A user with this email already exists_errorMessage" target="mov2#opm3#kocu3#ocp3" sourceValue="A user with this email already exists"/>
       </OKLink>
     </IsNotNullUnit>
-    <CreateUnit id="mov2#opm3#cru1" name="CreateUser" gr:x="430" gr:y="65" entity="User">
+    <CreateUnit id="mov2#opm3#cru1" name="CreateUser" gr:x="430" gr:y="65" entity="User" linkOrder="mov2#opm3#cru1#ln78">
       <OKLink id="mov2#opm3#cru1#oln6" name="OKFlow2" to="mov2#opm3#okcu2" automaticCoupling="true"/>
       <KOLink id="mov2#opm3#cru1#kln7" name="KOFlow2" to="mov2#opm3#kocu3">
         <LinkParameter id="mov2#opm3#cru1#kln7#par6" name="User could not be created_errorMessage" target="mov2#opm3#kocu3#ocp3" sourceValue="User could not be created"/>
       </KOLink>
+      <Link id="mov2#opm3#cru1#ln78" name="Flow78" to="mov2#opm3#cnu3" automaticCoupling="true" type="transport" validate="true"/>
     </CreateUnit>
     <SelectorUnit id="mov2#opm3#seu2" name="GetUser" gr:x="375" gr:y="350" entity="User" distinctAttributes="userOID">
       <Selector id="mov2#opm3#seu2#su3" defaultPolicy="fill" booleanOperator="and">
@@ -37,5 +40,16 @@
         <LinkParameter id="mov2#opm3#seu2#oln8#par11" name="oid_Input" source="userOIDArray" target="mov2#opm3#inn2.isnotnull"/>
       </OKLink>
     </SelectorUnit>
+    <SelectorUnit gr:x="600" gr:y="410" id="mov2#opm3#seu9" name="Selector9" entity="Group" linkOrder="mov2#opm3#seu9#ln76">
+      <Link id="mov2#opm3#seu9#ln76" name="Flow76" to="mov2#opm3#cnu3" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+    <ConnectUnit gr:x="780" gr:y="320" id="mov2#opm3#cnu3" name="Connect user to groups" relationship="User2Group">
+      <SourceSelector id="mov2#opm3#cnu3#su38" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm3#cnu3#su38#kcond21" name="KeyCondition21" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov2#opm3#cnu3#su39" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm3#cnu3#su39#kcond22" name="KeyCondition22" predicate="in" implied="false"/>
+      </TargetSelector>
+    </ConnectUnit>
   </OperationUnits>
 </OperationModule>

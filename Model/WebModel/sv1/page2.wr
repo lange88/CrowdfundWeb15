@@ -5,9 +5,9 @@
       <Field id="sv1#page2#enu1#fld2" name="Email" type="string" contentType="text/plain" modifiable="true"/>
       <Field id="sv1#page2#enu1#fld1" name="Username" type="string" contentType="text/plain" modifiable="true"/>
       <Link id="sv1#page2#enu1#ln10" name="Register" to="sv1#miu3" type="normal" validate="true">
-        <LinkParameter id="sv1#page2#enu1#ln10#par8" name="Email_userEmail" source="sv1#page2#enu1#fld2" target="sv1#miu3.mov1#mpkg3#opm6#icu6#icp20"/>
-        <LinkParameter id="sv1#page2#enu1#ln10#par9" name="Password_userName" source="sv1#page2#enu1#fld1" target="sv1#miu3.mov1#mpkg3#opm6#icu6#icp22"/>
-        <LinkParameter id="sv1#page2#enu1#ln10#par10" name="Username_userPassword" source="sv1#page2#enu1#fld3" target="sv1#miu3.mov1#mpkg3#opm6#icu6#icp21"/>
+        <LinkParameter id="sv1#page2#enu1#ln10#par129" name="Email_userEmail" source="sv1#page2#enu1#fld2" target="sv1#miu3.mov2#opm3#icu3#icp4"/>
+        <LinkParameter id="sv1#page2#enu1#ln10#par132" name="Username_userName" source="sv1#page2#enu1#fld1" target="sv1#miu3.mov2#opm3#icu3#icp8"/>
+        <LinkParameter id="sv1#page2#enu1#ln10#par141" name="Password_userPassword" source="sv1#page2#enu1#fld3" target="sv1#miu3.mov2#opm3#icu3#icp7"/>
       </Link>
     </EntryUnit>
     <MultiMessageUnit gr:x="15" gr:y="110" id="sv1#page2#mssu1" name="errorMessage"/>

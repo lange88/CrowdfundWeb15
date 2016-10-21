@@ -35,7 +35,7 @@
       <Field id="sv2#page13#enu3#fld6" name="Title" type="string" modifiable="true" attribute="ent7#att2"/>
       <Field id="sv2#page13#enu3#fld7" name="Description" type="string" modifiable="true" attribute="ent7#att3"/>
       <Field id="sv2#page13#enu3#fld8" name="Max pledges" type="integer" modifiable="true" attribute="ent7#att18"/>
-      <Field id="sv2#page13#enu3#fld9" name="Min_amount" type="decimal" modifiable="true" attribute="ent7#att4"/>
+      <Field id="sv2#page13#enu3#fld9" name="Minimum amount" type="decimal" modifiable="true" attribute="ent7#att4"/>
       <Link id="sv2#page13#enu3#ln19" name="Create" to="sv2#miu6" type="normal" validate="true">
         <LinkParameter id="sv2#page13#enu3#ln19#par51" name="Description_description" source="sv2#page13#enu3#fld7" target="sv2#miu6.mov1#mpkg1#opm7#icu7#icp24"/>
         <LinkParameter id="sv2#page13#enu3#ln19#par52" name="Max pledges_max_pledges" source="sv2#page13#enu3#fld8" target="sv2#miu6.mov1#mpkg1#opm7#icu7#icp25"/>

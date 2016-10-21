@@ -69,7 +69,7 @@
     <Attribute id="ent10#att12" name="popularity" type="decimal" derivationQuery="calculated::sum(Self.rel1#role5(as Var1).rel6#role12(as Var2).ent1#att17)" db:table="campaign_popularity_view" db:column="der_attr" storageType="file">
       <db:JoinColumn attribute="ent10#att7" name="oid"/>
     </Attribute>
-    <Attribute id="ent10#att13" name="quality" type="integer" derivationQuery="calculated::count(Self.rel7#role14(as Var1))" db:table="campaign_quality_view" db:column="der_attr" storageType="file">
+    <Attribute id="ent10#att13" name="quality" type="integer" derivationQuery="calculated::count(Self.rel7#role14(as Var1))" storageType="file" db:table="campaign_quality_view" db:column="der_attr">
       <db:JoinColumn attribute="ent10#att7" name="oid"/>
     </Attribute>
     <Attribute id="ent10#att27" name="progress" type="decimal" derivationQuery="calculated::sum(Self.rel1#role5(as Var1).rel6#role12(as Var2).ent1#att17)" db:table="campaign_progress_view" db:column="der_attr" storageType="file">

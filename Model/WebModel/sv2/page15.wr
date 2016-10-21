@@ -14,11 +14,14 @@
         <LinkParameter id="sv2#page15#enu8#ln74#par157" name="Username_username" source="sv2#page15#enu8#fld22" target="sv2#miu11.mov2#opm11#icu11#icp35"/>
       </Link>
     </EntryUnit>
-    <PowerIndexUnit gr:x="145" gr:y="0" id="sv2#page15#pwu3" name="Payment Information" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att21" linkOrder="sv2#page15#pwu3#ln72">
+    <PowerIndexUnit gr:x="145" gr:y="0" id="sv2#page15#pwu3" name="Payment Information" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att21" linkOrder="sv2#page15#pwu3#ln72 sv2#page15#pwu3#ln75">
       <Selector id="sv2#page15#pwu3#su32" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#page15#pwu3#su32#rcond18" name="RoleCondition18" role="rel10#role20" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv2#page15#pwu3#ln72" name="Edit" to="sv2#page16#enu9" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page15#pwu3#ln75" name="Delete" to="sv2#miu17" type="normal" validate="true">
+        <LinkParameter id="sv2#page15#pwu3#ln75#par161" name="oid_oid" source="data[].ent2#att20" target="sv2#miu17.mov2#opm14#icu14#icp39"/>
+      </Link>
     </PowerIndexUnit>
     <MultiMessageUnit gr:x="25" gr:y="115" id="sv2#page15#mssu7" name="ErrorMessage"/>
     <EntryUnit gr:x="150" gr:y="130" id="sv2#page15#enu10" name="Add Payment Information" entity="ent2" linkOrder="sv2#page15#enu10#ln83">
@@ -62,6 +65,7 @@
         <layout:Unit unitId="sv2#page15#pwu3">
           <layout:Attribute attribute="ent2#att21"/>
           <layout:Link link="sv2#page15#pwu3#ln72"/>
+          <layout:Link link="sv2#page15#pwu3#ln75"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

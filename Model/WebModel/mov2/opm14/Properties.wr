@@ -1,0 +1,23 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="145" gr:y="445" id="mov2#opm14" name="DeletePaymentInformation">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm14#icu14" gr:x="25" gr:y="95">
+      <InputCollectorParameter id="mov2#opm14#icu14#icp39" name="oid"/>
+      <OKLink id="mov2#opm14#icu14#oln53" name="OKFlow53" to="mov2#opm14#dlu2">
+        <LinkParameter id="mov2#opm14#icu14#oln53#par160" name="oid_KeyCondition19 [oid]" source="mov2#opm14#icu14#icp39" target="mov2#opm14#dlu2#su36#kcond19.ent2#att20"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <DeleteUnit gr:x="315" gr:y="60" id="mov2#opm14#dlu2" name="DeletePaymentInformation" entity="ent2">
+      <Selector id="mov2#opm14#dlu2#su36" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm14#dlu2#su36#kcond19" name="KeyCondition19" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm14#dlu2#oln54" name="OKFlow54" to="mov2#opm14#okcu12" automaticCoupling="true"/>
+      <KOLink id="mov2#opm14#dlu2#kln27" name="KOFlow27" to="mov2#opm14#kocu13">
+        <LinkParameter id="mov2#opm14#dlu2#kln27#par163" name="Error occured while deleting payment information._ErrorMessage" sourceValue="Error occured while deleting payment information." target="mov2#opm14#kocu13#ocp22"/>
+      </KOLink>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="545" gr:y="140" id="mov2#opm14#okcu12" name="OK Port12"/>
+    <KOCollectorUnit gr:x="545" gr:y="40" id="mov2#opm14#kocu13" name="KO Port13">
+      <OutputCollectorParameter id="mov2#opm14#kocu13#ocp22" name="ErrorMessage"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

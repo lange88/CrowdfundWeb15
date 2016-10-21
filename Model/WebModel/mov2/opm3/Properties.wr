@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm3" name="RegistrationAction" gr:x="325" gr:y="485">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm3" name="RegistrationAction" gr:x="145" gr:y="175">
   <OperationUnits>
     <InputCollectorUnit id="mov2#opm3#icu3" gr:x="0" gr:y="150">
       <InputCollectorParameter id="mov2#opm3#icu3#icp4" name="userEmail"/>

@@ -1,0 +1,129 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="400" gr:y="1035" id="sv2#page15" name="User Details">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="10" id="sv2#page15#enu8" name="User information" entity="User" linkOrder="sv2#page15#enu8#ln74">
+      <Field id="sv2#page15#enu8#fld22" name="Username" type="string" modifiable="true" attribute="userName"/>
+      <Field id="sv2#page15#enu8#fld23" name="Password" type="password" modifiable="true" attribute="password"/>
+      <Field id="sv2#page15#enu8#fld24" name="Birthdate" type="date" modifiable="true" attribute="User#att22"/>
+      <Field id="sv2#page15#enu8#fld25" name="Email" type="string" modifiable="true" attribute="email"/>
+      <Link id="sv2#page15#enu8#ln71" name="Flow71" to="sv2#page15#pwu3" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#page15#enu8#ln74" name="Update" to="sv2#miu11" type="normal" validate="true">
+        <LinkParameter id="sv2#page15#enu8#ln74#par153" name="Birthdate_birthdate" source="sv2#page15#enu8#fld24" target="sv2#miu11.mov2#opm11#icu11#icp38"/>
+        <LinkParameter id="sv2#page15#enu8#ln74#par154" name="Email_email" source="sv2#page15#enu8#fld25" target="sv2#miu11.mov2#opm11#icu11#icp37"/>
+        <LinkParameter id="sv2#page15#enu8#ln74#par155" name="Key [oid]_oid" source="key.userOID" target="sv2#miu11.mov2#opm11#icu11#icp34"/>
+        <LinkParameter id="sv2#page15#enu8#ln74#par156" name="Password_password" source="sv2#page15#enu8#fld23" target="sv2#miu11.mov2#opm11#icu11#icp36"/>
+        <LinkParameter id="sv2#page15#enu8#ln74#par157" name="Username_username" source="sv2#page15#enu8#fld22" target="sv2#miu11.mov2#opm11#icu11#icp35"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="145" gr:y="0" id="sv2#page15#pwu3" name="Payment Information" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att21" linkOrder="sv2#page15#pwu3#ln72">
+      <Selector id="sv2#page15#pwu3#su32" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page15#pwu3#su32#rcond18" name="RoleCondition18" role="rel10#role20" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page15#pwu3#ln72" name="Edit" to="sv2#page16#enu9" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+    <MultiMessageUnit gr:x="25" gr:y="115" id="sv2#page15#mssu7" name="ErrorMessage"/>
+    <EntryUnit gr:x="150" gr:y="130" id="sv2#page15#enu10" name="Add Payment Information" entity="ent2" linkOrder="sv2#page15#enu10#ln83">
+      <Field id="sv2#page15#enu10#fld27" name="Data" type="string" modifiable="true"/>
+      <Link id="sv2#page15#enu10#ln83" name="Add" to="sv2#miu13" type="normal" validate="true" gr:bendpoints="143,-145,-42,220">
+        <LinkParameter id="sv2#page15#enu10#ln83#par180" name="Data_data" source="sv2#page15#enu10#fld27" target="sv2#miu13.mov2#opm13#icu13#icp41"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit gr:x="325" gr:y="130" id="sv2#page15#gtu11" name="GetUser" contextParameters="UserCtxParam">
+      <Link id="sv2#page15#gtu11#ln84" name="Flow84" to="sv2#miu13" type="transport" validate="true">
+        <LinkParameter id="sv2#page15#gtu11#ln84#par184" name="UserCtxParam.oid_userID" source="sv2#page15#gtu11.UserCtxParam" target="sv2#miu13.mov2#opm13#icu13#icp42"/>
+      </Link>
+      <Link id="sv2#page15#gtu11#ln85" name="Flow85" to="sv2#page15#enu8" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page15#enu8">
+          <layout:Field field="sv2#page15#enu8#fld22"/>
+          <layout:Field field="sv2#page15#enu8#fld23"/>
+          <layout:Field field="sv2#page15#enu8#fld24"/>
+          <layout:Field field="sv2#page15#enu8#fld25"/>
+          <layout:Link link="sv2#page15#enu8#ln74"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page15#pwu3">
+          <layout:Attribute attribute="ent2#att21"/>
+          <layout:Link link="sv2#page15#pwu3#ln72"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page15#mssu7"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page15#enu10">
+          <layout:Field field="sv2#page15#enu10#fld27"/>
+          <layout:Link link="sv2#page15#enu10#ln83"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

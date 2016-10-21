@@ -1,0 +1,129 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page19" name="User Details" gr:x="1765" gr:y="50">
+  <ContentUnits>
+    <EntryUnit id="sv3#page19#enu11" name="User information" linkOrder="sv3#page19#enu11#ln87" gr:x="0" gr:y="10" entity="User">
+      <Field id="sv3#page19#enu11#fld28" name="Username" type="string" modifiable="true" attribute="userName"/>
+      <Field id="sv3#page19#enu11#fld29" name="Password" type="password" modifiable="true" attribute="password"/>
+      <Field id="sv3#page19#enu11#fld30" name="Birthdate" type="date" modifiable="true" attribute="User#att22"/>
+      <Field id="sv3#page19#enu11#fld31" name="Email" type="string" modifiable="true" attribute="email"/>
+      <Link id="sv3#page19#enu11#ln86" name="Flow71" to="sv3#page19#pwu4" type="transport" automaticCoupling="true" validate="true"/>
+      <Link id="sv3#page19#enu11#ln87" name="Update" to="sv3#miu14" type="normal" validate="true" gr:bendpoints="-130,144,-30,-166">
+        <LinkParameter id="sv3#page19#enu11#ln87#par195" name="Birthdate_birthdate" source="sv3#page19#enu11#fld30" target="sv3#miu14.mov2#opm11#icu11#icp38"/>
+        <LinkParameter id="sv3#page19#enu11#ln87#par196" name="Email_email" source="sv3#page19#enu11#fld31" target="sv3#miu14.mov2#opm11#icu11#icp37"/>
+        <LinkParameter id="sv3#page19#enu11#ln87#par197" name="Key [oid]_oid" source="key.userOID" target="sv3#miu14.mov2#opm11#icu11#icp34"/>
+        <LinkParameter id="sv3#page19#enu11#ln87#par198" name="Password_password" source="sv3#page19#enu11#fld29" target="sv3#miu14.mov2#opm11#icu11#icp36"/>
+        <LinkParameter id="sv3#page19#enu11#ln87#par199" name="Username_username" source="sv3#page19#enu11#fld28" target="sv3#miu14.mov2#opm11#icu11#icp35"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit id="sv3#page19#pwu4" name="Payment Information" linkOrder="sv3#page19#pwu4#ln88" gr:x="145" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att21">
+      <Selector id="sv3#page19#pwu4#su35" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page19#pwu4#su35#rcond26" name="RoleCondition18" role="rel10#role20" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv3#page19#pwu4#ln88" name="Edit" to="sv3#page22#enu13" type="normal" automaticCoupling="true" validate="true"/>
+    </PowerIndexUnit>
+    <MultiMessageUnit id="sv3#page19#mssu9" name="ErrorMessage" gr:x="25" gr:y="115"/>
+    <EntryUnit id="sv3#page19#enu12" name="Add Payment Information" linkOrder="sv3#page19#enu12#ln89" gr:x="150" gr:y="130" entity="ent2">
+      <Field id="sv3#page19#enu12#fld32" name="Data" type="string" modifiable="true"/>
+      <Link id="sv3#page19#enu12#ln89" name="Add" to="sv3#miu15" type="normal" validate="true" gr:bendpoints="143,-145,-42,220">
+        <LinkParameter id="sv3#page19#enu12#ln89#par200" name="Data_data" source="sv3#page19#enu12#fld32" target="sv3#miu15.mov2#opm13#icu13#icp41"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit id="sv3#page19#gtu12" name="GetUser" gr:x="325" gr:y="130" contextParameters="UserCtxParam">
+      <Link id="sv3#page19#gtu12#ln90" name="Flow84" to="sv3#miu15" type="transport" validate="true">
+        <LinkParameter id="sv3#page19#gtu12#ln90#par201" name="UserCtxParam.oid_userID" source="sv3#page19#gtu12.UserCtxParam" target="sv3#miu15.mov2#opm13#icu13#icp42"/>
+      </Link>
+      <Link id="sv3#page19#gtu12#ln91" name="Flow85" to="sv3#page19#enu11" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page19#enu11">
+          <layout:Field field="sv3#page19#enu11#fld28"/>
+          <layout:Field field="sv3#page19#enu11#fld29"/>
+          <layout:Field field="sv3#page19#enu11#fld30"/>
+          <layout:Field field="sv3#page19#enu11#fld31"/>
+          <layout:Link link="sv3#page19#enu11#ln87"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page19#pwu4">
+          <layout:Attribute attribute="ent2#att21"/>
+          <layout:Link link="sv3#page19#pwu4#ln88"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page19#mssu9"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page19#enu12">
+          <layout:Field field="sv3#page19#enu12#fld32"/>
+          <layout:Link link="sv3#page19#enu12#ln89"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

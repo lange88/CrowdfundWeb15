@@ -1,0 +1,25 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="145" gr:y="310" id="mov2#opm12" name="UpdatePaymentDetails">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm12#icu12" gr:x="30" gr:y="145">
+      <InputCollectorParameter id="mov2#opm12#icu12#icp44" name="data"/>
+      <InputCollectorParameter id="mov2#opm12#icu12#icp43" name="oid"/>
+      <OKLink id="mov2#opm12#icu12#oln61" name="OKFlow61" to="mov2#opm12#mfu5">
+        <LinkParameter id="mov2#opm12#icu12#oln61#par189" name="data_data" source="mov2#opm12#icu12#icp44" target="mov2#opm12#mfu5.ent2#att21"/>
+        <LinkParameter id="mov2#opm12#icu12#oln61#par190" name="oid_KeyCondition18 [oid]" source="mov2#opm12#icu12#icp43" target="mov2#opm12#mfu5#su34#kcond18.ent2#att20"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <ModifyUnit gr:x="330" gr:y="130" id="mov2#opm12#mfu5" name="UpdatePaymentInformation" entity="ent2">
+      <Selector id="mov2#opm12#mfu5#su34" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm12#mfu5#su34#kcond18" name="KeyCondition18" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm12#mfu5#oln56" name="OKFlow56" to="mov2#opm12#okcu10"/>
+      <KOLink id="mov2#opm12#mfu5#kln29" name="KOFlow29" to="mov2#opm12#kocu11">
+        <LinkParameter id="mov2#opm12#mfu5#kln29#par167" name="Error updating PaymentInformation._errorMessage" sourceValue="Error updating PaymentInformation." target="mov2#opm12#kocu11#ocp23"/>
+      </KOLink>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="605" gr:y="190" id="mov2#opm12#okcu10" name="OK Port10"/>
+    <KOCollectorUnit gr:x="605" gr:y="85" id="mov2#opm12#kocu11" name="KO Port11">
+      <OutputCollectorParameter id="mov2#opm12#kocu11#ocp23" name="errorMessage"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,22 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="145" gr:y="380" id="mov2#opm13" name="CreatePaymentDetails">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm13#icu13" gr:x="30" gr:y="50">
+      <InputCollectorParameter id="mov2#opm13#icu13#icp41" name="data"/>
+      <OKLink id="mov2#opm13#icu13#oln58" name="OKFlow58" to="mov2#opm13#cru7">
+        <LinkParameter id="mov2#opm13#icu13#oln58#par176" name="data_data" source="mov2#opm13#icu13#icp41" target="mov2#opm13#cru7.ent2#att21"/>
+        <LinkParameter id="mov2#opm13#icu13#oln58#par183" name="userID_User.oid(PaymentInformationToUser)" source="mov2#opm13#icu13#icp42" target="mov2#opm13#cru7.rel10#role19.userOID"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm13#icu13#icp42" name="userID"/>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="310" gr:y="50" id="mov2#opm13#cru7" name="CreatePaymentInformation" entity="ent2">
+      <OKLink id="mov2#opm13#cru7#oln59" name="OKFlow59" to="mov2#opm13#okcu11"/>
+      <KOLink id="mov2#opm13#cru7#kln31" name="KOFlow31" to="mov2#opm13#kocu12">
+        <LinkParameter id="mov2#opm13#cru7#kln31#par177" name="Error creating PaymentInformation._errorMessage" sourceValue="Error creating PaymentInformation." target="mov2#opm13#kocu12#ocp26"/>
+      </KOLink>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="525" gr:y="90" id="mov2#opm13#okcu11" name="OK Port11"/>
+    <KOCollectorUnit gr:x="525" gr:y="5" id="mov2#opm13#kocu12" name="KO Port12">
+      <OutputCollectorParameter id="mov2#opm13#kocu12#ocp26" name="errorMessage"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

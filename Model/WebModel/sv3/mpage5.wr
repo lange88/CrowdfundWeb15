@@ -9,11 +9,12 @@
         <LinkParameter id="sv3#mpage5#gtu10#ln59#par72" name="GroupCtxParam.oid_KeyCondition11 [oid]" source="sv3#mpage5#gtu10.GroupCtxParam" target="sv3#mpage5#inu9#su22#kcond13.groupOID"/>
       </Link>
     </GetUnit>
-    <DataUnit id="sv3#mpage5#dau11" name="Username" linkOrder="sv3#mpage5#dau11#ln60" gr:showAllParts="false" gr:x="365" gr:y="0" entity="User" displayAttributes="userName">
+    <DataUnit id="sv3#mpage5#dau11" name="Username" linkOrder="sv3#mpage5#dau11#ln60 sv3#mpage5#dau11#ln93" gr:showAllParts="false" gr:x="365" gr:y="0" entity="User" displayAttributes="userName">
       <Selector id="sv3#mpage5#dau11#su21" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mpage5#dau11#su21#kcond12" name="KeyCondition7" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv3#mpage5#dau11#ln60" name="Logout" to="sv3#lou4" type="normal" validate="true"/>
+      <Link id="sv3#mpage5#dau11#ln93" name="Edit Account" to="sv3#page19" automaticCoupling="true" type="normal" validate="true"/>
     </DataUnit>
     <IndexUnit id="sv3#mpage5#inu9" name="Change perspective" linkOrder="sv3#mpage5#inu9#ln61" customDescriptor="false" gr:x="280" gr:y="180" entity="Group" displayAttributes="groupName">
       <Link id="sv3#mpage5#inu9#ln61" name="Flow47" to="sv3#cgu7" type="normal" validate="true">
@@ -46,8 +47,9 @@
               <layout:Cell colspan="4">
                 <layout:Unit unitId="sv3#mpage5#dau11" layout:frameLayout="None" layout:unitLayout="WRDefault/User">
                   <layout:Attribute attribute="userName"/>
-                  <layout:Link link="sv3#mpage5#dau11#ln60"/>
                   <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+                  <layout:Link link="sv3#mpage5#dau11#ln60"/>
+                  <layout:Link link="sv3#mpage5#dau11#ln93"/>
                 </layout:Unit>
               </layout:Cell>
               <layout:Cell/>

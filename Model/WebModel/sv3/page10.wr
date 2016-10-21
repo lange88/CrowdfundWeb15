@@ -1,9 +1,9 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="870" gr:y="35" id="sv3#page10" name="View Questions" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="785" gr:y="-150" id="sv3#page10" name="View Questions" landmark="true">
   <ContentUnits>
     <GetUnit gr:x="0" gr:y="0" id="sv3#page10#gtu6" name="GetUser" contextParameters="UserCtxParam">
       <Link id="sv3#page10#gtu6#ln37" name="Flow37" to="sv3#page10#mdu2" automaticCoupling="true" type="transport" validate="true"/>
     </GetUnit>
-    <MultiDataUnit gr:x="205" gr:y="110" id="sv3#page10#mdu2" name="MultipleDetails2" entity="ent11" displayAttributes="ent11#att19 ent11#att25 ent11#att26">
+    <MultiDataUnit gr:x="205" gr:y="110" id="sv3#page10#mdu2" name="Your questions" entity="ent11" displayAttributes="ent11#att19 ent11#att25 ent11#att26">
       <Selector id="sv3#page10#mdu2#su15" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page10#mdu2#su15#rcond9" name="RoleCondition9" predicate="in" implied="false" role="rel8#role15"/>
       </Selector>

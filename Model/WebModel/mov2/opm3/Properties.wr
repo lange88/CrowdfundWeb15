@@ -9,7 +9,7 @@
         <LinkParameter id="mov2#opm3#icu3#ln2#par2" name="userPassword_password" source="mov2#opm3#icu3#icp7" target="mov2#opm3#cru1.password"/>
         <LinkParameter id="mov2#opm3#icu3#ln2#par3" name="userName_userName" source="mov2#opm3#icu3#icp8" target="mov2#opm3#cru1.userName"/>
         <LinkParameter id="mov2#opm3#icu3#ln2#par144" name="1_Group.oid(defaultGroup)" sourceValue="1" target="mov2#opm3#cru1.User2DefaultGroup.groupOID"/>
-        <LinkParameter id="mov2#opm3#icu3#ln2#par145" name="1,2_Group.oid(groups)" sourceValue="1,2" target="mov2#opm3#cru1.User2Group.groupOID"/>
+        <LinkParameter id="mov2#opm3#icu3#ln2#par145" name="1,2_Group.oid(groups)" target="mov2#opm3#cru1.User2Group.groupOID" blank="true"/>
       </Link>
       <OKLink id="mov2#opm3#icu3#oln4" name="OKFlow5" to="mov2#opm3#seu2">
         <LinkParameter id="mov2#opm3#icu3#oln4#par4" name="userEmail_AttCondition1" source="mov2#opm3#icu3#icp4" target="mov2#opm3#seu2#su3#acond2"/>
@@ -25,12 +25,14 @@
         <LinkParameter id="mov2#opm3#inn2#oln5#par5" name="A user with this email already exists_errorMessage" target="mov2#opm3#kocu3#ocp3" sourceValue="A user with this email already exists"/>
       </OKLink>
     </IsNotNullUnit>
-    <CreateUnit id="mov2#opm3#cru1" name="CreateUser" gr:x="430" gr:y="65" entity="User" linkOrder="mov2#opm3#cru1#ln78">
-      <OKLink id="mov2#opm3#cru1#oln6" name="OKFlow2" to="mov2#opm3#okcu2" automaticCoupling="true"/>
+    <CreateUnit id="mov2#opm3#cru1" name="CreateUser" gr:x="430" gr:y="65" entity="User" linkOrder="mov2#opm3#cru1#ln82">
       <KOLink id="mov2#opm3#cru1#kln7" name="KOFlow2" to="mov2#opm3#kocu3">
         <LinkParameter id="mov2#opm3#cru1#kln7#par6" name="User could not be created_errorMessage" target="mov2#opm3#kocu3#ocp3" sourceValue="User could not be created"/>
       </KOLink>
-      <Link id="mov2#opm3#cru1#ln78" name="Flow78" to="mov2#opm3#cnu3" automaticCoupling="true" type="transport" validate="true"/>
+      <OKLink id="mov2#opm3#cru1#oln55" name="OKFlow55" to="mov2#opm3#seu9" automaticCoupling="true"/>
+      <Link id="mov2#opm3#cru1#ln82" name="Flow82" to="mov2#opm3#cnu4" type="transport" validate="true">
+        <LinkParameter id="mov2#opm3#cru1#ln82#par178" name="oid_KeyCondition23 [oid] [User] [Source]" source="userOIDArray" target="mov2#opm3#cnu4#su40#kcond23.userOID"/>
+      </Link>
     </CreateUnit>
     <SelectorUnit id="mov2#opm3#seu2" name="GetUser" gr:x="375" gr:y="350" entity="User" distinctAttributes="userOID">
       <Selector id="mov2#opm3#seu2#su3" defaultPolicy="fill" booleanOperator="and">
@@ -40,16 +42,20 @@
         <LinkParameter id="mov2#opm3#seu2#oln8#par11" name="oid_Input" source="userOIDArray" target="mov2#opm3#inn2.isnotnull"/>
       </OKLink>
     </SelectorUnit>
-    <SelectorUnit gr:x="600" gr:y="410" id="mov2#opm3#seu9" name="Selector9" entity="Group" linkOrder="mov2#opm3#seu9#ln76">
-      <Link id="mov2#opm3#seu9#ln76" name="Flow76" to="mov2#opm3#cnu3" automaticCoupling="true" type="transport" validate="true"/>
+    <SelectorUnit gr:x="600" gr:y="410" id="mov2#opm3#seu9" name="Select groups" entity="Group" distinctAttributes="groupOID groupName">
+      <Selector id="mov2#opm3#seu9#su42" defaultPolicy="fill" booleanOperator="and"/>
+      <OKLink id="mov2#opm3#seu9#oln66" name="Flow80" to="mov2#opm3#cnu4">
+        <LinkParameter id="mov2#opm3#seu9#oln66#par175" name="oid_KeyCondition24 [oid] [Group] [Target]" source="groupOIDArray" target="mov2#opm3#cnu4#su41#kcond24.groupOID"/>
+      </OKLink>
     </SelectorUnit>
-    <ConnectUnit gr:x="780" gr:y="320" id="mov2#opm3#cnu3" name="Connect user to groups" relationship="User2Group">
-      <SourceSelector id="mov2#opm3#cnu3#su38" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="mov2#opm3#cnu3#su38#kcond21" name="KeyCondition21" predicate="in" implied="false"/>
+    <ConnectUnit gr:x="815" gr:y="315" id="mov2#opm3#cnu4" name="Connect user to groups" relationship="User2Group">
+      <SourceSelector id="mov2#opm3#cnu4#su40" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm3#cnu4#su40#kcond23" name="KeyCondition23" predicate="in" implied="false"/>
       </SourceSelector>
-      <TargetSelector id="mov2#opm3#cnu3#su39" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="mov2#opm3#cnu3#su39#kcond22" name="KeyCondition22" predicate="in" implied="false"/>
+      <TargetSelector id="mov2#opm3#cnu4#su41" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm3#cnu4#su41#kcond24" name="KeyCondition24" predicate="in" implied="false"/>
       </TargetSelector>
+      <OKLink id="mov2#opm3#cnu4#oln65" name="OKFlow65" to="mov2#opm3#okcu2" automaticCoupling="true"/>
     </ConnectUnit>
   </OperationUnits>
 </OperationModule>

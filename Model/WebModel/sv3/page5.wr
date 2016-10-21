@@ -8,7 +8,7 @@
         <LinkParameter id="sv3#page5#dau2#ln12#par22" name="oid_RoleCondition1 [oid]" source="data.ent10#att7" target="sv3#page5#pwu1#su8#rcond6.ent10#att7"/>
       </Link>
       <Link id="sv3#page5#dau2#ln26" name="Ask a question" to="sv3#page9#dau5" automaticCoupling="true" type="normal" validate="true"/>
-      <Link id="sv3#page5#dau2#ln64" name="Flow49" to="sv3#miu4" type="normal" validate="true">
+      <Link id="sv3#page5#dau2#ln64" name="Toggle Vote" to="sv3#miu4" type="normal" validate="true">
         <LinkParameter id="sv3#page5#dau2#ln64#par105" name="oid_CampaignId" source="data.ent10#att7" target="sv3#miu4.mov3#opm4#icu4#icp17"/>
       </Link>
     </DataUnit>
@@ -20,9 +20,25 @@
         <LinkParameter id="sv3#page5#pwu1#ln22#par32" name="oid_KeyCondition4 [oid]" source="data[].ent7#att1" target="sv3#page6#dau3#su7#kcond4.ent7#att1"/>
       </Link>
     </PowerIndexUnit>
-    <MultiMessageUnit gr:x="155" gr:y="245" id="sv3#page5#mssu5" name="Message5"/>
+    <MultiMessageUnit gr:x="155" gr:y="245" id="sv3#page5#mssu5" name="Notification"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page5#mssu5"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv3#page5#dau2">
@@ -71,9 +87,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv3#page5#mssu5"/>
-      </layout:Cell>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

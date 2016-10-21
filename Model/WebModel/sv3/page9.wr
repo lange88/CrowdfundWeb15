@@ -8,7 +8,7 @@
     <EntryUnit gr:x="40" gr:y="130" id="sv3#page9#enu4" name="New question" entity="ent11" linkOrder="sv3#page9#enu4#ln31">
       <Field id="sv3#page9#enu4#fld10" name="Question" type="string" modifiable="true" attribute="ent11#att25"/>
       <Field id="sv3#page9#enu4#fld11" name="Is this a private question?" type="boolean" modifiable="true" attribute="ent11#att19"/>
-      <Link id="sv3#page9#enu4#ln31" name="Flow31" to="sv3#miu7" type="normal" validate="true">
+      <Link id="sv3#page9#enu4#ln31" name="Submit" to="sv3#miu7" type="normal" validate="true">
         <LinkParameter id="sv3#page9#enu4#ln31#par58" name="Is this a private question?_Private" source="sv3#page9#enu4#fld11" target="sv3#miu7.mov3#opm9#icu9#icp15"/>
         <LinkParameter id="sv3#page9#enu4#ln31#par62" name="Question_Question" source="sv3#page9#enu4#fld10" target="sv3#miu7.mov3#opm9#icu9#icp10"/>
       </Link>

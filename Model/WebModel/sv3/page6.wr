@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="185" gr:y="305" id="sv3#page6" name="Make pledge">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="185" gr:y="305" id="sv3#page6" name="Make Pledge">
   <ContentUnits>
-    <DataUnit gr:x="95" gr:y="0" id="sv3#page6#dau3" name="Details3" entity="ent7" displayAttributes="ent7#att2 ent7#att3 ent7#att4 ent7#att18">
+    <DataUnit gr:x="95" gr:y="0" id="sv3#page6#dau3" name="Contribution Details" entity="ent7" displayAttributes="ent7#att2 ent7#att3 ent7#att4 ent7#att18">
       <Selector id="sv3#page6#dau3#su7" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page6#dau3#su7#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
       </Selector>
@@ -10,9 +10,9 @@
         <LinkParameter id="sv3#page6#dau3#ln18#par44" name="max_pledges_ContributionMaxContributions" source="data.ent7#att18" target="sv3#miu6.mov3#opm5#icu5#icp13"/>
       </Link>
     </DataUnit>
-    <EntryUnit gr:x="155" gr:y="110" id="sv3#page6#enu3" name="Pledge" entity="ent1" linkOrder="sv3#page6#enu3#ln17" fieldOrder="sv3#page6#enu3#fld6">
+    <EntryUnit gr:x="165" gr:y="120" id="sv3#page6#enu3" name="Pledge" entity="ent1" linkOrder="sv3#page6#enu3#ln17" fieldOrder="sv3#page6#enu3#fld6">
       <Field id="sv3#page6#enu3#fld6" name="PledgeAmount" type="decimal" modifiable="true" attribute="ent1#att17"/>
-      <Link id="sv3#page6#enu3#ln17" name="Flow17" to="sv3#miu6" type="normal" validate="true">
+      <Link id="sv3#page6#enu3#ln17" name="Pledge" to="sv3#miu6" type="normal" validate="true">
         <LinkParameter id="sv3#page6#enu3#ln17#par28" name="Field6_Amount" source="sv3#page6#enu3#fld6" target="sv3#miu6.mov3#opm5#icu5#icp11"/>
       </Link>
     </EntryUnit>

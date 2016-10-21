@@ -1,10 +1,10 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="2055" gr:y="725" id="sv2#page18" name="Aswer question">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="2055" gr:y="725" id="sv2#page18" name="Aswer Question">
   <ContentUnits>
     <DataUnit gr:x="0" gr:y="0" id="sv2#page18#dau4" name="Question" entity="ent11" displayAttributes="ent11#att25 rel9#role17.userName">
       <Selector id="sv2#page18#dau4#su26" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#page18#dau4#su26#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
       </Selector>
-      <Link id="sv2#page18#dau4#ln55" name="Flow55" to="sv2#miu4" type="transport" validate="true">
+      <Link id="sv2#page18#dau4#ln55" to="sv2#miu4" type="transport" validate="true" name="Flow55">
         <LinkParameter id="sv2#page18#dau4#ln55#par101" name="oid_QuestionID" source="data.ent11#att14" target="sv2#miu4.mov1#opm4#icu4#icp17"/>
         <LinkParameter id="sv2#page18#dau4#ln55#par125" name="QuestionToCampaign.oid_CampaignID" source="data.rel2#role7_ent10#att7" target="sv2#miu4.mov1#opm4#icu4#icp1"/>
       </Link>
@@ -15,7 +15,7 @@
         <LinkParameter id="sv2#page18#enu7#ln54#par100" name="AnswerText_AnswerText" source="sv2#page18#enu7#fld15" target="sv2#miu4.mov1#opm4#icu4#icp19"/>
       </Link>
     </EntryUnit>
-    <MultiMessageUnit gr:x="160" gr:y="0" id="sv2#page18#mssu5" name="ErrorMessage"/>
+    <MultiMessageUnit gr:x="160" gr:y="0" id="sv2#page18#mssu5" name="Error Message"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>

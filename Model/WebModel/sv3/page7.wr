@@ -1,11 +1,11 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="230" gr:y="925" id="sv3#page7" name="Past Contributions" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="125" gr:y="970" id="sv3#page7" name="Past Contributions" landmark="true">
   <ContentUnits>
     <MultiDataUnit gr:x="0" gr:y="0" id="sv3#page7#mdu1" name="All contributions" entity="ent1" displayAttributes="ent1#att17 rel6#role11.ent7#att2 rel6#role11.ent7#att3">
       <Selector id="sv3#page7#mdu1#su11" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page7#mdu1#su11#rcond8" predicate="in" implied="false" name="UserKey" role="rel5#role9"/>
       </Selector>
     </MultiDataUnit>
-    <GetUnit gr:x="215" gr:y="35" id="sv3#page7#gtu4" name="Get4" contextParameters="UserCtxParam">
+    <GetUnit gr:x="215" gr:y="35" id="sv3#page7#gtu4" name="GetUser" contextParameters="UserCtxParam">
       <Link id="sv3#page7#gtu4#ln24" name="Flow24" to="sv3#page7#mdu1" automaticCoupling="true" type="transport" validate="true"/>
     </GetUnit>
   </ContentUnits>

@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="785" gr:y="155" id="sv1#CampaignDetails" name="Campaign Details">
   <ContentUnits>
-    <DataUnit gr:x="0" gr:y="0" id="sv1#CampaignDetails#dau1" name="Details2" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
+    <DataUnit gr:x="0" gr:y="0" id="sv1#CampaignDetails#dau1" name="Campaign" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
       <Selector id="sv1#CampaignDetails#dau1#su1" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#CampaignDetails#dau1#su1#kcond1" name="KeyCondition2" predicate="in" implied="false"/>
       </Selector>

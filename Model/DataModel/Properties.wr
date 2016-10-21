@@ -5,8 +5,8 @@
     <Attribute name="password" id="password" type="password" db:column="password"/>
     <Attribute name="email" id="email" type="string" db:column="email"/>
     <Attribute id="User#att22" name="birthdate" type="date" db:column="birthdate"/>
-    <Attribute id="User#att23" name="reputation" type="integer" db:column="reputation"/>
-    <Attribute id="User#att24" name="wisdom" type="integer" db:column="wisdom"/>
+    <Attribute id="User#att23" name="reputation" type="integer" derivationQuery="calculated::count(Self.rel4#role3(as Var1).rel7#role14(as Var2))"/>
+    <Attribute id="User#att24" name="wisdom" type="integer" derivationQuery="calculated::sum(Self.rel5#role9(as Var1).rel6#role11(as Var2).rel1#role6(as Var3).ent10#att13)"/>
   </Entity>
   <Entity id="Group" name="Group" duration="persistent" gr:x="-80" gr:y="390" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
     <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
@@ -56,7 +56,7 @@
     <Attribute id="ent7#att4" name="min_amount" type="decimal" db:column="min_amount"/>
     <Attribute id="ent7#att18" name="max_pledges" type="integer" db:column="max_pledges"/>
   </Entity>
-  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" gr:x="670" gr:y="480" db:database="db1" db:table="campaign">
+  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13 ent10#att27" gr:x="670" gr:y="480" db:database="db1" db:table="campaign">
     <Attribute id="ent10#att7" name="oid" key="true" type="integer" db:column="oid"/>
     <Attribute id="ent10#att8" name="title" type="string" db:column="title"/>
     <Attribute id="ent10#att9" name="description" type="string" db:column="description"/>
@@ -68,6 +68,7 @@
     <Attribute id="ent10#att13" name="quality" type="integer" derivationQuery="calculated::count(Self.rel7#role14(as Var1))" db:table="campaign_quality_view" db:column="der_attr" storageType="file">
       <db:JoinColumn attribute="ent10#att7" name="oid"/>
     </Attribute>
+    <Attribute id="ent10#att27" name="progress" type="decimal" derivationQuery="calculated::sum(Self.rel1#role5(as Var1).rel6#role12(as Var2).ent1#att17)"/>
   </Entity>
   <Entity id="ent11" name="Question" duration="persistent" gr:x="285" gr:y="-20" attributeOrder="ent11#att14 ent11#att19 ent11#att25 ent11#att26" db:database="db1" db:table="question">
     <Attribute id="ent11#att14" name="oid" key="true" type="integer" db:column="oid"/>

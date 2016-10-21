@@ -20,7 +20,7 @@
         <LinkParameter id="sv2#page1#tmu1#ln39#par78" name="Current/Input Timestamp_expiration" source="currentTimestamp" target="sv2#page1#inu4#su17#acond6"/>
       </Link>
     </TimeUnit>
-    <IndexUnit gr:x="255" gr:y="230" id="sv2#page1#inu4" name="Past Campaigns" entity="ent10" linkOrder="sv2#page1#inu4#ln43" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
+    <IndexUnit gr:x="255" gr:y="140" id="sv2#page1#inu4" name="Past Campaigns" entity="ent10" linkOrder="sv2#page1#inu4#ln43" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
       <Selector id="sv2#page1#inu4#su17" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv2#page1#inu4#su17#acond6" name="expiration" predicate="lteq" booleanOperator="and" implied="false" attributes="ent10#att11"/>
         <RelationshipRoleCondition id="sv2#page1#inu4#su17#rcond13" predicate="in" implied="false" name="Filter on user" role="rel4#role3"/>

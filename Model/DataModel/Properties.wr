@@ -169,4 +169,31 @@
       <db:JoinColumn attribute="ent10#att7" name="campaign_oid"/>
     </RelationshipRole2>
   </Relationship>
+  <Entity gr:x="765" gr:y="160" id="ent3" name="Suggestion" duration="persistent" db:database="db1" db:table="suggestion">
+    <Attribute id="ent3#att5" key="true" name="oid" type="integer" db:column="oid"/>
+  </Entity>
+  <Relationship id="rel11" name="Supporter_Suggestion" sourceEntity="User" targetEntity="ent3" db:database="db1" db:table="suggestion">
+    <RelationshipRole1 id="rel11#role21" name="UserToSuggestion" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel11#role22" name="SuggestionToUser" maxCard="1">
+      <db:JoinColumn attribute="ent3#att5" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel12" name="Campaigner_Suggestion" sourceEntity="User" targetEntity="ent3" gr:bendpoints="395,-10,-65,110" db:database="db1" db:table="suggestion">
+    <RelationshipRole1 id="rel12#role23" name="UserToSuggestion_2" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid_2"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel12#role24" name="SuggestionToUser_2" maxCard="1">
+      <db:JoinColumn attribute="ent3#att5" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel14" name="Suggestion_Campaign" sourceEntity="ent3" targetEntity="ent10" db:database="db1" db:table="suggestion">
+    <RelationshipRole1 id="rel14#role27" name="SuggestionToCampaign" maxCard="1">
+      <db:JoinColumn attribute="ent3#att5" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel14#role28" name="CampaignToSuggestion" maxCard="N">
+      <db:JoinColumn attribute="ent10#att7" name="campaign_oid"/>
+    </RelationshipRole2>
+  </Relationship>
 </DataModel>

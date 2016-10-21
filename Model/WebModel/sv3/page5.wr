@@ -16,7 +16,7 @@
       <Selector id="sv3#page5#pwu1#su8" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page5#pwu1#su8#rcond6" role="rel1#role5" predicate="in" implied="false" name="RoleCondition1"/>
       </Selector>
-      <Link id="sv3#page5#pwu1#ln22" name="Flow16" to="sv3#page6#dau3" type="normal" validate="true">
+      <Link id="sv3#page5#pwu1#ln22" name="Details" to="sv3#page6#dau3" type="normal" validate="true">
         <LinkParameter id="sv3#page5#pwu1#ln22#par32" name="oid_KeyCondition4 [oid]" source="data[].ent7#att1" target="sv3#page6#dau3#su7#kcond4.ent7#att1"/>
       </Link>
     </PowerIndexUnit>

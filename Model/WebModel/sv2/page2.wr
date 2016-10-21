@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="640" gr:y="125" id="sv2#page2" name="CreatePage">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="640" gr:y="125" id="sv2#page2" name="Create New Campaign">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv2#page2#enu1" name="CreateForm" entity="ent10" linkOrder="sv2#page2#enu1#ln8">
       <Field id="sv2#page2#enu1#fld1" name="title" type="string" modifiable="true" attribute="ent10#att8"/>
@@ -12,9 +12,9 @@
         <LinkParameter id="sv2#page2#enu1#ln8#par12" name="CampaignToTag_Tag.oid(CampaignToTag)" source="sv2#page2#enu1#msfld2" target="sv2#miu1.mov1#mpkg3#opm6#icu6#icp20"/>
         <LinkParameter id="sv2#page2#enu1#ln8#par13" name="title_title" source="sv2#page2#enu1#fld1" target="sv2#miu1.mov1#mpkg3#opm6#icu6#icp29"/>
       </Link>
-      <MultiSelectionField id="sv2#page2#enu1#msfld2" name="Multi Selection Field2" type="string" role="rel3#role1"/>
+      <MultiSelectionField id="sv2#page2#enu1#msfld2" name="Tags" type="string" role="rel3#role1"/>
     </EntryUnit>
-    <MultiMessageUnit gr:x="75" gr:y="155" id="sv2#page2#mssu1" name="ErrorMessage"/>
+    <MultiMessageUnit gr:x="75" gr:y="155" id="sv2#page2#mssu1" name="Error Message"/>
     <SelectorUnit gr:x="210" gr:y="0" id="sv2#page2#seu4" name="Tags" entity="ent12">
       <Link id="sv2#page2#seu4#ln12" name="Flow12" to="sv2#page2#enu1" type="transport" validate="true">
         <LinkParameter id="sv2#page2#seu4#ln12#par26" name="oid_Multi Selection Field2 [label]" source="ent12#att16Array" target="sv2#page2#enu1#msfld2_label"/>

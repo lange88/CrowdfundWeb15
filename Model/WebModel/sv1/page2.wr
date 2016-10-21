@@ -1,10 +1,10 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="80" gr:y="120" id="sv1#page2" name="RegisterPage">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="80" gr:y="120" id="sv1#page2" name="Register Page">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv1#page2#enu1" name="RegistrationForm" fieldOrder="sv1#page2#enu1#fld1 sv1#page2#enu1#fld2 sv1#page2#enu1#fld3" entity="User" linkOrder="sv1#page2#enu1#ln10">
       <Field id="sv1#page2#enu1#fld3" name="Password" type="password" modifiable="true"/>
       <Field id="sv1#page2#enu1#fld2" name="Email" type="string" contentType="text/plain" modifiable="true"/>
       <Field id="sv1#page2#enu1#fld1" name="Username" type="string" contentType="text/plain" modifiable="true"/>
-      <Link id="sv1#page2#enu1#ln10" name="Flow10" to="sv1#miu3" type="normal" validate="true">
+      <Link id="sv1#page2#enu1#ln10" name="Register" to="sv1#miu3" type="normal" validate="true">
         <LinkParameter id="sv1#page2#enu1#ln10#par8" name="Email_userEmail" source="sv1#page2#enu1#fld2" target="sv1#miu3.mov1#mpkg3#opm6#icu6#icp20"/>
         <LinkParameter id="sv1#page2#enu1#ln10#par9" name="Password_userName" source="sv1#page2#enu1#fld1" target="sv1#miu3.mov1#mpkg3#opm6#icu6#icp22"/>
         <LinkParameter id="sv1#page2#enu1#ln10#par10" name="Username_userPassword" source="sv1#page2#enu1#fld3" target="sv1#miu3.mov1#mpkg3#opm6#icu6#icp21"/>

@@ -14,7 +14,7 @@
         <KeyCondition id="sv3#mpage5#dau11#su21#kcond12" name="KeyCondition7" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv3#mpage5#dau11#ln60" name="Logout" to="sv3#lou4" type="normal" validate="true"/>
-      <Link id="sv3#mpage5#dau11#ln93" name="Edit Account" to="sv3#page19" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv3#mpage5#dau11#ln93" name="Account" to="sv3#page19" automaticCoupling="true" type="normal" validate="true"/>
     </DataUnit>
     <IndexUnit id="sv3#mpage5#inu9" name="Change perspective" linkOrder="sv3#mpage5#inu9#ln61" customDescriptor="false" gr:x="280" gr:y="180" entity="Group" displayAttributes="groupName">
       <Link id="sv3#mpage5#inu9#ln61" name="Flow47" to="sv3#cgu7" type="normal" validate="true">

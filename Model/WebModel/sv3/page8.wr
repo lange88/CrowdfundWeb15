@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="970" gr:y="645" id="sv3#page8" name="Search Results">
   <ContentUnits>
-    <PowerIndexUnit gr:x="0" gr:y="0" id="sv3#page8#pwu2" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv3#page8#pwu2" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13 ent10#att27">
       <Selector id="sv3#page8#pwu2#su19" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv3#page8#pwu2#su19#acond6" name="AttCondition6" predicate="contains" booleanOperator="or" implied="false" attributes="ent10#att8 ent10#att9 rel3#role1.ent12#att16"/>
       </Selector>
@@ -16,6 +16,7 @@
           <layout:Attribute attribute="ent10#att11"/>
           <layout:Attribute attribute="ent10#att12"/>
           <layout:Attribute attribute="ent10#att13"/>
+          <layout:Attribute attribute="ent10#att27"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

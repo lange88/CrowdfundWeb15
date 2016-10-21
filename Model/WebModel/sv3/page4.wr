@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="495" gr:y="565" id="sv3#page4" name="Supporter Home" linkOrder="sv3#page4#ln21" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv3#page4#inu3" name="Available Campaigns" entity="ent10" linkOrder="sv3#page4#inu3#ln7" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
+    <IndexUnit gr:x="0" gr:y="0" id="sv3#page4#inu3" name="Available Campaigns" entity="ent10" linkOrder="sv3#page4#inu3#ln7" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13 ent10#att27">
       <Link id="sv3#page4#inu3#ln7" name="Details" to="sv3#page5#dau2" automaticCoupling="true" type="normal" validate="true"/>
       <Selector id="sv3#page4#inu3#su20" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page4#inu3#su20#rcond14" name="RoleCondition14" predicate="notIn" implied="false" role="rel5#role9.rel6#role11.rel1#role6"/>
@@ -18,14 +18,14 @@
         <LinkParameter id="sv3#page4#enu5#ln9#par94" name="Filter_AttCondition6" source="sv3#page4#enu5#fld14" target="sv3#page8#pwu2#su19#acond6"/>
       </Link>
     </EntryUnit>
-    <IndexUnit gr:x="25" gr:y="150" id="sv3#page4#inu5" name="Recommendations" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
+    <IndexUnit gr:x="25" gr:y="150" id="sv3#page4#inu5" name="Recommendations" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13 ent10#att27">
       <Selector id="sv3#page4#inu5#su2" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page4#inu5#su2#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel5#role9.rel6#role11.rel1#role6.rel3#role1.rel3#role2"/>
         <RelationshipRoleCondition id="sv3#page4#inu5#su2#rcond15" name="RoleCondition15" predicate="notIn" implied="false" role="rel5#role9.rel6#role11.rel1#role6"/>
         <RelationshipRoleCondition id="sv3#page4#inu5#su2#rcond17" name="RoleCondition17" predicate="notIn" implied="false" role="rel4#role3"/>
       </Selector>
     </IndexUnit>
-    <IndexUnit gr:x="270" gr:y="250" id="sv3#page4#inu10" name="Suggestions from campaign owners" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10">
+    <IndexUnit gr:x="270" gr:y="250" id="sv3#page4#inu10" name="Suggestions from campaign owners" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13 ent10#att27">
       <Selector id="sv3#page4#inu10#su31" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page4#inu10#su31#rcond23" name="RoleCondition23" predicate="in" implied="false" role="rel11#role21.rel14#role27"/>
         <RelationshipRoleCondition id="sv3#page4#inu10#su31#rcond24" name="RoleCondition24" predicate="notIn" implied="false" role="rel5#role9.rel6#role11.rel1#role6"/>
@@ -43,6 +43,7 @@
           <layout:Attribute attribute="ent10#att11"/>
           <layout:Attribute attribute="ent10#att12"/>
           <layout:Attribute attribute="ent10#att13"/>
+          <layout:Attribute attribute="ent10#att27"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -85,6 +86,7 @@
           <layout:Attribute attribute="ent10#att11"/>
           <layout:Attribute attribute="ent10#att12"/>
           <layout:Attribute attribute="ent10#att13"/>
+          <layout:Attribute attribute="ent10#att27"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -105,6 +107,10 @@
           <layout:Attribute attribute="ent10#att8"/>
           <layout:Attribute attribute="ent10#att9"/>
           <layout:Attribute attribute="ent10#att10"/>
+          <layout:Attribute attribute="ent10#att11"/>
+          <layout:Attribute attribute="ent10#att12"/>
+          <layout:Attribute attribute="ent10#att13"/>
+          <layout:Attribute attribute="ent10#att27"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

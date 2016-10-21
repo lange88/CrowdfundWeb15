@@ -1,0 +1,35 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="145" gr:y="245" id="mov2#opm11" name="UpdateUserAction">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm11#icu11" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm11#icu11#icp34" name="oid"/>
+      <InputCollectorParameter id="mov2#opm11#icu11#icp35" name="username"/>
+      <InputCollectorParameter id="mov2#opm11#icu11#icp36" name="password"/>
+      <InputCollectorParameter id="mov2#opm11#icu11#icp37" name="email"/>
+      <InputCollectorParameter id="mov2#opm11#icu11#icp38" name="birthdate"/>
+      <OKLink id="mov2#opm11#icu11#oln49" name="OKFlow49" to="mov2#opm11#mfu4">
+        <LinkParameter id="mov2#opm11#icu11#oln49#par146" name="birthdate_birthdate" source="mov2#opm11#icu11#icp38" target="mov2#opm11#mfu4.User#att22"/>
+        <LinkParameter id="mov2#opm11#icu11#oln49#par147" name="email_email" source="mov2#opm11#icu11#icp37" target="mov2#opm11#mfu4.email"/>
+        <LinkParameter id="mov2#opm11#icu11#oln49#par148" name="oid_KeyCondition17 [oid]" source="mov2#opm11#icu11#icp34" target="mov2#opm11#mfu4#su33#kcond17.userOID"/>
+        <LinkParameter id="mov2#opm11#icu11#oln49#par149" name="password_password" source="mov2#opm11#icu11#icp36" target="mov2#opm11#mfu4.password"/>
+        <LinkParameter id="mov2#opm11#icu11#oln49#par150" name="username_userName" source="mov2#opm11#icu11#icp35" target="mov2#opm11#mfu4.userName"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <ModifyUnit gr:x="315" gr:y="85" id="mov2#opm11#mfu4" name="UpdateUserInfo" entity="User">
+      <Selector id="mov2#opm11#mfu4#su33" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm11#mfu4#su33#kcond17" name="KeyCondition17" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm11#mfu4#oln51" name="OKFlow51" to="mov2#opm11#okcu9">
+        <LinkParameter id="mov2#opm11#mfu4#oln51#par151" name="oid_oid" source="userOIDArray" target="mov2#opm11#okcu9#ocp20"/>
+      </OKLink>
+      <KOLink id="mov2#opm11#mfu4#kln25" name="KOFlow25" to="mov2#opm11#kocu10">
+        <LinkParameter id="mov2#opm11#mfu4#kln25#par152" name="Error updating user information._errorMessage" sourceValue="Error updating user information." target="mov2#opm11#kocu10#ocp21"/>
+      </KOLink>
+    </ModifyUnit>
+    <KOCollectorUnit gr:x="520" gr:y="150" id="mov2#opm11#kocu10" name="KO Port10">
+      <OutputCollectorParameter id="mov2#opm11#kocu10#ocp21" name="errorMessage"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="520" gr:y="30" id="mov2#opm11#okcu9" name="OK Port9">
+      <OutputCollectorParameter id="mov2#opm11#okcu9#ocp20" name="oid"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

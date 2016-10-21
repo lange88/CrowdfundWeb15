@@ -1,12 +1,70 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="85" gr:y="60" id="sv2#page14" name="Edit campaign">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1025" gr:y="170" id="sv2#page14" name="Edit campaign">
   <ContentUnits>
-    <EntryUnit gr:x="0" gr:y="0" id="sv2#page14#enu5" name="Edit campaign"/>
+    <EntryUnit gr:x="0" gr:y="5" id="sv2#page14#enu5" name="Edit campaign" linkOrder="sv2#page14#enu5#ln46" entity="ent10">
+      <Link id="sv2#page14#enu5#ln46" name="Flow46" to="sv2#miu9" type="normal" validate="true">
+        <LinkParameter id="sv2#page14#enu5#ln46#par122" name="Campaign Object_Campaign Object" source="entityBean" target="sv2#miu9.mov1#mpkg3#opm10#icu10#icp30"/>
+        <LinkParameter id="sv2#page14#enu5#ln46#par124" name="Key [oid]_KeyCondition9 [oid]" source="key.ent10#att7" target="sv2#miu9.mov1#mpkg3#opm10#icu10#icp31"/>
+      </Link>
+      <Field id="sv2#page14#enu5#fld16" name="title" type="string" modifiable="true" attribute="ent10#att8"/>
+      <Field id="sv2#page14#enu5#fld17" name="description" type="string" modifiable="true" attribute="ent10#att9"/>
+      <Field id="sv2#page14#enu5#fld18" name="goal" type="decimal" modifiable="true" attribute="ent10#att10"/>
+      <Field id="sv2#page14#enu5#fld19" name="expiration" type="timestamp" modifiable="true" attribute="ent10#att11"/>
+      <Field id="sv2#page14#enu5#fld20" name="popularity" type="decimal" modifiable="true"/>
+      <Field id="sv2#page14#enu5#fld21" name="quality" type="integer" modifiable="true"/>
+      <MultiSelectionField id="sv2#page14#enu5#msfld1" name="CampaignToTag" type="string" role="rel3#role1"/>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="425" gr:y="20" id="sv2#page14#mssu6" name="Message6"/>
+    <SelectorUnit gr:x="280" gr:y="5" id="sv2#page14#seu8" name="Tags" entity="ent12">
+      <Link id="sv2#page14#seu8#ln47" name="Flow47" to="sv2#page14#enu5" type="transport" validate="true">
+        <LinkParameter id="sv2#page14#seu8#ln47#par113" name="caption_CampaignToTag [label]" source="ent12#att16Array" target="sv2#page14#enu5#msfld1_label"/>
+        <LinkParameter id="sv2#page14#seu8#ln47#par114" name="oid_CampaignToTag [output]" source="ent12#att15Array" target="sv2#page14#enu5#msfld1_output"/>
+      </Link>
+    </SelectorUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page14#enu5"/>
+        <layout:Unit unitId="sv2#page14#enu5">
+          <layout:Link link="sv2#page14#enu5#ln46"/>
+          <layout:Field field="sv2#page14#enu5#fld16"/>
+          <layout:Field field="sv2#page14#enu5#fld17"/>
+          <layout:Field field="sv2#page14#enu5#fld18"/>
+          <layout:Field field="sv2#page14#enu5#fld19"/>
+          <layout:Field field="sv2#page14#enu5#fld20"/>
+          <layout:Field field="sv2#page14#enu5#fld21"/>
+          <layout:Field field="sv2#page14#enu5#msfld1"/>
+        </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page14#mssu6"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

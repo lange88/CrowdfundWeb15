@@ -8,11 +8,11 @@
     <Attribute id="User#att23" name="reputation" type="integer" db:column="reputation"/>
     <Attribute id="User#att24" name="wisdom" type="integer" db:column="wisdom"/>
   </Entity>
-  <Entity id="Group" name="Group" duration="persistent" gr:x="755" gr:y="120" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
+  <Entity id="Group" name="Group" duration="persistent" gr:x="-80" gr:y="390" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
     <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
   </Entity>
-  <Entity id="Module" name="Module" duration="persistent" gr:x="1255" gr:y="175" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
+  <Entity id="Module" name="Module" duration="persistent" gr:x="-75" gr:y="530" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
     <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
     <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
@@ -49,14 +49,14 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity id="ent7" name="Contribution" duration="persistent" attributeOrder="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" gr:x="385" gr:y="780" db:database="db1" db:table="contribution">
+  <Entity id="ent7" name="Contribution" duration="persistent" attributeOrder="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" gr:x="395" gr:y="685" db:database="db1" db:table="contribution">
     <Attribute id="ent7#att1" name="oid" key="true" type="integer" db:column="oid"/>
     <Attribute id="ent7#att2" name="title" type="string" db:column="title"/>
     <Attribute id="ent7#att3" name="description" type="string" db:column="description"/>
     <Attribute id="ent7#att4" name="min_amount" type="decimal" db:column="min_amount"/>
     <Attribute id="ent7#att18" name="max_pledges" type="integer" db:column="max_pledges"/>
   </Entity>
-  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" gr:x="830" gr:y="595" db:database="db1" db:table="campaign">
+  <Entity id="ent10" name="Campaign" duration="persistent" attributeOrder="ent10#att7 ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13" gr:x="670" gr:y="480" db:database="db1" db:table="campaign">
     <Attribute id="ent10#att7" name="oid" key="true" type="integer" db:column="oid"/>
     <Attribute id="ent10#att8" name="title" type="string" db:column="title"/>
     <Attribute id="ent10#att9" name="description" type="string" db:column="description"/>
@@ -75,7 +75,7 @@
     <Attribute id="ent11#att25" name="content" type="string" db:column="content"/>
     <Attribute id="ent11#att26" name="answer" type="string" db:column="answer"/>
   </Entity>
-  <Entity id="ent12" name="Tag" duration="persistent" attributeOrder="ent12#att15 ent12#att16" gr:x="1310" gr:y="620" db:database="db1" db:table="tag">
+  <Entity id="ent12" name="Tag" duration="persistent" attributeOrder="ent12#att15 ent12#att16" gr:x="915" gr:y="510" db:database="db1" db:table="tag">
     <Attribute id="ent12#att15" name="oid" key="true" type="integer" db:column="oid"/>
     <Attribute id="ent12#att16" name="caption" type="string" db:column="caption"/>
   </Entity>
@@ -105,7 +105,7 @@
       <db:JoinColumn attribute="ent7#att1" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="30" gr:y="615" id="ent1" name="Pledge" duration="persistent" attributeOrder="ent1#att6 ent1#att17" db:database="db1" db:table="pledge">
+  <Entity gr:x="205" gr:y="495" id="ent1" name="Pledge" duration="persistent" attributeOrder="ent1#att6 ent1#att17" db:database="db1" db:table="pledge">
     <Attribute id="ent1#att6" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent1#att17" name="amount" type="decimal" db:column="amount"/>
   </Entity>
@@ -159,6 +159,41 @@
     </RelationshipRole1>
     <RelationshipRole2 id="rel10#role20" name="UserToPaymentInformation" maxCard="N">
       <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel2" name="Question_Campaign" sourceEntity="ent11" targetEntity="ent10" gr:bendpoints="310,173,-90,-358" db:database="db1" db:table="question">
+    <RelationshipRole1 id="rel2#role7" name="QuestionToCampaign" maxCard="1">
+      <db:JoinColumn attribute="ent11#att14" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel2#role8" name="CampaignToQuestion" maxCard="N">
+      <db:JoinColumn attribute="ent10#att7" name="campaign_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="765" gr:y="160" id="ent3" name="Suggestion" duration="persistent" db:database="db1" db:table="suggestion">
+    <Attribute id="ent3#att5" key="true" name="oid" type="integer" db:column="oid"/>
+  </Entity>
+  <Relationship id="rel11" name="Supporter_Suggestion" sourceEntity="User" targetEntity="ent3" db:database="db1" db:table="suggestion">
+    <RelationshipRole1 id="rel11#role21" name="UserToSuggestion" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel11#role22" name="SuggestionToUser" maxCard="1">
+      <db:JoinColumn attribute="ent3#att5" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel12" name="Campaigner_Suggestion" sourceEntity="User" targetEntity="ent3" gr:bendpoints="395,-10,-65,110" db:database="db1" db:table="suggestion">
+    <RelationshipRole1 id="rel12#role23" name="UserToSuggestion_2" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid_2"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel12#role24" name="SuggestionToUser_2" maxCard="1">
+      <db:JoinColumn attribute="ent3#att5" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel14" name="Suggestion_Campaign" sourceEntity="ent3" targetEntity="ent10" db:database="db1" db:table="suggestion">
+    <RelationshipRole1 id="rel14#role27" name="SuggestionToCampaign" maxCard="1">
+      <db:JoinColumn attribute="ent3#att5" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel14#role28" name="CampaignToSuggestion" maxCard="N">
+      <db:JoinColumn attribute="ent10#att7" name="campaign_oid"/>
     </RelationshipRole2>
   </Relationship>
 </DataModel>

@@ -3,13 +3,14 @@
     <IndexUnit gr:x="0" gr:y="0" id="sv3#page4#inu3" name="Available Campaigns" entity="ent10" linkOrder="sv3#page4#inu3#ln7" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
       <Link id="sv3#page4#inu3#ln7" name="Flow7" to="sv3#page5#dau2" automaticCoupling="true" type="normal" validate="true"/>
       <Selector id="sv3#page4#inu3#su20" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv3#page4#inu3#su20#rcond14" name="RoleCondition14" predicate="notIn" implied="false" role="rel6#role11.rel1#role6"/>
+        <RelationshipRoleCondition id="sv3#page4#inu3#su20#rcond14" name="RoleCondition14" predicate="notIn" implied="false" role="rel5#role9.rel6#role11.rel1#role6"/>
+        <RelationshipRoleCondition id="sv3#page4#inu3#su20#rcond16" name="RoleCondition16" predicate="notIn" implied="false" role="rel4#role3"/>
       </Selector>
     </IndexUnit>
     <GetUnit gr:x="315" gr:y="10" id="sv3#page4#gtu8" name="GetUser" contextParameters="UserCtxParam">
-      <Link id="sv3#page4#gtu8#ln41" name="Flow41" to="sv3#page4#inu3" type="transport" validate="true">
-        <LinkParameter id="sv3#page4#gtu8#ln41#par81" name="UserCtxParam.oid_RoleCondition14 [oid]" source="sv3#page4#gtu8.UserCtxParam" target="sv3#page4#inu3#su20#rcond14.ent1#att6"/>
-      </Link>
+      <Link id="sv3#page4#gtu8#ln41" name="Flow41" to="sv3#page4#inu3" type="transport" validate="true" automaticCoupling="true"/>
+      <Link id="sv3#page4#gtu8#ln5" name="Flow5" to="sv3#page4#inu5" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv3#page4#gtu8#ln70" name="Flow70" to="sv3#page4#inu10" automaticCoupling="true" type="transport" validate="true"/>
     </GetUnit>
     <EntryUnit gr:x="310" gr:y="115" id="sv3#page4#enu5" name="Search" linkOrder="sv3#page4#enu5#ln9">
       <Field id="sv3#page4#enu5#fld14" name="Filter" type="string" modifiable="true" contentType="text/plain"/>
@@ -17,6 +18,19 @@
         <LinkParameter id="sv3#page4#enu5#ln9#par94" name="Filter_AttCondition6" source="sv3#page4#enu5#fld14" target="sv3#page8#pwu2#su19#acond6"/>
       </Link>
     </EntryUnit>
+    <IndexUnit gr:x="25" gr:y="150" id="sv3#page4#inu5" name="Recommendations" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10 ent10#att11 ent10#att12 ent10#att13">
+      <Selector id="sv3#page4#inu5#su2" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page4#inu5#su2#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel5#role9.rel6#role11.rel1#role6.rel3#role1.rel3#role2"/>
+        <RelationshipRoleCondition id="sv3#page4#inu5#su2#rcond15" name="RoleCondition15" predicate="notIn" implied="false" role="rel5#role9.rel6#role11.rel1#role6"/>
+        <RelationshipRoleCondition id="sv3#page4#inu5#su2#rcond17" name="RoleCondition17" predicate="notIn" implied="false" role="rel4#role3"/>
+      </Selector>
+    </IndexUnit>
+    <IndexUnit gr:x="270" gr:y="250" id="sv3#page4#inu10" name="Suggestions from campaign owners" entity="ent10" displayAttributes="ent10#att8 ent10#att9 ent10#att10">
+      <Selector id="sv3#page4#inu10#su31" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page4#inu10#su31#rcond23" name="RoleCondition23" predicate="in" implied="false" role="rel11#role21.rel14#role27"/>
+        <RelationshipRoleCondition id="sv3#page4#inu10#su31#rcond24" name="RoleCondition24" predicate="notIn" implied="false" role="rel5#role9.rel6#role11.rel1#role6"/>
+      </Selector>
+    </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -48,6 +62,49 @@
         <layout:Unit unitId="sv3#page4#enu5">
           <layout:Field field="sv3#page4#enu5#fld14"/>
           <layout:Link link="sv3#page4#enu5#ln9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page4#inu5">
+          <layout:Attribute attribute="ent10#att8"/>
+          <layout:Attribute attribute="ent10#att9"/>
+          <layout:Attribute attribute="ent10#att10"/>
+          <layout:Attribute attribute="ent10#att11"/>
+          <layout:Attribute attribute="ent10#att12"/>
+          <layout:Attribute attribute="ent10#att13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page4#inu10">
+          <layout:Attribute attribute="ent10#att8"/>
+          <layout:Attribute attribute="ent10#att9"/>
+          <layout:Attribute attribute="ent10#att10"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

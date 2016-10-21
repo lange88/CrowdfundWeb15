@@ -17,6 +17,7 @@
       <Link id="sv2#page13#dau2#ln68" name="Flow68" to="sv2#miu10" type="transport" validate="true">
         <LinkParameter id="sv2#page13#dau2#ln68#par142" name="oid_CampaignId" source="data.ent10#att7" target="sv2#miu10.mov1#opm1#icu1#icp33"/>
       </Link>
+      <Link id="sv2#page13#dau2#ln95" name="Flow95" to="sv2#page13#inu6" automaticCoupling="true" type="transport" validate="true"/>
     </DataUnit>
     <IndexUnit gr:x="65" gr:y="380" id="sv2#page13#inu3" name="Contibutions list" entity="ent7" displayAttributes="ent7#att1 ent7#att2 ent7#att3 ent7#att4 ent7#att18" linkOrder="sv2#page13#inu3#ln7 sv2#page13#inu3#ln38">
       <Link id="sv2#page13#inu3#ln7" name="Edit" to="sv2#page17#enu6" type="normal" validate="true">
@@ -66,6 +67,11 @@
         <LinkParameter id="sv2#page13#gtu7#ln67#par143" name="UserCtxParam.oid_CampaignerId" source="sv2#page13#gtu7.UserCtxParam" target="sv2#miu10.mov1#opm1#icu1#icp32"/>
       </Link>
     </GetUnit>
+    <IndexUnit gr:x="65" gr:y="245" id="sv2#page13#inu6" name="Current contributors" entity="ent1" displayAttributes="ent1#att17 rel5#role10.userName">
+      <Selector id="sv2#page13#inu6#su45" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page13#inu6#su45#rcond27" name="RoleCondition27" predicate="in" implied="false" role="rel1#role5.rel6#role12"/>
+      </Selector>
+    </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -134,11 +140,10 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page13#inu8">
-          <layout:Attribute attribute="userName"/>
-          <layout:Attribute attribute="email"/>
-          <layout:Link link="sv2#page13#inu8#ln65"/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#page13#inu6">
+          <layout:Attribute attribute="ent1#att17"/>
+          <layout:Attribute attribute="rel5#role10.userName"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -146,7 +151,13 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#page13#inu8">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Link link="sv2#page13#inu8#ln65"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

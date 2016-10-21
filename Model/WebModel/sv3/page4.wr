@@ -8,13 +8,13 @@
       </Selector>
     </IndexUnit>
     <GetUnit gr:x="315" gr:y="10" id="sv3#page4#gtu8" name="GetUser" contextParameters="UserCtxParam">
-      <Link id="sv3#page4#gtu8#ln41" name="Find" to="sv3#page4#inu3" type="transport" validate="true" automaticCoupling="true"/>
+      <Link id="sv3#page4#gtu8#ln41" name="flow" to="sv3#page4#inu3" type="transport" validate="true" automaticCoupling="true"/>
       <Link id="sv3#page4#gtu8#ln5" name="Flow5" to="sv3#page4#inu5" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="sv3#page4#gtu8#ln70" name="Flow70" to="sv3#page4#inu10" automaticCoupling="true" type="transport" validate="true"/>
     </GetUnit>
     <EntryUnit gr:x="310" gr:y="115" id="sv3#page4#enu5" name="Search" linkOrder="sv3#page4#enu5#ln9">
       <Field id="sv3#page4#enu5#fld14" name="Filter" type="string" modifiable="true" contentType="text/plain"/>
-      <Link id="sv3#page4#enu5#ln9" name="Flow9" to="sv3#page8#pwu2" type="normal" validate="true">
+      <Link id="sv3#page4#enu5#ln9" name="Find" to="sv3#page8#pwu2" type="normal" validate="true">
         <LinkParameter id="sv3#page4#enu5#ln9#par94" name="Filter_AttCondition6" source="sv3#page4#enu5#fld14" target="sv3#page8#pwu2#su19#acond6"/>
       </Link>
     </EntryUnit>
